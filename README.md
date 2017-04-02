@@ -1,1 +1,1 @@
-# Smash
+[Color:RED]Smash
