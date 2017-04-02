@@ -3,7 +3,7 @@ main: me.happyman.source
 version: 2016.12.28
 author: HappyMan
 prefix: FinalSmash
-website: munchymc.com
+website: finalsmash.us
 description: This is a test plugin.
 load: STARTUP
 
