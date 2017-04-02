@@ -1,0 +1,171 @@
+name: Smash
+main: me.happyman.source
+version: 2016.12.28
+author: HappyMan
+prefix: FinalSmash
+website: munchymc.com
+description: This is a test plugin.
+load: STARTUP
+
+commands:
+   broadcast:
+      usage: "§cUsage: §6/broadcast <message>"
+      aliases: broadcast
+      permission: minecraft.command.kick
+      description: Sends a broadcast message
+   enableforcefield:
+      usage: "§cUsage: §6/enableforcefield <world | all> <bounds> <damage in hp> <interval in seconds>"
+      aliases: [ef, eff]
+      permission: minecraft.command.ban
+      description: "Possible shapes are sphere, cyl and, freestyle in order of increasing # of params (bounds/coords, radius, height). Freestyle: (xmin, xmax, ymin, ymax, zmin, zmax)."
+   disableforcefield:
+      usage: "§cUsage: §6/disableforcefield"
+      aliases: [df, dff]
+      permission: minecraft.command.ban
+      description: Disables the forcefield
+   ffexempt:
+      usage: "§cUsage: §6/ffexempt <add | remove> <team name> | <list>"
+      permission: minecraft.command.ban
+      description: Adds or removes a scoreboard team from being exempt from forcefield damage
+   rlp:
+      usage: "§cUsage: §6/rlp"
+      permission: minecraft.command.op
+      description: Reloads the plugin
+   damage:
+      usage: "§cUsage: §6/damage [player]"
+      permission: minecraft.command.ban
+      description: Damages the player a bit
+   heal:
+      usage: "§cUsage: §6/heal [player]"
+      permission: minecraft.command.ban
+      description: Heals the player completely
+   weather:
+      usage: "§cUsage: §6/weather [rain | thunder | clear]"
+      permission: minecraft.command.weather
+      description: Unlike normal, does almost nothing
+   pvp:
+      usage: "§cUsage: §6/pvp [true | false]"
+      aliases: [togglepvp]
+      permission: minecraft.command.kick
+      description: Toggles the PvP on or off
+   soupefficiency:
+      usage: "§cUsage: §6/soupefficiency [desired efficiency | true | false]"
+      aliases: [se, shutsoupup, soup]
+      permission: minecraft.command.tell
+      description: Sets soup mentor pickiness
+   fatshaming:
+      usage: "§cUsage: §6/fatshaming [true | false]"
+      aliases: [fs, fat]
+      permission: minecraft.command.tell
+      description: Toggles getting told you're fat
+   smash:
+      usage: "§cUsage: §6/smash"
+      permission: minecraft.command.tell
+      description: Opens the Smash gui
+   start:
+      usage: "§cUsage: §6/start [seconds]"
+      permission: minecraft.command.kick
+      description: Sets the start time for the Smash game you're in
+   leave:
+      usage: "§cUsage: §6/leave"
+      aliases: [hub, lobby, quit, rage]
+      permission: minecraft.command.tell
+      description: Sends you back to the main world
+   statistics:
+      usage: "§cUsage: §6/stats [player]"
+      aliases: [stats]
+      permission: minecraft.command.tell
+      description: Shows you the Smash statistics for the given player
+   createworld:
+      usage: "§cUsage: §6/createworld <free|round #> [map #] [join immediately]"
+      aliases: [create, cw]
+      permission: minecraft.command.ban
+      description: Creates a new Smash world of the specified type. Do /maplist to see a full list of maps.
+   deleteworld:
+      usage: "§cUsage: §6/deleteworld [world name]"
+      aliases: [delete, dw]
+      permission: minecraft.command.ban
+      description: Deletes the world specified or the world your in if not
+   listmaps:
+      usage: "§cUsage: §6/listmaps"
+      aliases: [smashmaps, listsmashmaps, maplist, maps]
+      permission: minecraft.command.tell
+      description: Lists the currently avaliable Smash maps
+   listworlds:
+      usage: "§cUsage: §6/listworlds"
+      aliases: [worldlist, smashworldlist, smashlist, listworld, listgames, games]
+      permission: minecraft.command.tell
+      description: Lists the Smash worlds!
+   reset:
+      usage: "§cUsage: §6/reset [world]"
+      aliases: []
+      permission: minecraft.command.ban
+      description: Resets a Smash world
+   getworld:
+      usage: "§cUsage: §6/find [player]"
+      aliases: [find]
+      permission: minecraft.command.tell
+      description: Gets the name of the world you're in
+   kit:
+      usage: "§cUsage: §6/kit [kit name]"
+      aliases: [kitselector]
+      permission: minecraft.command.tell
+      description: Allows you to select a kit
+   kitlist:
+      usage: "§cUsage: §6/kitlist"
+      aliases: [kits, whatkitsdoihave, listkits, kitslist]
+      description: Shows you what kits you can use
+   adddamage:
+      usage: "§cUsage: §6/adddamage <player> <amount>"
+      aliases: [dmgplayer, dmg]
+      permission: minecraft.command.op
+      description: Adds damage to a player
+   goto:
+      usage: "§cUsage: §6/goto <world>"
+      aliases: [warp, world, join]
+      permission: minecraft.command.tell
+      description: Sends you to the Smash world
+   dm:
+      usage: "§cUsage: §6/deathmatchmode [true | false] [1-10]"
+      aliases: [deathmatch, votedm, deathmatchmode, dmm]
+      permission: minecraft.command.tell
+      description: Toggles your preference for whether you would like to be in deathmatch mode
+   mode:
+      usage: "§cUsage: §6/mode [world]"
+      aliases: [getmode]
+      permission: minecraft.command.tell
+      description: Determines the deathmatch setting of the world (or your world)
+   msg:
+      usage: "§cUsage: §6/msg <player> <message>"
+      aliases: [w, whisper, tell, message]
+      permission: minecraft.command.tell
+      description: Messages the player the message
+   r:
+      usage: "§cUsage: §6/r <message>"
+      permission: minecraft.command.tell
+      description: Replies to the person who messaged you last
+   spectate:
+      usage: "§cUsage: §6/spectate"
+      aliases: [spec]
+      permission: minecraft.command.tell
+      description: Sets you into spectator mode
+   giveorb:
+      usage: "§cUsage: §6/giveorb <player>"
+      aliases: []
+      permission: minecraft.command.op
+      description: Gives a Smash orb
+   ready:
+      usage: "§cUsage: §6/ready"
+      aliases: []
+      permission: minecraft.command.tell
+      description: Tells the server that you're ready for this game to start
+   votekick:
+      usage: "§cUsage: §6/votekick <player>"
+      aliases: []
+      permission: minecraft.command.tell
+      description: Votes to kick
+   end:
+      usage: "§cUsage: §6/end <Smash world>"
+      aliases: [endgame]
+      permission: minecraft.command.op
+      description: Ends a Smash game
