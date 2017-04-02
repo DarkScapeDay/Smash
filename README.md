@@ -1,1 +1,1 @@
-[Color:RED]Smash
+**Smash**
