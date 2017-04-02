@@ -21,7 +21,7 @@ public abstract class SmashItemWithUsages extends SmashItemWithExp
         this.usages = new HashMap<Player, Integer>();
         this.rechargeOnLand = rechargeOnLand;
     }
-
+//
     public SmashItemWithUsages(Material mat, String name, int usages, boolean rechargeOnLand) {
         super(mat, name);
         this.max_usages = usages;
