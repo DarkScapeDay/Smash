@@ -28,6 +28,9 @@ public abstract class SmashItemWithUsages extends SmashItemWithExp
         this.usages = new HashMap<Player, Integer>();
         this.rechargeOnLand = rechargeOnLand;
     }
+//sfdfd
+    public boolean getTrue() { return true; }
+
     public boolean rechargesOnLand()
     {
         return rechargeOnLand;
