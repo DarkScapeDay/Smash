@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Smash:jar">
+    <output-path>$USER_HOME$/Desktop/Current Server/plugins</output-path>
+    <root id="archive" name="Smash.jar">
+      <element id="module-output" name="Smash" />
+      <element id="library" level="project" name="jdk1.8" />
+    </root>
+  </artifact>
+</component>
