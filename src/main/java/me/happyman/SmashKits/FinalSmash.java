@@ -3,7 +3,8 @@ package me.happyman.SmashKits;
 import me.happyman.ItemTypes.SmashItemWithCharge;
 import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashItemManager;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -56,7 +57,7 @@ public abstract class FinalSmash extends SmashItemWithCharge
     @Override
     public boolean canUseItem(Player p)
     {
-        return SmashWorldManager.isSmashWorld(p.getWorld()) && !SmashWorldManager.isInSpectatorMode(p);
+        return SmashWorldManager.isSmashWorld(p.getWorld()) && !SmashWorldInteractor.isInSpectatorMode(p);
     }
 
     public boolean hasFinalSmashActive(Player p)

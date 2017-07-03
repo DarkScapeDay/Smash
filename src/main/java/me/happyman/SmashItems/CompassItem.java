@@ -3,7 +3,7 @@ package me.happyman.SmashItems;
 import me.happyman.ItemTypes.SmashItem;
 import me.happyman.SmashItemDrops.SmashOrb;
 import me.happyman.commands.SmashManager;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

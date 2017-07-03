@@ -3,7 +3,8 @@ package me.happyman.SmashItemDrops;
 import me.happyman.SmashKitMgt.SmashKitManager;
 import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashAttackListener;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -33,14 +34,14 @@ public class SmashOrb implements CommandExecutor
     public static void createOrb(final Location spawnLocation)
     {
         final World w = spawnLocation.getWorld();
-        SmashWorldManager.sendMessageToWorld(spawnLocation.getWorld(), ChatColor.DARK_PURPLE + "" + ChatColor.ITALIC + "" + ChatColor.BOLD + "A Final Smash Orb has spawned!");
+        SmashWorldInteractor.sendMessageToWorld(spawnLocation.getWorld(), ChatColor.DARK_PURPLE + "" + ChatColor.ITALIC + "" + ChatColor.BOLD + "A Final Smash Orb has spawned!");
         for (int i = 0; i < 3; i++)
         {
             for (Player p : w.getPlayers())
             {
-                if (!SmashWorldManager.isInSpectatorMode(p))
+                if (!SmashWorldInteractor.isInSpectatorMode(p))
                 {
-                    SmashWorldManager.playSoundToPlayers(w.getPlayers(), spawnLocation, Sound.ENDERMAN_TELEPORT, .6F, 1F);
+                    SmashWorldInteractor.playSoundToPlayers(w.getPlayers(), spawnLocation, Sound.ENDERMAN_TELEPORT, .6F, 1F);
                 }
             }
         }
@@ -143,7 +144,7 @@ public class SmashOrb implements CommandExecutor
     public static boolean isLookingAtSmashOrb(Player p)
     {
         World w = p.getWorld();
-        if (hasSmashOrb(w) && !SmashWorldManager.isInSpectatorMode(p))
+        if (hasSmashOrb(w) && !SmashWorldInteractor.isInSpectatorMode(p))
         {
             Entity e = SmashAttackListener.getEntityBeingFaced(p, 4.2F, 5);
             return e != null && e instanceof Item && SmashOrbTracker.getOrbMaterials().contains(((Item)e).getItemStack().getType());

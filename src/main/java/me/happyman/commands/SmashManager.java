@@ -6,8 +6,8 @@ import me.happyman.Listeners.SmashItemManager;
 import me.happyman.Listeners.TabCompletion;
 import me.happyman.utils.ParticleEffect;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashScoreboardManager;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashScoreboardManager;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -18,6 +18,8 @@ import me.happyman.source;
 import org.bukkit.entity.Player;
 
 import java.util.*;
+
+import static me.happyman.worlds.SmashScoreboardManager.updateDamage;
 
 public class SmashManager
 {
@@ -230,7 +232,7 @@ public class SmashManager
                 }
                 actualDamages.put(p, getDamage(p) + damage);
                 p.setLevel(Math.round(actualDamages.get(p)));
-                SmashScoreboardManager.updateDamage(p);
+                updateDamage(p);
             }
         }
     }
@@ -248,7 +250,7 @@ public class SmashManager
     {
         actualDamages.put(p, (float)0);
         p.setLevel(0);
-        SmashScoreboardManager.updateDamage(p);
+        updateDamage(p);
     }
 
     public static double getMagnitude(Vector v)

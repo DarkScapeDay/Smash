@@ -31,45 +31,185 @@
   <component name="FavoritesManager">
     <favorites_list name="Test1" />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="source.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/source.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="511" column="15" lean-forward="true" selection-start-line="511" selection-start-column="15" selection-end-line="511" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1717#2601#0" expanded="true" />
+                <element signature="e#2600#2601#0" expanded="true" />
+                <element signature="e#5787#5975#0" expanded="true" />
+                <element signature="e#5974#5975#0" expanded="true" />
+                <element signature="e#6037#6051#0" expanded="true" />
+                <element signature="e#6818#7006#0" expanded="true" />
+                <element signature="e#7005#7006#0" expanded="true" />
+                <element signature="e#18350#18351#0" expanded="true" />
+                <element signature="e#18438#18439#0" expanded="true" />
+                <element signature="e#23688#23704#0" expanded="true" />
+                <element signature="e#26909#26945#0" expanded="false" />
+                <element signature="e#35175#35176#0" expanded="true" />
+                <element signature="e#35229#35230#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SmashStatTracker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashStatTracker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="528" column="29" lean-forward="true" selection-start-line="528" selection-start-column="29" selection-end-line="528" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PortalManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5032">
+              <caret line="334" column="92" lean-forward="false" selection-start-line="334" selection-start-column="92" selection-end-line="334" selection-end-column="92" />
+              <folding>
+                <element signature="e#6890#6898#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForcefieldManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/commands/ForcefieldManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+              <folding>
+                <element signature="e#1939#1940#0" expanded="true" />
+                <element signature="e#1973#1974#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SmashWorldListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SmashWorldManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34680">
+              <caret line="2121" column="16" lean-forward="false" selection-start-line="2121" selection-start-column="16" selection-end-line="2121" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#12287#12288#0" expanded="false" />
+                <element signature="e#12337#12338#0" expanded="false" />
+                <element signature="e#15006#15007#0" expanded="false" />
+                <element signature="e#15064#15065#0" expanded="false" />
+                <element signature="e#15259#15260#0" expanded="false" />
+                <element signature="e#15296#15297#0" expanded="false" />
+                <element signature="e#16149#16150#0" expanded="false" />
+                <element signature="e#16197#16198#0" expanded="false" />
+                <element signature="e#16609#16610#0" expanded="false" />
+                <element signature="e#16672#16673#0" expanded="false" />
+                <element signature="e#16990#16991#0" expanded="false" />
+                <element signature="e#17040#17041#0" expanded="false" />
+                <element signature="e#19391#19392#0" expanded="false" />
+                <element signature="e#19449#19450#0" expanded="false" />
+                <element signature="e#41424#41425#0" expanded="false" />
+                <element signature="e#41456#41457#0" expanded="false" />
+                <element signature="e#64705#64706#0" expanded="false" />
+                <element signature="e#64766#64767#0" expanded="false" />
+                <element signature="e#65086#65087#0" expanded="false" />
+                <element signature="e#65137#65138#0" expanded="false" />
+                <element signature="e#66128#66129#0" expanded="false" />
+                <element signature="e#66196#66197#0" expanded="false" />
+                <element signature="e#67904#67905#0" expanded="false" />
+                <element signature="e#67997#67998#0" expanded="false" />
+                <element signature="e#69418#69419#0" expanded="false" />
+                <element signature="e#69489#69490#0" expanded="false" />
+                <element signature="e#79562#79563#0" expanded="false" />
+                <element signature="e#79635#79636#0" expanded="false" />
+                <element signature="e#82462#82463#0" expanded="false" />
+                <element signature="e#82542#82543#0" expanded="false" />
+                <element signature="e#84573#84574#0" expanded="false" />
+                <element signature="e#84647#84648#0" expanded="false" />
+                <element signature="e#85455#85456#0" expanded="false" />
+                <element signature="e#85507#85508#0" expanded="false" />
+                <element signature="e#90407#90408#0" expanded="false" />
+                <element signature="e#90489#90490#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FTPAccessor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/FTPAccessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="97" column="12" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+              <folding>
+                <element signature="e#3099#3304#0" expanded="true" />
+                <element signature="e#3303#3304#0" expanded="true" />
+                <element signature="e#4776#4777#0" expanded="true" />
+                <element signature="e#4816#4817#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>blaze</find>
-      <find>firework</find>
-      <find>endfinal</find>
-      <find>iter</find>
-      <find>&lt; 10</find>
-      <find>orb</find>
-      <find>getbestworld</find>
-      <find>kick</find>
-      <find>oldfactor</find>
-      <find>sendpar</find>
-      <find>getplu</find>
-      <find>sendentity</find>
-      <find>attackplayer</find>
-      <find>charge</find>
-      <find>tcharge</find>
-      <find>attackplayer(</find>
-      <find>attackPlayer(</find>
-      <find>attackplayers</find>
-      <find>alse</find>
-      <find>.damage(</find>
-      <find>g</find>
-      <find>getlast</find>
-      <find>timeof</find>
-      <find>forgetwhen</find>
-      <find>canrefuelnow</find>
-      <find>restor</find>
-      <find>j</find>
-      <find>decre</find>
-      <find>decrement</find>
-      <find>jumpland</find>
+      <find>abstra</find>
+      <find>getall</find>
+      <find>half</find>
+      <find>delay</find>
+      <find>contains</find>
+      <find>.split</find>
+      <find>isinpo</find>
+      <find>containsplayer</find>
+      <find>addor</find>
+      <find>tptick</find>
+      <find>computev</find>
+      <find>cancel</find>
+      <find>getworldrepresenters</find>
+      <find>get</find>
+      <find>&quot;al</find>
+      <find>al</find>
+      <find>isworld</find>
+      <find>portal</find>
+      <find>connection is no</find>
+      <find>putplugindatum</find>
+      <find>&quot;txt&quot;</find>
+      <find>&quot;</find>
+      <find>putdatum</find>
+      <find>scanner</find>
+      <find>getdatum</find>
+      <find>FileReader</find>
+      <find>hasfile</find>
+      <find>crede</find>
+      <find>getjson</find>
+      <find>send to the</find>
     </findStrings>
     <replaceStrings>
       <replace>Verifier</replace>
@@ -78,6 +218,20 @@
       <replace>SmashItemManager.getPlugin()</replace>
       <replace>Chicken</replace>
       <replace>Item</replace>
+      <replace>Bukkit.broadcastMessage</replace>
+      <replace>getDatum</replace>
+      <replace>incrementStatistic</replace>
+      <replace>getStatistic</replace>
+      <replace>SmashFile(</replace>
+      <replace>File</replace>
+      <replace>depth</replace>
+      <replace>int</replace>
+      <replace>'t</replace>
+      <replace>plugin</replace>
+      <replace>int baseY</replace>
+      <replace>protected</replace>
+      <replace>public boolean accept</replace>
+      <replace>SmashManager.getPlugin()</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -88,60 +242,71 @@
       <projects_view />
     </option>
   </component>
+  <component name="GroovyConsoleState">
+    <option name="list">
+      <list>
+        <Entry>
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
+          <option name="moduleName" value="Smash" />
+          <option name="title" value="Smash (Bundled Groovy 2.4.6)" />
+        </Entry>
+      </list>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Bowser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashScoreboardManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/PitBow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithExp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithOverlappingTasks.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithCharge.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithCrouchCharge.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/BaseballBat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKitMgt/SmashKit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/FoxFinalSmash.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/FoxFirer.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/listeners/SmashItemManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItems/CompassItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Mario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/MarioFireball.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/MarioFinalSmash.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/MarioFinalSmash.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/listeners/SmashMishapPreventor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Ganondorf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/FinalSmash.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrb.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SpeedChanger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashEntityTracker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/ItemDropManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/MonsterEgg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrbTracker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/source.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/KirbyRockTransformer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/KirbyInhaler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Pikachu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Fox.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/GroundPound.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Kirby.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Pit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Wario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/KirbySword.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/FoxFinalSmash.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/WarioFartManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/listeners/HitData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/SmashManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/listeners/SmashAttackListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/SonicHoming.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Sonic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/CommandVerifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Verifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PlayerFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashWorldListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/DirectoryType.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/RocketItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKitMgt/SmashKitManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashWorldManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/ForcefieldManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashPortal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PortalDirection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PortalData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SeanMurray.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/EventPortal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/EventPortalCommandReceiver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/GanondorfEgg.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithUsages.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/ItemDropManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrb.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrbTracker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKitMgt/SmashKitManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/KirbyInhaler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/DisableWeather.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/ParticleEffect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PlayerList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/ReflectionUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashEntityTracker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashScoreboardManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/WorldTraveller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/EventPortal.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/PortalManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashWorldInteractor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashWorldManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashScoreboardManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashStatTracker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Wario.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/SmashManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Listeners/TabCompletion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashMishapPreventor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PortalManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalDirection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SpongeLauncher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/VelocityModifier.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashAttackListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldInteractor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/ForcefieldManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/source.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/FTPAccessor.java" />
       </list>
     </option>
   </component>
@@ -153,9 +318,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -279,6 +445,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -307,6 +477,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="happyman" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Smash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Smash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="me" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="happyman" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="worlds" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -341,40 +545,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="me" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="happyman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpecialKitItems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -578,7 +748,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ItemTypes" />
+              <option name="myItemId" value="commands" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -603,55 +773,75 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="me" />
+              <option name="myItemId" value="Smash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Smash" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="happyman" />
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Smash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Smash" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Current Server/plugins" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/me/happyman/utils" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Timothy/IdeaProjects/Smash/src/main/java/me/happyman/listeners/SmashWorldListener.java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Timothy/IdeaProjects/Smash/src/main/java/me/happyman/utils/Portal/EventPortal.java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
-      <recent name="me.happyman.listeners.SmashAttackListener" />
-      <recent name="me.happyman.utils.SmashEntityTracker" />
-      <recent name="me.happyman.commands.SmashManager" />
-      <recent name="me.happyman.source" />
-      <recent name="me.happyman.listeners.SmashItemManager" />
+      <recent name="me.happyman.utils.VelocityModifier" />
+      <recent name="me.happyman.utils.SpongeLauncher" />
+      <recent name="me.happyman.utils.SmashWorldInteractor" />
+      <recent name="me.happyman.utils.SmashWorldManager" />
+      <recent name="smashworld" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="me.happyman.utils" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="me.happyman.utils" />
+      <recent name="]" />
       <recent name="me.happyman.SpecialKitItems" />
       <recent name="me.happyman.SmashKits" />
       <recent name="me.happyman.SmashItemDrops" />
-      <recent name="me.happyman.SmashKitMgt" />
-      <recent name="me.happyman.utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Timothy\IdeaProjects\Smash\lib" />
+      <recent name="C:\Users\Timothy\IdeaProjects\Smash\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -660,61 +850,6 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -859,30 +994,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="GAPID_DISABLE_PCS" value="false" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -909,37 +1020,38 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1040" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17741935" sideWeight="0.20572917" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14164905" sideWeight="0.1984375" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26321355" sideWeight="0.6255208" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14164905" sideWeight="0.8015625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33509514" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5381356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26215646" sideWeight="0.315625" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26321355" sideWeight="0.37447917" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -959,7 +1071,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="273" />
+      <option name="time" value="302" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -968,10 +1080,520 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/DirectoryType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/RocketItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/Server.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="101" column="14" lean-forward="false" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/craftbukkit/v1_8_R3/CraftServer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5644">
+          <caret line="520" column="50" lean-forward="false" selection-start-line="520" selection-start-column="50" selection-end-line="520" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/PlayerList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3740">
+          <caret line="327" column="39" lean-forward="false" selection-start-line="327" selection-start-column="39" selection-end-line="327" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/Bukkit.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="165" column="25" lean-forward="true" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/entity/Entity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/entity/Vehicle.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/craftbukkit/v1_8_R3/entity/CraftEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="575" column="131" lean-forward="true" selection-start-line="575" selection-start-column="131" selection-end-line="575" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashPortal.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/PortalData.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SeanMurray.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/util/HashMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="193" column="23" lean-forward="false" selection-start-line="193" selection-start-column="23" selection-end-line="193" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/EventPortalCommandReceiver.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/GanondorfEgg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="91" lean-forward="false" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithUsages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="220">
+          <caret line="57" column="113" lean-forward="false" selection-start-line="57" selection-start-column="113" selection-end-line="57" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/ItemDropManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" column="77" lean-forward="false" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/KirbyInhaler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="145" column="106" lean-forward="false" selection-start-line="145" selection-start-column="106" selection-end-line="145" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/ReflectionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/PlayerList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="678" column="30" lean-forward="false" selection-start-line="678" selection-start-column="30" selection-end-line="678" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/ParticleEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/commands/DisableWeather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/WorldTraveller.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/EventPortal.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="202" column="39" lean-forward="false" selection-start-line="202" selection-start-column="26" selection-end-line="202" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashEntityTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="143" column="63" lean-forward="false" selection-start-line="143" selection-start-column="63" selection-end-line="143" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKitMgt/SmashKitManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="522" column="34" lean-forward="true" selection-start-line="522" selection-start-column="34" selection-end-line="522" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Sonic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Wario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="118" column="24" lean-forward="false" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrbTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="186" column="53" lean-forward="false" selection-start-line="186" selection-start-column="53" selection-end-line="186" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Verifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/Listeners/TabCompletion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="43" column="45" lean-forward="true" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/commands/SmashManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Pit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="59" column="106" lean-forward="false" selection-start-line="59" selection-start-column="106" selection-end-line="59" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashMishapPreventor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="292" column="95" lean-forward="false" selection-start-line="292" selection-start-column="95" selection-end-line="292" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashScoreboardManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="228" column="5" lean-forward="true" selection-start-line="228" selection-start-column="5" selection-end-line="228" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalDirection.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="84" lean-forward="false" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashAttackListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12410">
+          <caret line="780" column="76" lean-forward="false" selection-start-line="780" selection-start-column="76" selection-end-line="780" selection-end-column="76" />
+          <folding>
+            <marker date="1498598213151" expanded="false" signature="35864:35935" ph="() → {" />
+            <marker date="1498598213151" expanded="false" signature="36267:36302" ph="}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/VelocityModifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="74" column="70" lean-forward="false" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldInteractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5729">
+          <caret line="1098" column="30" lean-forward="false" selection-start-line="1098" selection-start-column="30" selection-end-line="1098" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addTabEntry#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getTabList#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#removeTabEntry#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#addAllTabEntries#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#removeAllTabEntries#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#forgetOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#forgetOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#rememberOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#rememberOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#isDead#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#setIsDead#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#setDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#setDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#determineDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#determineDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#isDeathMatchWorld#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#isDeathMatchWorld#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getDeathMatchLives#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getDeathMatchLives#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#playSoundToPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#playSoundToPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#playSoundToPlayers#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#playSoundToPlayers#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#playSoundToPlayers#2;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#performDeathMatchDeath#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#recordKOStatistics#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#recordKOStatistics#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getRespawnRunnable#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getRespawnRunnable#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#respawnTeleport#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#allowFullflight#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#allowFullflight#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#sendMessageWithDelay#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#sendMessageWithDelay#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#sendMessageToWorld#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#sendMessageToWorld#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#sendMessageOutsideWorld#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#refreshWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#refreshWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#refreshWorldGui#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#refreshWorldGui#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldGuiLabel#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getAvaliableWorlds#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#hasSpecialPermissions#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#hasWorldGuiOpen#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#openWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#openWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getTourneyWorldCreationItem#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getTourneyWorldCreationItem#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getFreeplayWorldCreationItem#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getFreeplayWorldCreationItem#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#updateHitCooldown#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#updateHitCooldown#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#updateHitCooldown#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#updateHitCooldown#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#handleJoin#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#handleJoin#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="e#35906#36040#0" expanded="false" />
+            <element signature="docComment;method#initializeSmashPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#initializeSmashPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#resetPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#resetPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#handleLeave#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#setSpectatorMode#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="e#43035#43069#0" expanded="false" />
+            <element signature="method#hideSpectatorsFromPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#hideSpectatorsFromPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#unhidePlayersFromPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#hideSpectatorFromPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getLivingPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#isHated#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#canBeJoinedRightNow#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldNumber#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getWorldNumber#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldNumber#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldDescription#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getWorldDescription#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWelcomeMessage#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getWelcomeMessage#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getSimpleWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getSimpleWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldListName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getWorldListName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldStatus#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getWorldStatus#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getShortWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getShortWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldRepresenter#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getWorldRepresented#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getWorldRepresented#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getMapName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getMapName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getMapName#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getMapName#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#removeSmashGuiOpener#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#removeSmashGuiOpener#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#giveSmashGuiOpener#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#giveSmashGuiOpener#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#giveSmashGuiOpener#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#giveSmashGuiOpener#1;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getTourneyWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getTourneyWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="docComment;method#getFreeplayWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
+            <element signature="method#getFreeplayWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34680">
+          <caret line="2121" column="16" lean-forward="false" selection-start-line="2121" selection-start-column="16" selection-end-line="2121" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#12287#12288#0" expanded="false" />
+            <element signature="e#12337#12338#0" expanded="false" />
+            <element signature="e#15006#15007#0" expanded="false" />
+            <element signature="e#15064#15065#0" expanded="false" />
+            <element signature="e#15259#15260#0" expanded="false" />
+            <element signature="e#15296#15297#0" expanded="false" />
+            <element signature="e#16149#16150#0" expanded="false" />
+            <element signature="e#16197#16198#0" expanded="false" />
+            <element signature="e#16609#16610#0" expanded="false" />
+            <element signature="e#16672#16673#0" expanded="false" />
+            <element signature="e#16990#16991#0" expanded="false" />
+            <element signature="e#17040#17041#0" expanded="false" />
+            <element signature="e#19391#19392#0" expanded="false" />
+            <element signature="e#19449#19450#0" expanded="false" />
+            <element signature="e#41424#41425#0" expanded="false" />
+            <element signature="e#41456#41457#0" expanded="false" />
+            <element signature="e#64705#64706#0" expanded="false" />
+            <element signature="e#64766#64767#0" expanded="false" />
+            <element signature="e#65086#65087#0" expanded="false" />
+            <element signature="e#65137#65138#0" expanded="false" />
+            <element signature="e#66128#66129#0" expanded="false" />
+            <element signature="e#66196#66197#0" expanded="false" />
+            <element signature="e#67904#67905#0" expanded="false" />
+            <element signature="e#67997#67998#0" expanded="false" />
+            <element signature="e#69418#69419#0" expanded="false" />
+            <element signature="e#69489#69490#0" expanded="false" />
+            <element signature="e#79562#79563#0" expanded="false" />
+            <element signature="e#79635#79636#0" expanded="false" />
+            <element signature="e#82462#82463#0" expanded="false" />
+            <element signature="e#82542#82543#0" expanded="false" />
+            <element signature="e#84573#84574#0" expanded="false" />
+            <element signature="e#84647#84648#0" expanded="false" />
+            <element signature="e#85455#85456#0" expanded="false" />
+            <element signature="e#85507#85508#0" expanded="false" />
+            <element signature="e#90407#90408#0" expanded="false" />
+            <element signature="e#90489#90490#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="505" column="15" lean-forward="false" selection-start-line="505" selection-start-column="15" selection-end-line="505" selection-end-column="15" />
+          <folding>
+            <element signature="e#15236#15237#0" expanded="true" />
+            <element signature="e#15280#15281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Forcefield.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashStatTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="528" column="29" lean-forward="true" selection-start-line="528" selection-start-column="29" selection-end-line="528" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/commands/ForcefieldManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding>
+            <element signature="e#1939#1940#0" expanded="true" />
+            <element signature="e#1973#1974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5032">
+          <caret line="334" column="92" lean-forward="false" selection-start-line="334" selection-start-column="92" selection-end-line="334" selection-end-column="92" />
+          <folding>
+            <element signature="e#6890#6898#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/source.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="511" column="15" lean-forward="true" selection-start-line="511" selection-start-column="15" selection-end-line="511" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1717#2601#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
+            <element signature="e#5787#5975#0" expanded="true" />
+            <element signature="e#5974#5975#0" expanded="true" />
+            <element signature="e#6037#6051#0" expanded="true" />
+            <element signature="e#6818#7006#0" expanded="true" />
+            <element signature="e#7005#7006#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#18438#18439#0" expanded="true" />
+            <element signature="e#23688#23704#0" expanded="true" />
+            <element signature="e#26909#26945#0" expanded="false" />
+            <element signature="e#35175#35176#0" expanded="true" />
+            <element signature="e#35229#35230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/FTPAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="97" column="12" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+          <folding>
+            <element signature="e#3099#3304#0" expanded="true" />
+            <element signature="e#3303#3304#0" expanded="true" />
+            <element signature="e#4776#4777#0" expanded="true" />
+            <element signature="e#4816#4817#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1006,6 +1628,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>commons-net-3.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1034,7 +1657,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1053,7 +1675,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>spigot-1.8.8</last-edited>
+          <last-edited>commons-net-3.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

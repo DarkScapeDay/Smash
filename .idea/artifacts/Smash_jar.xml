@@ -4,6 +4,7 @@
     <root id="archive" name="Smash.jar">
       <element id="module-output" name="Smash" />
       <element id="library" level="project" name="jdk1.8" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/main/resources/commons-net-3.6.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

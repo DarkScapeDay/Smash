@@ -14,7 +14,7 @@ public class SoupManager implements CommandExecutor
 {
     private final source plugin;
     public static final String soupEffyCmdName = "soupefficiency";
-    public static final String shameCmdName = "fatshaming";
+    public static final String SHAME_CMD_NAME = "fatshaming";
     public static HashMap<Player, Float> soupEfficiencyGoals;
     public static HashMap<Player, Boolean> fatShamingPreferences;
 
@@ -26,7 +26,7 @@ public class SoupManager implements CommandExecutor
         fatShamingPreferences = new HashMap<Player, Boolean>();
 
         plugin.setExecutor(soupEffyCmdName, this);
-        plugin.setExecutor(shameCmdName, this);
+        plugin.setExecutor(SHAME_CMD_NAME, this);
     }
 
     public void updateQuickSoupEffy(Player p)
@@ -34,7 +34,7 @@ public class SoupManager implements CommandExecutor
         float dater;
         try
         {
-            String data = plugin.getPluginDatum(p, SoupManager.soupEffyCmdName);
+            String data = plugin.getDatum(p, SoupManager.soupEffyCmdName);
             dater = Float.parseFloat(data);
             if (dater > 1)
             {
@@ -49,14 +49,14 @@ public class SoupManager implements CommandExecutor
         catch (NumberFormatException e)
         {
             dater = 0;
-            plugin.putPluginDatum(p, SoupManager.soupEffyCmdName, 0);
+            plugin.putDatum(p, SoupManager.soupEffyCmdName, 0);
         }
         soupEfficiencyGoals.put(p, dater);
     }
 
     public void updateQuickFat(Player p)
     {
-        boolean wantsToBeShamed = plugin.getPluginDatum(p, shameCmdName).equalsIgnoreCase("true");
+        boolean wantsToBeShamed = plugin.getDatum(p, SHAME_CMD_NAME).equalsIgnoreCase("true");
         fatShamingPreferences.put(p, wantsToBeShamed);
     }
 
@@ -142,13 +142,13 @@ public class SoupManager implements CommandExecutor
                     if (plugin.isTrue(args[0]))
                     {
                         input = 1;
-                        plugin.putPluginDatum(p, soupEffyCmdName, input);
+                        plugin.putDatum(p, soupEffyCmdName, input);
                         p.sendMessage(ChatColor.GREEN + "Soup notifications set to 100% efficiency!");
                     }
                     else if (plugin.isFalse(args[0]))
                     {
                         input = 0;
-                        plugin.putPluginDatum(p, soupEffyCmdName, 0.0);
+                        plugin.putDatum(p, soupEffyCmdName, 0.0);
                         p.sendMessage(ChatColor.GREEN + "Soup notifications disabled!");
                     }
                     else if ("help".equalsIgnoreCase(args[0]))
@@ -162,23 +162,23 @@ public class SoupManager implements CommandExecutor
                         return true;
                     }
                 }
-                plugin.putPluginDatum(p, soupEffyCmdName, input);
+                plugin.putDatum(p, soupEffyCmdName, input);
                 updateQuickSoupEffy(p);
             }
             return true;
         }
-        else if (plugin.matchesCommand(label, shameCmdName))
+        else if (plugin.matchesCommand(label, SHAME_CMD_NAME))
         {
             Player p = (Player)sender;
-            if ((args.length > 0 && plugin.isTrue(args[0])) || (args.length == 0 && !plugin.isTrue(plugin.getPluginDatum(p, shameCmdName))))
+            if ((args.length > 0 && source.isTrue(args[0])) || (args.length == 0 && !source.isTrue(plugin.getDatum(p, SHAME_CMD_NAME))))
             {
-                plugin.putPluginDatum(p, shameCmdName, "true");
+                plugin.putDatum(p, SHAME_CMD_NAME, "true");
                 updateQuickFat(p);
                 p.sendMessage(ChatColor.GREEN + "Fat shaming enabled!");
             }
             else
             {
-                plugin.putPluginDatum(p, shameCmdName, "false");
+                plugin.putDatum(p, SHAME_CMD_NAME, "false");
                 updateQuickFat(p);
                 p.sendMessage(ChatColor.GREEN + "Fat shaming disabled!");
             }

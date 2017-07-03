@@ -7,7 +7,8 @@ import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashAttackListener;
 import me.happyman.utils.ParticleEffect;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
@@ -484,11 +485,11 @@ public class FoxFinalSmash extends FinalSmash implements Listener
                     new Pariclly(245, 245, 253, true));
         }
 
-        SmashWorldManager.allowFullflight(p, true);
+        SmashWorldInteractor.allowFullflight(p, true);
         p.setFlySpeed(p.getFlySpeed()*10F);
 
         World w = p.getWorld();
-        SmashWorldManager.sendMessageToWorld(w, "<" + p.getDisplayName() + "> " + ChatColor.GOLD + "" + ChatColor.BOLD + "Landmaster!");
+        SmashWorldInteractor.sendMessageToWorld(w, "<" + p.getDisplayName() + "> " + ChatColor.GOLD + "" + ChatColor.BOLD + "Landmaster!");
 
         addTask(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(SmashManager.getPlugin(), new Runnable() {
             public static final int HIT_COOLDOWN = 10;
@@ -502,7 +503,7 @@ public class FoxFinalSmash extends FinalSmash implements Listener
 
                 for (Entity e : p.getNearbyEntities(TANK_SIZE, hoverHeight, TANK_SIZE))
                 {
-                    if (e instanceof Player && (!tickHitTimes.containsKey(e) || iteration - tickHitTimes.get(e) >= HIT_COOLDOWN) && !e.equals(p) && !SmashWorldManager.isInSpectatorMode((Player)e) && p.getLocation().getY() - e.getLocation().getY() > 3)
+                    if (e instanceof Player && (!tickHitTimes.containsKey(e) || iteration - tickHitTimes.get(e) >= HIT_COOLDOWN) && !e.equals(p) && !SmashWorldInteractor.isInSpectatorMode((Player)e) && p.getLocation().getY() - e.getLocation().getY() > 3)
                     {
                         tickHitTimes.put((Player)e, iteration);
                         Location attackLoc = p.getLocation().clone();
@@ -596,7 +597,7 @@ public class FoxFinalSmash extends FinalSmash implements Listener
     {
         SmashAttackListener.forgetArtificiallyShieldedPlayer(p);
         p.setFlySpeed(p.getFlySpeed()*0.1F);
-        if (!SmashWorldManager.isInSpectatorMode(p) && !(SmashWorldManager.isSmashWorld(p.getWorld()) && (!SmashWorldManager.gameHasStarted(p.getWorld())) || SmashWorldManager.gameHasEnded(p.getWorld())))
+        if (!SmashWorldInteractor.isInSpectatorMode(p) && !(SmashWorldManager.isSmashWorld(p.getWorld()) && (!SmashWorldManager.gameHasStarted(p.getWorld())) || SmashWorldManager.gameHasEnded(p.getWorld())))
         {
             p.setAllowFlight(false);
         }

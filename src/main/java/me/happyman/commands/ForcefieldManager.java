@@ -1,6 +1,7 @@
 package me.happyman.commands;
 
 import me.happyman.source;
+import me.happyman.utils.DirectoryType;
 import me.happyman.utils.Forcefield;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -10,9 +11,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 public class ForcefieldManager extends CommandVerifier implements CommandExecutor
 {
@@ -20,7 +21,7 @@ public class ForcefieldManager extends CommandVerifier implements CommandExecuto
     private final String disableCmd;
     private final String addTeamCmd;
     private HashMap<World, Forcefield> worldForcefields;
-    private final String settingFile = "ForcefieldExemptions";
+    private final String settingFile = "ForcefieldExemptTeams.txt";
     private static List<String> exemptTeams;
 
     public ForcefieldManager(source plugin)
@@ -29,13 +30,22 @@ public class ForcefieldManager extends CommandVerifier implements CommandExecuto
 
         worldForcefields = new HashMap<World, Forcefield>();
         exemptTeams = new ArrayList<String>();
-        for (String team : plugin.getPluginDataKeys(plugin.SETTING_FOLDER, settingFile))
+        try
         {
-            if (plugin.getPluginDatum(plugin.SETTING_FOLDER, settingFile, team).equals("true"))
+            File f = plugin.getSpecificFile(DirectoryType.SERVER_DATA, "", settingFile);
+            Scanner scanner = new Scanner(f);
+            scanner.useDelimiter("\\Z");
+            String[] stringList = scanner.next().split(", ");
+            for (String team : stringList)
             {
                 exemptTeams.add(team);
             }
         }
+        catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
+        catch (NoSuchElementException ex) {}
 
         for (World world : Bukkit.getWorlds())
         {
@@ -82,7 +92,7 @@ public class ForcefieldManager extends CommandVerifier implements CommandExecuto
                     else
                     {
                         exemptTeams.add(args[1]);
-                        plugin.putPluginDatum(plugin.SETTING_FOLDER, settingFile, args[1], "true");
+                        plugin.putPluginDatum(DirectoryType.SERVER_DATA, "", settingFile, args[1], "true");
                         sender.sendMessage(ChatColor.GOLD + "Team " + args[1] + " exempted from forcefield damage.");
                     }
                 }
@@ -91,7 +101,7 @@ public class ForcefieldManager extends CommandVerifier implements CommandExecuto
                     if (exemptTeams.contains(args[1]))
                     {
                         exemptTeams.remove(args[1]);
-                        plugin.putPluginDatum(plugin.SETTING_FOLDER, settingFile, args[1], "false");
+                        plugin.putPluginDatum(DirectoryType.SERVER_DATA, "", settingFile, args[1], "false");
                         sender.sendMessage(ChatColor.GOLD + "Team " + args[1] + " can take forcefield damage now.");
                     }
                     else

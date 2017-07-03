@@ -1,6 +1,9 @@
 package me.happyman.utils;
 
 import me.happyman.source;
+import me.happyman.worlds.SmashScoreboardManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -31,6 +34,7 @@ public class SmashStatTracker implements CommandExecutor
     public static final String KO_RECEIVED_SCORE = "KO's Received";
     public static final String FALLEN_OUT_SCORE = "Times fallen out";
     private static final String ELO_SCORE_DATANAME = "Smash Elo";
+    public static final String NAME_DATANAME = "Name";
     private static final float ELO_CHANGE_RATE_SPEED = (float)0.02;
     private static final float ELO_FARMABILITY_MOD = 0.2F; //min = mod/(1+mod)
     private static final float ELO_CHANGE_AT_0_ELO = 0.5F;
@@ -55,8 +59,8 @@ public class SmashStatTracker implements CommandExecutor
         long expiration;
         try
         {
-            result = Integer.valueOf(plugin.getPluginDatum(p, TOURNEY_LEVEL_DATANAME));
-            expiration = Long.valueOf(plugin.getPluginDatum(p, TOURNEY_EXPIRATION_DATANAME));
+            result = Integer.valueOf(plugin.getDatum(p, TOURNEY_LEVEL_DATANAME));
+            expiration = Long.valueOf(plugin.getDatum(p, TOURNEY_EXPIRATION_DATANAME));
             if (plugin.getMinute() > expiration && !SmashWorldManager.isTourneyWorld(p.getWorld()))
             {
                 p.sendMessage(ChatColor.YELLOW + "Your Tournament level expired because you didn't complete a Tourney game in over " + SmashWorldManager.EXPIRATION_MINUTES + " minutes.");
@@ -73,14 +77,14 @@ public class SmashStatTracker implements CommandExecutor
     //Level is 0-indexed
     public static void setTourneyLevel(Player p, int level)
     {
-        if (level > SmashWorldManager.HIGHEST_TOURNEY_LEVEL || level < 1)
+        if (level > SmashWorldInteractor.HIGHEST_TOURNEY_LEVEL || level < 1)
         {
             Bukkit.getConsoleSender().sendMessage(plugin.loggerPrefix() + ChatColor.RED + "Error! Could not set tourney level to " + level);
         }
         else if (level > 1)
         {
-            plugin.putPluginDatum(p, TOURNEY_LEVEL_DATANAME, level);
-            plugin.putPluginDatum(p, TOURNEY_EXPIRATION_DATANAME, plugin.getMinute() + SmashWorldManager.EXPIRATION_MINUTES);
+            plugin.putDatum(p, TOURNEY_LEVEL_DATANAME, level);
+            plugin.putDatum(p, TOURNEY_EXPIRATION_DATANAME, plugin.getMinute() + SmashWorldManager.EXPIRATION_MINUTES);
         }
         else
         {
@@ -90,12 +94,12 @@ public class SmashStatTracker implements CommandExecutor
 
     public static void incrementTourneyLevel(Player p)
     {
-        if (getTourneyLevel(p) == SmashWorldManager.HIGHEST_TOURNEY_LEVEL)
+        if (getTourneyLevel(p) == SmashWorldInteractor.HIGHEST_TOURNEY_LEVEL)
         {
             resetTourneyLevel(p);
             incrementTourneyWins(p);
         }
-        else if (getTourneyLevel(p) >= 1 && getTourneyLevel(p) < SmashWorldManager.HIGHEST_TOURNEY_LEVEL)
+        else if (getTourneyLevel(p) >= 1 && getTourneyLevel(p) < SmashWorldInteractor.HIGHEST_TOURNEY_LEVEL)
         {
             setTourneyLevel(p, getTourneyLevel(p) + 1);
         }
@@ -115,8 +119,8 @@ public class SmashStatTracker implements CommandExecutor
 
     public static int resetTourneyLevel(String p)
     {
-        plugin.putPluginDatum(p, TOURNEY_LEVEL_DATANAME, 1);
-        plugin.putPluginDatum(p, TOURNEY_EXPIRATION_DATANAME, (long)1e15);
+        plugin.putDatum(p, TOURNEY_LEVEL_DATANAME, 1);
+        plugin.putDatum(p, TOURNEY_EXPIRATION_DATANAME, (long)1e15);
         return 1;
     }
 
@@ -129,7 +133,7 @@ public class SmashStatTracker implements CommandExecutor
     public static int incrementFreeGamesPlayed(Player p)
     {
         incrementPointBasedGamesPlayed(p);
-        return plugin.incrementPluginStatistic(p, FREE_GAMES_PLAYED);
+        return plugin.incrementStatistic(p, FREE_GAMES_PLAYED);
     }
 
     public static void incrementFreeGamesPlayed(List<Player> players)
@@ -142,7 +146,7 @@ public class SmashStatTracker implements CommandExecutor
 
     public static int getFreeGamesPlayed(String p)
     {
-        return plugin.getPluginStatistic(p, FREE_GAMES_PLAYED);
+        return plugin.getStatistic(p, FREE_GAMES_PLAYED);
     }
 
     public static int getFreeGamesPlayed(Player p)
@@ -153,7 +157,7 @@ public class SmashStatTracker implements CommandExecutor
     //***************
     public static int incrementFreeGamesWon(Player p)
     {
-        return plugin.incrementPluginStatistic(p, FREE_WINS);
+        return plugin.incrementStatistic(p, FREE_WINS);
     }
 
     public static void incrementFreeGamesWon(List<Player> players)
@@ -171,20 +175,20 @@ public class SmashStatTracker implements CommandExecutor
 
     public static int getFreeGamesWon(String p)
     {
-        return plugin.getPluginStatistic(p, FREE_WINS);
+        return plugin.getStatistic(p, FREE_WINS);
     }
 
     //***************
     public static int incrementTourneyGamesPlayed(Player p)
     {
-        return plugin.incrementPluginStatistic(p, TOURNEY_GAMES_PLAYED);
+        return plugin.incrementStatistic(p, TOURNEY_GAMES_PLAYED);
     }
 
     private static void incrementPointBasedGamesPlayed(Player p)
     {
-        if (!SmashWorldManager.isDeathMatchWorld(p.getWorld()))
+        if (!SmashWorldInteractor.isDeathMatchWorld(p.getWorld()))
         {
-            plugin.incrementPluginStatistic(p, POINT_BASED_GAMES_PLAYED);
+            plugin.incrementStatistic(p, POINT_BASED_GAMES_PLAYED);
         }
     }
 
@@ -203,16 +207,16 @@ public class SmashStatTracker implements CommandExecutor
 
     public static int getTourneyGamesPlayed(String p)
     {
-        return plugin.getPluginStatistic(p, TOURNEY_GAMES_PLAYED);
+        return plugin.getStatistic(p, TOURNEY_GAMES_PLAYED);
     }
 
     private int getPointBasedGamePlayed(String p)
     {
-        int games = plugin.getPluginStatistic(p, POINT_BASED_GAMES_PLAYED);
+        int games = plugin.getStatistic(p, POINT_BASED_GAMES_PLAYED);
         if (games == 0)
         {
             games = getTotalGamesPlayed(p);
-            plugin.putPluginDatum(p, POINT_BASED_GAMES_PLAYED, games);
+            plugin.putDatum(p, POINT_BASED_GAMES_PLAYED, games);
         }
         return games;
     }
@@ -220,7 +224,7 @@ public class SmashStatTracker implements CommandExecutor
     //***************
     private static int incrementTourneyWins(Player p)
     {
-        return plugin.incrementPluginStatistic(p, TOURNEY_WINS);
+        return plugin.incrementStatistic(p, TOURNEY_WINS);
     }
 
     private static void incrementTourneyWins(List<Player> players)
@@ -238,13 +242,13 @@ public class SmashStatTracker implements CommandExecutor
 
     public static int getTourneyGamesWon(String p)
     {
-        return plugin.getPluginStatistic(p, TOURNEY_WINS);
+        return plugin.getStatistic(p, TOURNEY_WINS);
     }
     //****************
     public static void incrementTourneyRoundsPlayed(Player p)
     {
         incrementPointBasedGamesPlayed(p);
-        plugin.incrementPluginStatistic(p, TOURNEY_ROUNDS_PLAYED);
+        plugin.incrementStatistic(p, TOURNEY_ROUNDS_PLAYED);
     }
 
     public static void incrementTourneyRoundsPlayed(List<Player> players)
@@ -272,10 +276,10 @@ public class SmashStatTracker implements CommandExecutor
     public static void addScoreToTotalPoints(Player p)
     {
         World w = p.getWorld();
-        if (SmashWorldManager.isSmashWorld(w) && SmashWorldManager.gameHasStarted(w) && !SmashWorldManager.isDeathMatchWorld(w) && SmashScoreboardManager.getPlayerScoreValue(p) != null)
+        if (SmashWorldManager.isSmashWorld(w) && SmashWorldManager.gameHasStarted(w) && !SmashWorldInteractor.isDeathMatchWorld(w) && SmashScoreboardManager.getPlayerScoreValue(p) != null)
         {
-            int oldScore = plugin.getPluginStatistic(p, POINTS_ACCUMULATED);
-            plugin.putPluginDatum(p, POINTS_ACCUMULATED, oldScore + SmashScoreboardManager.getPlayerScoreValue(p));
+            int oldScore = plugin.getStatistic(p, POINTS_ACCUMULATED);
+            plugin.putDatum(p, POINTS_ACCUMULATED, oldScore + SmashScoreboardManager.getPlayerScoreValue(p));
         }
     }
 
@@ -321,7 +325,7 @@ public class SmashStatTracker implements CommandExecutor
         float score;
         try
         {
-            score = Float.valueOf(plugin.getPluginDatum(p, ELO_SCORE_DATANAME));
+            score = Float.valueOf(plugin.getDatum(p, ELO_SCORE_DATANAME));
             if (score == 0)
             {
                 throw new NumberFormatException();
@@ -330,7 +334,7 @@ public class SmashStatTracker implements CommandExecutor
         catch (NumberFormatException e)
         {
             score = 1000;
-            plugin.putPluginDatum(p, ELO_SCORE_DATANAME, score);
+            plugin.putDatum(p, ELO_SCORE_DATANAME, score);
         }
         return score;
     }
@@ -378,7 +382,7 @@ public class SmashStatTracker implements CommandExecutor
 
     private static void performEloChange(String killer, final String deadPlayer, float modification, boolean showDeadPlayer)
     {
-        if (SmashStatTracker.hasAdvancedStatistics(killer) && SmashStatTracker.hasAdvancedStatistics(deadPlayer))
+        if (SmashStatTracker.canJoinTourneys(killer) && SmashStatTracker.canJoinTourneys(deadPlayer))
         {
             //Bukkit.getPlayer("HappyMan").sendMessage("has advanced stat");
             if (!killer.equals(deadPlayer))
@@ -403,7 +407,7 @@ public class SmashStatTracker implements CommandExecutor
         if (SmashWorldManager.isSmashWorld(w))
         {
             List<String> playersInvolved = new ArrayList<String>();
-            for (Player p : SmashWorldManager.getLivingPlayers(w))
+            for (Player p : SmashWorldInteractor.getLivingPlayers(w))
             {
                 playersInvolved.add(p.getName());
             }
@@ -439,7 +443,7 @@ public class SmashStatTracker implements CommandExecutor
             //p.sendMessage(eloChangeString(Math.round(eloIncrease)) + " elo");
         }*/
         //Bukkit.getPlayer("HappyMan").sendMessage("elo");
-        plugin.putPluginDatum(p, ELO_SCORE_DATANAME, (formerElo + eloIncrease));
+        plugin.putDatum(p, ELO_SCORE_DATANAME, (formerElo + eloIncrease));
     }
 
 
@@ -464,7 +468,7 @@ public class SmashStatTracker implements CommandExecutor
 
     public static int getTourneyRoundsPlayed(String p)
     {
-        return plugin.getPluginStatistic(p, TOURNEY_ROUNDS_PLAYED);
+        return plugin.getStatistic(p, TOURNEY_ROUNDS_PLAYED);
     }
 
     public static int getTourneyRoundsPlayed(Player p)
@@ -483,21 +487,28 @@ public class SmashStatTracker implements CommandExecutor
         return getTotalGamesPlayed(p.getName());
     }
 
-    public static boolean hasAdvancedStatistics(String p)
+    public static boolean canJoinTourneys(String p)
     {
-        return getTotalGamesPlayed(p) >= SmashWorldManager.MIN_FREE_GAMES_TO_JOIN_TOURNEYS;
+        return getGamesTilCanJoinTourneys(p) <= 0;
+    }
+
+    public static int getGamesTilCanJoinTourneys(String p)
+    {
+        return SmashWorldInteractor.MIN_FREE_GAMES_TO_JOIN_TOURNEYS - getTotalGamesPlayed(p);
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
     {
         if (plugin.matchesCommand(label, SMASH_STAT_CMD))
         {
-            String p = null;
+            String p;
+
             if (args.length == 0)
             {
                 if (!(sender instanceof Player))
                 {
                     plugin.sendErrorMessage("You are not a player!");
+                    return true;
                 }
                 else
                 {
@@ -512,30 +523,28 @@ public class SmashStatTracker implements CommandExecutor
                 {
                     offlines.add(offline.getName());
                 }*/
-
-                if (plugin.playerHasFile(args[0]))
-                {
-                    p = args[0];
-                }
-                else
-                {
-                    sender.sendMessage(ChatColor.YELLOW + "It seems that '" + args[0] + "' hasn't played on this server before!");
-                    return true;
-                }
+                p = args[0];
             }
+
+            if (!plugin.hasFile(p))
+            {
+                sender.sendMessage(ChatColor.YELLOW + "Server was unable to find " + p + "'s stats.");
+                return true;
+            }
+            String playerFileName =  plugin.getPlayerFileName(p);
 
             List<String> statLines = new ArrayList<String>();
             String prefix = ChatColor.DARK_GRAY + " | ";
-            statLines.add(prefix + ChatColor.AQUA + "Tournaments played: " + getTourneyGamesPlayed(p));
-            statLines.add(prefix + ChatColor.AQUA + "Tournaments won: " + getTourneyGamesWon(p));
-            statLines.add(prefix + ChatColor.GOLD + "Free Games played: " + getFreeGamesPlayed(p));
-            statLines.add(prefix + ChatColor.GOLD + "Free Games won: " + getFreeGamesWon(p));
-            statLines.add(prefix + ChatColor.YELLOW + "KO's Dealt/Received: " + plugin.getPluginStatistic(p, KO_DEALT_SCORE) + "/" + plugin.getPluginStatistic(p, KO_RECEIVED_SCORE));
-            statLines.add(prefix + ChatColor.YELLOW + "Times fallen off the map: " + plugin.getPluginStatistic(p, FALLEN_OUT_SCORE));
-            if (hasAdvancedStatistics(p))
+            statLines.add(prefix + ChatColor.AQUA + "Tournaments played: " + getTourneyGamesPlayed(playerFileName));
+            statLines.add(prefix + ChatColor.AQUA + "Tournaments won: " + getTourneyGamesWon(playerFileName));
+            statLines.add(prefix + ChatColor.GOLD + "Free Games played: " + getFreeGamesPlayed(playerFileName));
+            statLines.add(prefix + ChatColor.GOLD + "Free Games won: " + getFreeGamesWon(playerFileName));
+            statLines.add(prefix + ChatColor.YELLOW + "KO's Dealt/Received: " + plugin.getStatistic(playerFileName, KO_DEALT_SCORE) + "/" + plugin.getStatistic(playerFileName, KO_RECEIVED_SCORE));
+            statLines.add(prefix + ChatColor.YELLOW + "Times fallen off the map: " + plugin.getStatistic(playerFileName, FALLEN_OUT_SCORE));
+            if (canJoinTourneys(playerFileName))
             {
-                statLines.add(prefix + ChatColor.GRAY + "Avg end-game score: " + String.format("%.2f", 1.0 * plugin.getPluginStatistic(p, POINTS_ACCUMULATED) / getPointBasedGamePlayed(p)));
-                statLines.add(prefix + ChatColor.GREEN + "" + ChatColor.BOLD + "Elo" + ChatColor.RESET + "" + ChatColor.GREEN + ": " + Math.round(getEloScore(p)));
+                statLines.add(prefix + ChatColor.GRAY + "Avg end-game score: " + String.format("%.2f", 1.0 * plugin.getStatistic(playerFileName, POINTS_ACCUMULATED) / getPointBasedGamePlayed(playerFileName)));
+                statLines.add(prefix + ChatColor.GREEN + "" + ChatColor.BOLD + "Elo" + ChatColor.RESET + "" + ChatColor.GREEN + ": " + Math.round(getEloScore(playerFileName)));
             }
 
             int longestLength = 0;
@@ -546,7 +555,15 @@ public class SmashStatTracker implements CommandExecutor
                     longestLength = line.length();
                 }
             }
-            String firstText = "Stats for " + plugin.getCapitalName(p);
+            String firstText = "Stats for ";
+            if (args.length > 0)
+            {
+                firstText += playerFileName.substring(0, playerFileName.indexOf(' '));
+            }
+            else
+            {
+                firstText += p;
+            }
             int equalsLength = (int)Math.round(1.0*(longestLength - firstText.length())/2/1.6);
             String equalses = "";
             for (int i = 0; i < equalsLength; i++)

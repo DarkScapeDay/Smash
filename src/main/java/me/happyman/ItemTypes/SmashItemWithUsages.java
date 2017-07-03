@@ -1,7 +1,7 @@
 package me.happyman.ItemTypes;
 
 import me.happyman.commands.SmashManager;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;

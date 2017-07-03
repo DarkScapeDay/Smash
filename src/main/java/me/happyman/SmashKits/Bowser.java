@@ -7,7 +7,7 @@ import me.happyman.SmashKitMgt.*;
 import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashAttackListener;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.util.Vector;
@@ -24,7 +24,7 @@ public class Bowser extends SmashKit
                     protected void performFinalSmashAbility(final Player p)
                     {
                         final World w = p.getWorld();
-                        SmashWorldManager.sendMessageToWorld(w, "<" + p.getDisplayName() + "> " + ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "ROOOOAAARRR!!!");
+                        SmashWorldInteractor.sendMessageToWorld(w, "<" + p.getDisplayName() + "> " + ChatColor.DARK_GREEN + "" + ChatColor.BOLD + "ROOOOAAARRR!!!");
                         SmashAttackListener.setFinalAttackMod(p, 3F);
                         SmashAttackListener.setFinalIntakeMod(p, 0F);
 

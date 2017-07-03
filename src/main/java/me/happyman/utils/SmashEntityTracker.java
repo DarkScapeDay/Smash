@@ -2,6 +2,8 @@ package me.happyman.utils;
 
 import me.happyman.ItemTypes.SpeedChanger;
 import me.happyman.commands.SmashManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Arrow;
@@ -139,7 +141,7 @@ public class SmashEntityTracker implements Listener
             {
                 try
                 {
-                    p.setFlySpeed(factor*SmashWorldManager.DEFAULT_FLY_SPEED);
+                    p.setFlySpeed(factor* SmashWorldInteractor.DEFAULT_FLY_SPEED);
                 }
                 catch (IllegalArgumentException e)
                 {
@@ -167,7 +169,7 @@ public class SmashEntityTracker implements Listener
             setSpeedFactor(p, 1F);
         }
         p.setWalkSpeed(0.2F);
-        p.setFlySpeed(SmashWorldManager.DEFAULT_FLY_SPEED);
+        p.setFlySpeed(SmashWorldInteractor.DEFAULT_FLY_SPEED);
     }
 
     @CheckReturnValue

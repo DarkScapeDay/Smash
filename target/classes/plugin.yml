@@ -169,3 +169,41 @@ commands:
       aliases: [endgame]
       permission: minecraft.command.op
       description: Ends a Smash game
+   a*:
+      description: Performs an A* search
+      permission: minecraft.command.op
+      usage: "§cUsage: §6/a* [entity height] [entity width] [allow parkour] [allow flying]"
+   createplayer:
+      description: Creates a fake player
+      permission: minecraft.command.ban
+      usage: "§cUsage: §6/createplayer"
+   jump:
+      description: Makes you or another player jump a certain number of blocks
+      permission: minecraft.command.ban
+      usage: "§cUsage: §6/jump <blocks> [player]"
+   playparticle:
+      description: Plays a particle at the designated location (or player's location)
+      permission: minecraft.command.ban
+      aliases: [pp]
+      usage: "§cUsage: §6/playparticle <coords or player> [coord offset] [tp]"
+   registerportal:
+      description: Register and add a portal
+      permission: minecraft.command.op
+      aliases: [addportal, regport]
+      usage: "§cUsage: §6/addportal <id>"
+   unregisterportal:
+      description: Unregister and remove a portal
+      permission: minecraft.command.op
+      aliases: [removeportal, unregport]
+      usage: "§cUsage: §6/removeportal <id>"
+   rebuildportal:
+      description: Rebuild a portal!
+      permission: minecraft.command.op
+      aliases: [refreshportal, portalrefresh]
+      usage: "§cUsage: §6/refreshportal <id>"
+   listportals:
+      description: Lists all portals (registered and unregistered)
+      permission: minecraft.command.op
+      aliases: [portallist]
+      usage: "§cUsage: §6/listportals"
+

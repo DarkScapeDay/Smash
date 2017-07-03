@@ -7,7 +7,9 @@ import me.happyman.commands.HealAndDamage;
 import me.happyman.commands.SmashManager;
 import me.happyman.source;
 import me.happyman.utils.SmashStatTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldListener;
+import me.happyman.worlds.SmashWorldManager;
 import me.happyman.utils.Verifier;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -24,6 +26,8 @@ import org.bukkit.util.Vector;
 
 import java.util.HashMap;
 import java.util.Scanner;
+
+import static me.happyman.worlds.SmashWorldInteractor.*;
 
 public class SmashMishapPreventor implements Listener
 {
@@ -44,7 +48,7 @@ public class SmashMishapPreventor implements Listener
     public void projLaunch(ProjectileLaunchEvent e)
     {
         ProjectileSource shooter = e.getEntity().getShooter();
-        if (shooter instanceof Player && SmashWorldManager.isInSpectatorMode((Player)shooter) && !SmashWorldManager.hasSpecialPermissions((Player)shooter))
+        if (shooter instanceof Player && isInSpectatorMode((Player)shooter) && !hasSpecialPermissions((Player)shooter))
         {
             e.setCancelled(true);
         }
@@ -65,7 +69,7 @@ public class SmashMishapPreventor implements Listener
         if (e.getEntity() instanceof Player)
         {
             Player p = (Player) e.getEntity();
-            if (SmashWorldManager.isSmashWorld(p.getWorld()) || SmashWorldManager.isInSpectatorMode(p))
+            if (SmashWorldManager.isSmashWorld(p.getWorld()) || SmashWorldInteractor.isInSpectatorMode(p))
             {
                 e.setCancelled(true);
                 if (p.getFoodLevel() < 20)
@@ -160,7 +164,7 @@ public class SmashMishapPreventor implements Listener
     }
 
     @EventHandler
-    public void statAndHelpAndReadyCommandSender(PlayerCommandPreprocessEvent e)
+    public void statHelpAndReadyCommandSender(PlayerCommandPreprocessEvent e)
     {
         String commandSent = e.getMessage().substring(1, e.getMessage().length()).toLowerCase();
         Scanner s = new Scanner(commandSent);
@@ -177,7 +181,7 @@ public class SmashMishapPreventor implements Listener
                 e.setCancelled(true);
                 SmashStatTracker.displayHelpMessage(e.getPlayer());
             }
-            else if (label.equals("start") && !SmashWorldManager.hasSpecialPermissions(e.getPlayer()))
+            else if (label.equals("start") && !hasSpecialPermissions(e.getPlayer()))
             {
                 e.setCancelled(true);
                 Bukkit.dispatchCommand(e.getPlayer(), "ready");
@@ -286,7 +290,7 @@ public class SmashMishapPreventor implements Listener
                 public void run()
                 {
                     if ( //&& SmashKitManager.isKitItem(p, item)// && p.getItemInHand().hasItemMeta() && p.getItemInHand().getItemMeta().hasDisplayName() &&
-                        !p.getItemInHand().equals(item) && p.getInventory().contains(item) && !SmashWorldManager.isDead(p))
+                        !p.getItemInHand().equals(item) && p.getInventory().contains(item) && !isDead(p))
                     {
                         item.setDurability((short)-1);
                         /*Bukkit.getScheduler().callSyncMethod(SmashItemManager.getPlugin(), new Callable() {

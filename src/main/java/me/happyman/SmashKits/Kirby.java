@@ -9,7 +9,8 @@ import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashAttackListener;
 import me.happyman.utils.ParticleEffect;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
@@ -72,7 +73,7 @@ public class Kirby extends SmashKit
                                     {
                                         for (Player victim : p.getWorld().getPlayers())
                                         {
-                                            if (!victim.equals(p) && !SmashWorldManager.isInSpectatorMode(victim) && victim.getLocation().distance(p.getLocation()) < range)
+                                            if (!victim.equals(p) && !SmashWorldInteractor.isInSpectatorMode(victim) && victim.getLocation().distance(p.getLocation()) < range)
                                             {
                                                 delayToStartTicks.put(victim, r.nextInt(MAX_DELAY_TO_START_MOVING));
                                             }

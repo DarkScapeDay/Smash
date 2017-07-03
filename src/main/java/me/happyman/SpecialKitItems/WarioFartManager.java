@@ -3,7 +3,7 @@ package me.happyman.SpecialKitItems;
 import me.happyman.ItemTypes.SmashItemWithCharge;
 import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashAttackListener;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;

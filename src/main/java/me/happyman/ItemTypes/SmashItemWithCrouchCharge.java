@@ -2,7 +2,7 @@ package me.happyman.ItemTypes;
 
 import me.happyman.commands.SmashManager;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -63,7 +63,7 @@ public abstract class SmashItemWithCrouchCharge extends SmashItemWithCharge impl
     @EventHandler
     public void pickupBatChargeRightAway(PlayerPickupItemEvent e)
     {
-        if (!SmashWorldManager.isInSpectatorMode(e.getPlayer()))
+        if (!SmashWorldInteractor.isInSpectatorMode(e.getPlayer()))
         {
             activateCrouchChargeItemIfCrouching(e.getPlayer());
         }

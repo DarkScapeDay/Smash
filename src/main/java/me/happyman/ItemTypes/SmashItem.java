@@ -3,7 +3,7 @@ package me.happyman.ItemTypes;
 import me.happyman.SmashKitMgt.SmashKitManager;
 import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashItemManager;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -146,6 +146,6 @@ public abstract class SmashItem
 
     public boolean canUseItem(Player p)
     {
-        return !SmashKitManager.canChangeKit(p) && !SmashWorldManager.isInSpectatorMode(p);
+        return !SmashKitManager.canChangeKit(p) && !SmashWorldInteractor.isInSpectatorMode(p);
     }
 }

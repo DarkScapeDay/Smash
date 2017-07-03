@@ -7,7 +7,9 @@ import me.happyman.SmashKitMgt.SmashKitManager;
 import me.happyman.commands.SmashManager;
 import me.happyman.source;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.utils.VelocityModifier;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
@@ -34,7 +36,7 @@ public class SmashAttackListener implements Listener
     public static final float DAMAGE_GAIN_FACTOR = 0.45F;
 
     private static final float SWORD_BUFF = 1.2F;
-    private static HashMap<Player, ArrayList<Integer>> kbTasks;
+    //private static HashMap<Player, ArrayList<Integer>> kbTasks;
 
     private static ArrayList<Player> artificiallyShieldedPlayers;
     private static HashMap<Player, Float> finalAttackMods;
@@ -46,7 +48,7 @@ public class SmashAttackListener implements Listener
     {
         Bukkit.getPluginManager().registerEvents(this, plugin);
         artificiallyShieldedPlayers = new ArrayList<Player>();
-        kbTasks = new HashMap<Player, ArrayList<Integer>>();
+        //kbTasks = new HashMap<Player, ArrayList<Integer>>();
         finalAttackMods = new HashMap<Player, Float>();
         finalIntakeMods = new HashMap<Player, Float>();
     }
@@ -388,7 +390,7 @@ public class SmashAttackListener implements Listener
         if (e.getEntity() instanceof Player)
         {
             Player p = (Player)e.getEntity();
-            if (SmashWorldManager.isInSpectatorMode(p))
+            if (SmashWorldInteractor.isInSpectatorMode(p))
             {
                 e.setCancelled(true);
             }
@@ -484,9 +486,9 @@ public class SmashAttackListener implements Listener
         Entity damageSource = e.getDamager();
         World w = e.getEntity().getWorld();
         //damageSource.getType().toString()
-        if (damageSource instanceof Player && SmashWorldManager.isInSpectatorMode((Player)damageSource) || e.getEntity() instanceof Player && SmashWorldManager.isInSpectatorMode((Player)e.getEntity()))
+        if (damageSource instanceof Player && SmashWorldInteractor.isInSpectatorMode((Player)damageSource) || e.getEntity() instanceof Player && SmashWorldInteractor.isInSpectatorMode((Player)e.getEntity()))
         {
-            if (damageSource instanceof Player && SmashWorldManager.isInSpectatorMode((Player)damageSource))
+            if (damageSource instanceof Player && SmashWorldInteractor.isInSpectatorMode((Player)damageSource))
             {
                 ((Player)damageSource).sendMessage(ChatColor.GRAY + "You cannot attack while in spectator mode!");
             }
@@ -607,18 +609,6 @@ public class SmashAttackListener implements Listener
         }
     }
 
-    public static void cancelKB(Player p)
-    {
-        if (kbTasks.containsKey(p))
-        {
-            for (int task : kbTasks.get(p))
-            {
-                Bukkit.getScheduler().cancelTask(task);
-            }
-            kbTasks.remove(p);
-        }
-    }
-
     public static void attackPlayer(Player damagerPlayer, String damageWeaponName, Location damageSourceLocation, final Player damagedPlayer, float power, boolean wasProjectile)
     {
         attackPlayer(damagerPlayer, damageWeaponName, damageSourceLocation, damagedPlayer, power, wasProjectile, PHYSICALLY_HIT_DEFAULT);
@@ -628,7 +618,7 @@ public class SmashAttackListener implements Listener
     {
         if (damagerPlayer != null && damageWeaponName != null && damageSourceLocation != null && damagedPlayer != null)
         {
-            if (!SmashWorldManager.isInSpectatorMode(damagedPlayer) && !SmashWorldManager.isInSpectatorMode(damagerPlayer))
+            if (!SmashWorldInteractor.isInSpectatorMode(damagedPlayer) && !SmashWorldInteractor.isInSpectatorMode(damagerPlayer))
             {
                 if (isShielded(damagedPlayer))
                 {
@@ -758,13 +748,12 @@ public class SmashAttackListener implements Listener
 
             if (iterations > 0)
             {
-
                 if (physicalHit)
                 {
                     damagedPlayer.damage(0);
                 }
 
-                if (!kbTasks.containsKey(damagedPlayer))
+                /*if (!kbTasks.containsKey(damagedPlayer))
                 {
                     kbTasks.put(damagedPlayer, new ArrayList<Integer>());
                 }
@@ -788,7 +777,8 @@ public class SmashAttackListener implements Listener
                     }
                 }, 0, 0);
                 kbTasks.get(damagedPlayer).add(task);
-                SmashManager.getPlugin().cancelTaskAfterDelay(task, iterations);
+                SmashManager.getPlugin().cancelTaskAfterDelay(task, iterations);*/
+                VelocityModifier.setPlayerVelocity(damagedPlayer, kbVector);
             }
         }
         else

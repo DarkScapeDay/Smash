@@ -24,7 +24,7 @@ public class BaseballBat extends SmashItemWithCrouchCharge
         }
         if (charge == 0F)
         {
-            cancelTask(p);
+            cancelAndForget(p);
         }
     }*/
 

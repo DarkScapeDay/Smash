@@ -4,7 +4,7 @@ import me.happyman.SmashKitMgt.SmashKitManager;
 import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashAttackListener;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;

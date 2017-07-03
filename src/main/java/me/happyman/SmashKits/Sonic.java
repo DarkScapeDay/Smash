@@ -12,7 +12,7 @@ import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashAttackListener;
 import me.happyman.utils.ParticleEffect;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -42,7 +42,7 @@ public class Sonic extends SmashKit
                     protected void performFinalSmashAbility(final Player p)
                     {
                         SmashAttackListener.setArtificiallyShieldedPlayer(p);
-                        SmashWorldManager.allowFullflight(p, true);
+                        SmashWorldInteractor.allowFullflight(p, true);
                         SmashEntityTracker.setSpeedFactor(p, 80);
                         addTask(p, Bukkit.getScheduler().scheduleSyncRepeatingTask(SmashManager.getPlugin(), new Runnable() {
                             private HashMap<Player, Integer> tickHitTimes = new HashMap<Player, Integer>();
@@ -51,7 +51,7 @@ public class Sonic extends SmashKit
                             public void run() {
                                 for (Player victim : p.getWorld().getPlayers())
                                 {
-                                    if (!(tickHitTimes.containsKey(victim) && iteration - tickHitTimes.get(victim) < 10) && !victim.equals(p) && !SmashWorldManager.isInSpectatorMode(victim) && victim.getLocation().distance(p.getLocation()) < ATTACK_RANGE)
+                                    if (!(tickHitTimes.containsKey(victim) && iteration - tickHitTimes.get(victim) < 10) && !victim.equals(p) && !SmashWorldInteractor.isInSpectatorMode(victim) && victim.getLocation().distance(p.getLocation()) < ATTACK_RANGE)
                                     {
                                         tickHitTimes.put(victim, iteration);
                                         SmashAttackListener.attackPlayer(p, ChatColor.stripColor("Super " + SmashKitManager.getSelectedKit(p).getName()), p.getLocation(), victim, ATTACK_POWER, false);
@@ -70,7 +70,7 @@ public class Sonic extends SmashKit
                                 }
                                 if (!p.isFlying())
                                 {
-                                    SmashWorldManager.allowFullflight(p, true);
+                                    SmashWorldInteractor.allowFullflight(p, true);
                                 }
                                 iteration++;
                             }

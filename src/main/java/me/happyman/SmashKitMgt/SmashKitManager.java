@@ -9,7 +9,9 @@ import me.happyman.SmashKits.*;
 import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashKitListener;
 import me.happyman.source;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.utils.DirectoryType;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -114,19 +116,19 @@ public class SmashKitManager implements CommandExecutor
 
     public static int getRotationLevel(Player p)
     {
-        return plugin.getPluginStatistic(p, ROTATION_LEVEL_DATANAME);
+        return plugin.getStatistic(p, ROTATION_LEVEL_DATANAME);
     }
 
     public static void setRotationLevel(Player p, int level)
     {
-        plugin.putPluginDatum(p, ROTATION_LEVEL_DATANAME, level);
+        plugin.putDatum(p, ROTATION_LEVEL_DATANAME, level);
     }
 
     public static void givePlayerKit(Player p, String kitName)
     {
-        if (isSmashKit(kitName) && !plugin.getPluginData(p, OWNED_KITS_DATANAME).contains(plugin.capitalize(kitName)))
+        if (isSmashKit(kitName) && !plugin.getData(p, OWNED_KITS_DATANAME).contains(plugin.capitalize(kitName)))
         {
-            plugin.addPluginDatumEntry(p, OWNED_KITS_DATANAME, plugin.capitalize(kitName));
+            plugin.addDatumEntry(p, OWNED_KITS_DATANAME, plugin.capitalize(kitName));
         }
     }
 
@@ -139,7 +141,7 @@ public class SmashKitManager implements CommandExecutor
     {
         if (!selectedKits.containsKey(p))
         {
-            SmashKit currentKit = getKit(plugin.getPluginDatum(p, SELECED_KIT_DATANAME));
+            SmashKit currentKit = getKit(plugin.getDatum(p, SELECED_KIT_DATANAME));
             if (currentKit != null && canUseKit(p, currentKit.getName()))
             {
                 setSelectedKit(p, currentKit, true);
@@ -176,13 +178,13 @@ public class SmashKitManager implements CommandExecutor
     {
         if (!loading)
         {
-            plugin.putPluginDatum(p, SELECED_KIT_DATANAME, kit.getName());
+            plugin.putDatum(p, SELECED_KIT_DATANAME, kit.getName());
             if (SmashWorldManager.isSmashWorld(p.getWorld()))
             {
                 kit.applyKitInventory(p);
                 if (!SmashWorldManager.gameHasStarted(p.getWorld()))
                 {
-                    SmashWorldManager.sendMessageToWorld(p.getWorld(), "<" + p.getDisplayName() + ChatColor.RESET + "> " + kit.getDescription());
+                    SmashWorldInteractor.sendMessageToWorld(p.getWorld(), "<" + p.getDisplayName() + ChatColor.RESET + "> " + kit.getDescription());
                 }
             }
             else
@@ -214,14 +216,14 @@ public class SmashKitManager implements CommandExecutor
     {
         if (selectedKits.containsKey(p))
         {
-            plugin.putPluginDatum(p, SELECED_KIT_DATANAME, selectedKits.get(p).getName());
+            plugin.putDatum(p, SELECED_KIT_DATANAME, selectedKits.get(p).getName());
             selectedKits.remove(p);
         }
     }
 
     public static List<String> getPersonallyOwnedKits(Player p)
     {
-        List<String> ownedList = plugin.getPluginData(p, OWNED_KITS_DATANAME);
+        List<String> ownedList = plugin.getData(p, OWNED_KITS_DATANAME);
         return ownedList;
     }
 
@@ -264,7 +266,7 @@ public class SmashKitManager implements CommandExecutor
 
     public static boolean canChangeKit(Player p)
     {
-        return !SmashWorldManager.isSmashWorld(p.getWorld()) || !SmashWorldManager.gameHasStarted(p.getWorld()) || SmashWorldManager.gameHasEnded(p.getWorld()) || SmashWorldManager.isInSpectatorMode(p);
+        return !SmashWorldManager.isSmashWorld(p.getWorld()) || !SmashWorldManager.gameHasStarted(p.getWorld()) || SmashWorldManager.gameHasEnded(p.getWorld()) || SmashWorldInteractor.isInSpectatorMode(p);
     }
 
     public static boolean isUsingFireImmuneKit(Player p)
@@ -427,7 +429,7 @@ public class SmashKitManager implements CommandExecutor
         List<String> rotationKits = new ArrayList<String>();
         for (int i = 0; i <= rotationLevel; i++)
         {
-            for (String s : plugin.getPluginData(plugin.SETTING_FOLDER, "Rotation Kits", "Rotation level " + rotationLevel))
+            for (String s : plugin.getData(DirectoryType.SERVER_DATA, "", "Rotation Kits", "Rotation level " + rotationLevel))
             {
                 rotationKits.add(s);
             }

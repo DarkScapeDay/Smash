@@ -182,7 +182,7 @@ public enum ParticleEffect {
      * </ul>
      */
     REDSTONE("reddust", 30, -1, ParticleProperty.COLORABLE),
-    /**
+     /**
      * A particle effect which is displayed when snowballs hit a block:
      * <ul>
      * <li>It looks like a little piece with the snowball texture

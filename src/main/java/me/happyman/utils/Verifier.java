@@ -12,7 +12,7 @@ public abstract class Verifier implements Listener
 {
     private static HashMap<Player, String> decisions;
     private static HashMap<Player, Verifier> pendingVerifiers;
-    public static source plugin;
+    protected static source plugin;
 
     public abstract void handleResponse(Player p, String response);
 

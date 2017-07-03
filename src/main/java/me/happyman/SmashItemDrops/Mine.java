@@ -2,9 +2,10 @@ package me.happyman.SmashItemDrops;
 
 import me.happyman.ItemTypes.SmashItem;
 import me.happyman.commands.SmashManager;
+import me.happyman.utils.DirectoryType;
 import me.happyman.utils.SmashEntityTracker;
 import me.happyman.Listeners.SmashItemManager;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.*;
@@ -60,10 +61,10 @@ public class Mine extends SmashItem implements Listener
                 mines.get(w).remove(0);
             }
         }
-        else if (SmashManager.getPlugin().hasFile(w.getName(), MINE_LOCATION_FILE))
+        else if (SmashManager.getPlugin().hasFile(DirectoryType.ROOT, w.getName(), MINE_LOCATION_FILE))
         {
             final String worldName = w.getName();
-            List<ArrayList<String>> locationList = SmashManager.getPlugin().getAllData(worldName, MINE_LOCATION_FILE);
+            List<ArrayList<String>> locationList = SmashManager.getPlugin().getAllDataSimple(DirectoryType.ROOT, worldName, MINE_LOCATION_FILE);
             int size = locationList.size();
             for (int i = 0; i < size; i++)
             {
@@ -72,7 +73,7 @@ public class Mine extends SmashItem implements Listener
             }
             if (size > 0)
             {
-                SmashManager.getPlugin().clearFile(worldName, MINE_LOCATION_FILE);
+                SmashManager.getPlugin().clearFile(DirectoryType.ROOT, worldName, MINE_LOCATION_FILE);
             }
         }
     }
@@ -98,7 +99,7 @@ public class Mine extends SmashItem implements Listener
 
         int number = mines.get(mineBlock.getWorld()).size();
         mineNumber.put(mineBlock, number);
-        SmashManager.getPlugin().putDatum(mineBlock.getWorld().getName(), MINE_LOCATION_FILE, "l" + number,
+        SmashManager.getPlugin().putDatum(DirectoryType.ROOT, mineBlock.getWorld().getName(), MINE_LOCATION_FILE, "l" + number,
                 String.format("%1$d %2$d %3$d", mineBlock.getX(), mineBlock.getY(), mineBlock.getZ()));
 
         mineBlock.setType(MINE_ITEM.getType());
@@ -117,7 +118,7 @@ public class Mine extends SmashItem implements Listener
         TNTPrimed killer = blowBlockUp(mine, monsterSteppedOnIt);
         if (mineNumber.containsKey(mine))
         {
-            SmashManager.getPlugin().removeFileData(mine.getWorld().getName(), MINE_LOCATION_FILE, "l" + mineNumber.get(mine));
+            SmashManager.getPlugin().removeData(DirectoryType.ROOT, mine.getWorld().getName(),"l" + mineNumber.get(mine));
             mineNumber.remove(mine);
         }
         if (mineCulprits.containsKey(l))
@@ -223,7 +224,7 @@ public class Mine extends SmashItem implements Listener
     {
         if (e.getAction().equals(Action.PHYSICAL) && mineNumber.containsKey(e.getClickedBlock()))
         {
-            if (SmashWorldManager.isInSpectatorMode(e.getPlayer()))
+            if (SmashWorldInteractor.isInSpectatorMode(e.getPlayer()))
             {
                 e.setCancelled(true);
             }

@@ -71,7 +71,7 @@ public final class ReflectionUtils {
      * Returns an instance of a class with the given arguments
      *
      * @param clazz Target class
-     * @param arguments Arguments which are used to construct an object of the target class
+     * @param arguments Arguments which are used to updateBlocks an object of the target class
      * @return The instance of the target class with the specified arguments
      * @throws InstantiationException If you cannot create an instance of the target class due to certain circumstances
      * @throws IllegalAccessException If the desired constructor cannot be accessed due to certain circumstances
@@ -88,7 +88,7 @@ public final class ReflectionUtils {
      *
      * @param className Name of the desired target class
      * @param packageType Package where the desired target class is located
-     * @param arguments Arguments which are used to construct an object of the desired target class
+     * @param arguments Arguments which are used to updateBlocks an object of the desired target class
      * @return The instance of the desired target class with the specified arguments
      * @throws InstantiationException If you cannot create an instance of the desired target class due to certain circumstances
      * @throws IllegalAccessException If the desired constructor cannot be accessed due to certain circumstances

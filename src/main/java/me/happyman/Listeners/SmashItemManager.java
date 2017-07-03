@@ -9,7 +9,7 @@ import me.happyman.SmashKitMgt.SmashKitManager;
 import me.happyman.commands.SmashManager;
 import me.happyman.source;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

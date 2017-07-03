@@ -40,17 +40,17 @@ public class Broadcast implements CommandExecutor
                         s += " ";
                     }
                 }
-                Bukkit.broadcastMessage("\n \n");
+                /**/Bukkit.broadcastMessage("\n \n");
                 if (sender instanceof Player)
                 { //p.getGameMode().toString() p.sendMessage()
                     Player p = (Player)sender;
-                    Bukkit.broadcastMessage("> " + p.getDisplayName() + " - " + s);
+                    /**/Bukkit.broadcastMessage("> " + p.getDisplayName() + " - " + s);
                 }
                 else
                 {
-                    Bukkit.broadcastMessage("> " + ChatColor.RED + "Server" + ChatColor.WHITE + " - " + s);
+                    /**/Bukkit.broadcastMessage("> " + ChatColor.RED + "Server" + ChatColor.WHITE + " - " + s);
                 }
-                Bukkit.broadcastMessage("\n \n");
+                /**/Bukkit.broadcastMessage("\n \n");
             }
             return true;
         }

@@ -3,7 +3,7 @@ package me.happyman.SmashItemDrops;
 import me.happyman.ItemTypes.SpeedChanger;
 import me.happyman.commands.SmashManager;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;

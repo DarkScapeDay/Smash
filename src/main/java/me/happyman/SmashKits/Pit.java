@@ -8,7 +8,8 @@ import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashAttackListener;
 import me.happyman.utils.ParticleEffect;
 import me.happyman.utils.SmashEntityTracker;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.ItemStack;
@@ -86,7 +87,7 @@ public class Pit extends SmashKit
                                                 for (int i = 0; i < avaliablePlayers.size(); i++)
                                                 {
                                                     Player candidate = avaliablePlayers.get(i);
-                                                    if (!targetPlayers.containsValue(candidate) && !candidate.equals(p) && !SmashWorldManager.isInSpectatorMode(candidate))
+                                                    if (!targetPlayers.containsValue(candidate) && !candidate.equals(p) && !SmashWorldInteractor.isInSpectatorMode(candidate))
                                                     {
                                                         targetPlayers.put(e, candidate);
                                                         w.playSound(e.getLocation(), Sound.GHAST_FIREBALL, 1, 0.2F);
@@ -144,7 +145,7 @@ public class Pit extends SmashKit
                             }
                         }, 20);
 
-                        SmashWorldManager.sendMessageToWorld(p.getWorld(), "<" + p.getDisplayName() + "> " + ChatColor.WHITE + "" + ChatColor.ITALIC + "All troops, move out!");
+                        SmashWorldInteractor.sendMessageToWorld(p.getWorld(), "<" + p.getDisplayName() + "> " + ChatColor.WHITE + "" + ChatColor.ITALIC + "All troops, move out!");
 
 
                     }
@@ -194,7 +195,7 @@ public class Pit extends SmashKit
             public void cancelTask(Player p)
             {
                 super.cancelTask(p);
-                if (!SmashWorldManager.isSmashWorld(p.getWorld()) && !SmashWorldManager.isInSpectatorMode(p))
+                if (!SmashWorldManager.isSmashWorld(p.getWorld()) && !SmashWorldInteractor.isInSpectatorMode(p))
                 {
                     p.setAllowFlight(false);
                 }

@@ -3,7 +3,8 @@ package me.happyman.SmashItemDrops;
 import me.happyman.ItemTypes.SmashItemWithTask;
 import me.happyman.commands.SmashManager;
 import me.happyman.Listeners.SmashItemManager;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -182,7 +183,7 @@ public class Hammer extends SmashItemWithTask implements Listener
         final Player p = e.getPlayer();
         final World w = p.getWorld();
 
-        if (SmashWorldManager.isSmashWorld(w) && !isWieldingHammer(p) && !SmashWorldManager.isInSpectatorMode(p) && SmashWorldManager.gameHasStarted(w) && !SmashWorldManager.gameHasEnded(w) && isThis(e.getItem().getItemStack()))
+        if (SmashWorldManager.isSmashWorld(w) && !isWieldingHammer(p) && !SmashWorldInteractor.isInSpectatorMode(p) && SmashWorldManager.gameHasStarted(w) && !SmashWorldManager.gameHasEnded(w) && isThis(e.getItem().getItemStack()))
         {
             e.setCancelled(true);
             e.getItem().remove();

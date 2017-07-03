@@ -2,7 +2,8 @@ package me.happyman.SmashItemDrops;
 
 import me.happyman.ItemTypes.SmashItem;
 import me.happyman.commands.SmashManager;
-import me.happyman.utils.SmashWorldManager;
+import me.happyman.worlds.SmashWorldInteractor;
+import me.happyman.worlds.SmashWorldManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -104,7 +105,7 @@ public class ItemDropManager implements Listener
         World w = e.getPlayer().getWorld();
         if (SmashWorldManager.isSmashWorld(w))
         {
-            if (isSmashDropItem(e.getItem().getItemStack()) && e.getItem().getLocation().getBlock().getType().equals(MATERIAL_FOR_ITEM_DROPS) && !Hammer.isWieldingHammer(e.getPlayer()) && !SmashWorldManager.isInSpectatorMode(e.getPlayer()))
+            if (isSmashDropItem(e.getItem().getItemStack()) && e.getItem().getLocation().getBlock().getType().equals(MATERIAL_FOR_ITEM_DROPS) && !Hammer.isWieldingHammer(e.getPlayer()) && !SmashWorldInteractor.isInSpectatorMode(e.getPlayer()))
             {
                 e.getItem().getLocation().getBlock().setType(Material.AIR);
             }
