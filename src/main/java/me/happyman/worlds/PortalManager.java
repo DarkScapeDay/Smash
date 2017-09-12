@@ -1,18 +1,17 @@
 package me.happyman.worlds;
 
-import me.happyman.commands.SmashManager;
-import me.happyman.source;
-import me.happyman.utils.DirectoryType;
+
 import org.bukkit.*;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.util.Vector;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.util.Vector;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -24,33 +23,136 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-import static me.happyman.worlds.PortalListener.halfMaterializedPlayers;
-import static me.happyman.worlds.PortalListener.portalDwellers;
-import static me.happyman.worlds.SmashWorldInteractor.*;
+import static me.happyman.Plugin.*;
+import static me.happyman.utils.FileManager.getServerDataFile;
+import static me.happyman.worlds.MainListener.sendPlayerToWorld;
 
 public class PortalManager implements CommandExecutor
 {
-    private static final float ENTRANCE_OFFSET = 1f;
-    public static final String REGISTER_PORTAL_COMMAND ="registerportal";
-    public static final String UNREGISTER_PORTAL_COMMAND = "unregisterportal";
-    public static final String LIST_PORTAL_COMMAND = "listportals";
-    public static final String REFRESH_PORTAL_COMMAND = "refreshportal";
+    private static class PortalListener implements Listener
+    {
+        private PortalListener()
+        {
+            Bukkit.getPluginManager().registerEvents(this, getPlugin());
+        }
 
-    private static HashMap<String, EventPortal> allPortals = new HashMap<String, EventPortal>();
+        @EventHandler
+        public void listenToAllWhoMayEnter(PlayerMoveEvent e)
+        {
+            final Player p = e.getPlayer();
+            Iterator<CuboidPortal> portalIterator = PortalEnum.iterator();
+            while (portalIterator.hasNext())
+            {
+                final CuboidPortal portal = portalIterator.next();
+                final boolean isInPortal = portal.containsPlayer(p);
+                final boolean isDweller = portal.hasDweller(p);
+                if (isInPortal && !halfMaterializedPlayers.containsKey(p) && !isDweller)
+                {
+                    portal.setDwelling(p, true);
+                    p.setVelocity(new Vector().zero());
+                    p.sendMessage(ChatColor.GREEN + "" + ChatColor.ITALIC + "Initiating...");
+                    if (portal.getTpDelayTicks() > 0)
+                    {
+                        int task = Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), new Runnable()
+                        {
+                            public void run()
+                            {
+                                halfMaterializedPlayers.remove(p);
+                                portal.performTeleportAction(p);
+                            }
+                        }, portal.getTpDelayTicks());
+                        halfMaterializedPlayers.put(p, task);
+                    }
+                    else
+                    {
+                        portal.performTeleportAction(p);
+                    }
+                }
+                else if (!isInPortal && isDweller)
+                {
+                    portal.setDwelling(p, false);
+                    if (halfMaterializedPlayers.containsKey(p))
+                    {
+                        Bukkit.getScheduler().cancelTask(halfMaterializedPlayers.get(p));
+                        halfMaterializedPlayers.remove(p);
+                        p.sendMessage(ChatColor.YELLOW + "Teleport canceled! Sorry you changed your mind so soon.");
+                    }
+                }
+            }
+        }
+    }
+
+    private static final HashMap<Player, Integer> halfMaterializedPlayers = new HashMap<Player, Integer>();
+
+    private static final String REGISTER_PORTAL_COMMAND ="registerportal";
+    private static final String UNREGISTER_PORTAL_COMMAND = "unregisterportal";
+    private static final String LIST_PORTAL_COMMAND = "listportals";
+    private static final String REFRESH_PORTAL_COMMAND = "refreshportal";
+
+//    private static final HashMap<String, CuboidPortal> allPortals = new HashMap<String, CuboidPortal>();
     private static final String PORTAL_REGISTRY_FILE_DELIMITER = ", ";
     private static ArrayList<String> portalRegistry = new  ArrayList<String>();
     private static final Material DEFAULT_MATERIAL = Material.OBSIDIAN;
+    private static final Vector centerLocation = getFallbackLocation().toVector();
+    private static final float centerX = (float)centerLocation.getX();
+    private static final int centerY = (int)centerLocation.getY();
+    private static final float centerZ = (float)centerLocation.getZ();
+    private static final int offset_from_center = 13;
+    private static final int portal_widths = 9;
+    private static final int portal_depths = 1;
 
-    private static source plugin;
-
-    public PortalManager(source plugin)
+    protected PortalManager()
     {
-        this.plugin = plugin;
-        plugin.setExecutor(LIST_PORTAL_COMMAND, this);
-        plugin.setExecutor(REGISTER_PORTAL_COMMAND, this);
-        plugin.setExecutor(UNREGISTER_PORTAL_COMMAND, this);
-        plugin.setExecutor(REFRESH_PORTAL_COMMAND, this);
-        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+        setExecutor(LIST_PORTAL_COMMAND, this);
+
+        TabCompleter portalTabCompleter = new TabCompleter()
+        {
+            @Override
+            public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args)
+            {
+                List<String> completions = new ArrayList<String>();;
+
+                boolean refreshing = matchesCommand(label, REFRESH_PORTAL_COMMAND);
+
+                if (refreshing || matchesCommand(label, UNREGISTER_PORTAL_COMMAND))
+                {
+                    Iterator<CuboidPortal> portalIterator = PortalEnum.iterator();
+                    while (portalIterator.hasNext())
+                    {
+                        CuboidPortal p = portalIterator.next();
+                        if (p.isRegistered())
+                        {
+                            completions.add(p.getId());
+                        }
+                    }
+                }
+
+                if (refreshing || matchesCommand(label, REGISTER_PORTAL_COMMAND))
+                {
+                    Iterator<CuboidPortal> portalIterator = PortalEnum.iterator();
+                    while (portalIterator.hasNext())
+                    {
+                        CuboidPortal p = portalIterator.next();
+                        if (!p.isRegistered())
+                        {
+                            completions.add(p.getId());
+                        }
+                    }
+                }
+
+                if (completions.size() == 0)
+                {
+                    return null;
+                }
+                return completions;
+            }
+        };
+
+        setExecutor(REGISTER_PORTAL_COMMAND, this, portalTabCompleter);
+        setExecutor(UNREGISTER_PORTAL_COMMAND, this, portalTabCompleter);
+        setExecutor(REFRESH_PORTAL_COMMAND, this, portalTabCompleter);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), new Runnable()
+        {
             public void run()
             {
                 initialize();
@@ -59,26 +161,12 @@ public class PortalManager implements CommandExecutor
         }, 2);
     }
 
-    public void makePortals()
-    {
-        logPortal(new EventPortal("Sean", Bukkit.getWorld("Stuffland"), -63.5f, 51, 1131.5f, 9, 9, 1,
-                PortalDirection.NORTH_SOUTH, new Material[]{Material.DIAMOND_BLOCK, Material.DIAMOND_BLOCK, Material.DIAMOND_BLOCK, Material.DIAMOND_ORE}, Material.THIN_GLASS)
-        {
-            @Override
-            public void performTeleportAction(Player p)
-            {
-                openWorldGui(p);
-            }
-        });
-    }
 
-    public void initialize()
+    static
     {
-        //get portal registry list
         try
         {
-            File regFile = getPortalRegistryFile();
-            Scanner s = new Scanner(regFile);
+            Scanner s = new Scanner(getPortalRegistryFile());
             while (s.hasNextLine())
             {
                 try
@@ -95,9 +183,96 @@ public class PortalManager implements CommandExecutor
         {
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED +"Error! Unable to complete portal registry cache!");
         }
+    }
+    private enum PortalEnum //you can change enum name, but not id
+    {
+        FP_WARP(new CuboidPortal("Freeplay_Portal", getFallbackWorld(), centerX, centerY, centerZ + offset_from_center, portal_widths, portal_widths, portal_depths,
+                PortalDirection.NORTH_SOUTH, 0, new Material[] {Material.GOLD_BLOCK, Material.GOLD_BLOCK, Material.GOLD_BLOCK, Material.GOLD_ORE}, Material.AIR, true)
+        {
+            @Override
+            public void performTeleportAction(Player p)
+            {
+                WorldType.setTourneyPreferer(p, false);
+                if (!sendPlayerToWorld(p, WorldType.SMASH.getBestWorld(p), true))
+                {
+                    p.sendMessage(ChatColor.RED + "There are no worlds available right now");
+                }
+            }
+        }),
+        T_WARP(new CuboidPortal("Tourney_Portal", getFallbackWorld(), centerX + offset_from_center, centerY, centerZ, portal_depths, portal_widths, portal_widths,
+                PortalDirection.EAST_WEST, 0, new Material[] {Material.DIAMOND_BLOCK, Material.DIAMOND_BLOCK, Material.DIAMOND_BLOCK, Material.DIAMOND_ORE}, Material.AIR, true)
+        {
+            public void performTeleportAction(Player p)
+            {
+                WorldType.setTourneyPreferer(p, true);
+                if (!sendPlayerToWorld(p, WorldType.SMASH.getBestWorld(p), true))
+                {
+                    p.sendMessage(ChatColor.RED + "There are no worlds available right now");
+                }
+            }
+        }),
+        META_WARP(new CuboidPortal("Meta_World_Portal", getFallbackWorld(), centerX - offset_from_center, centerY, centerZ, portal_depths, portal_widths, portal_widths,
+                 PortalDirection.EAST_WEST, 0, new Material[] {Material.IRON_BLOCK, Material.IRON_BLOCK, Material.IRON_BLOCK, Material.IRON_ORE}, Material.AIR, true)
+        {
+            @Override
+            public void performTeleportAction(Player p)
+            {
+                if (!sendPlayerToWorld(p, WorldType.META.getBestWorld(p), true))
+                {
+                    p.sendMessage(ChatColor.RED + "There are no worlds available right now");
+                }
+            }
+        });
 
-        makePortals();
+        private final CuboidPortal portal;
 
+        PortalEnum(CuboidPortal portal)
+        {
+            this.portal = portal;
+        }
+
+        public CuboidPortal getPortal()
+        {
+            return portal;
+        }
+
+        public static void initialize() {}
+
+        public static Iterator<CuboidPortal> iterator()
+        {
+            return new Iterator<CuboidPortal>()
+            {
+                PortalEnum[] valueArray = values();
+                int index = 0;
+
+                @Override
+                public boolean hasNext()
+                {
+                    return index < valueArray.length;
+                }
+
+                @Override
+                public CuboidPortal next()
+                {
+                    return valueArray[index++].getPortal();
+                }
+
+                @Override
+                public void remove() {
+
+                }
+            };
+        }
+    }
+
+    public static Iterator<CuboidPortal> portalIterator()
+    {
+        return PortalEnum.iterator();
+    }
+
+    public void initialize()
+    {
+        PortalEnum.initialize();
         //uncache non-existent portals
         File f = getPortalCacheFile();
         if (f == null)
@@ -120,7 +295,7 @@ public class PortalManager implements CommandExecutor
                 if (curJSONObject.containsKey("id"))
                 {
                     String id = (String) curJSONObject.get("id");
-                    if (!allPortals.containsKey(id) /*uncache non-existent portals*/)
+                    if (!portalExists(id) /*uncache non-existent portals*/)
                     {
                         array.remove(i--);
                     }
@@ -136,7 +311,7 @@ public class PortalManager implements CommandExecutor
             List<String> idsToKeep = new ArrayList<String>();
             for (String id : portalRegistry)
             {
-                if (allPortals.containsKey(id))
+                if (portalExists(id))
                 {
                     idsToKeep.add(id);
                 }
@@ -157,18 +332,13 @@ public class PortalManager implements CommandExecutor
         }
         catch(FileNotFoundException ex)
         {
-            SmashManager.getPlugin().sendErrorMessage(ChatColor.RED + "File not found for portal registry!");
+            sendErrorMessage(ChatColor.RED + "File not found for portal registry!");
         }
     }
 
-    public static HashSet<EventPortal> getAllPortals()
+    private static IDState setRegistered(String portalID, boolean register)
     {
-        return new HashSet<EventPortal>(allPortals.values());
-    }
-
-    public static IDState setRegistered(String portalID, boolean register)
-    {
-        if (!allPortals.containsKey(portalID))
+        if (!portalExists(portalID))
         {
             return IDState.NONEXISTENT;
         }
@@ -187,18 +357,21 @@ public class PortalManager implements CommandExecutor
         return IDState.CHANGED;
     }
 
-    public static EventPortal getPortal(String id)
+    private static CuboidPortal getPortal(String id)
     {
-        if (allPortals.containsKey(id))
+        for (PortalEnum portalEnumValue : PortalEnum.values())
         {
-            return allPortals.get(id);
+            if (portalEnumValue.getPortal().getId().equals(id))
+            {
+                return portalEnumValue.getPortal();
+            }
         }
         return null;
     }
 
     private static void registerPortal(String id)
     {
-        EventPortal portal = getPortal(id);
+        CuboidPortal portal = getPortal(id);
         if (portal != null && !isRegistered(id))
         {
             portalRegistry.add(id);
@@ -246,27 +419,14 @@ public class PortalManager implements CommandExecutor
         }
     }
 
-    public File getPortalCacheFile()
+    private static File getPortalCacheFile()
     {
-        File f = SmashManager.getPlugin().getSpecificFile(DirectoryType.SERVER_DATA, "", "portal_cache.json");
-        try
-        {
-            if (!f.exists() && !f.createNewFile())
-            {
-                throw new IOException("Could not get cache file!");
-            }
-        }
-        catch (IOException ex)
-        {
-            SmashManager.getPlugin().sendErrorMessage(ChatColor.RED + "Error! Could not write to file for portal data!");
-            return null;
-        }
-        return f;
+        return getServerDataFile("", "portal_cache.json", true);
     }
 
     private static void unregisterPortal(String id)
     {
-        EventPortal portal = getPortal(id);
+        CuboidPortal portal = getPortal(id);
         boolean registered = isRegistered(id);
         boolean exists = portal != null;
 
@@ -283,7 +443,7 @@ public class PortalManager implements CommandExecutor
                     String[] vals = s.nextLine().split(PORTAL_REGISTRY_FILE_DELIMITER);
                     for (String val : vals)
                     {
-                        if (allPortals.containsKey(val) && !val.equals(id))
+                        if (portalExists(val) && !val.equals(id))
                         {
                             idsToPrint.add(val);
                         }
@@ -317,7 +477,7 @@ public class PortalManager implements CommandExecutor
 
     private static boolean portalExists(String id)
     {
-        return allPortals.containsKey(id);
+        return getPortal(id) != null;
     }
 
     private static IDState refreshPortal(String id)
@@ -332,28 +492,15 @@ public class PortalManager implements CommandExecutor
 
     private static File getPortalRegistryFile()
     {
-        File f =  plugin.getSpecificFile(DirectoryType.SERVER_DATA, "", "portal_registry.txt");
-        try
-        {
-            if (!f.exists() && !f.createNewFile())
-            {
-                throw new IOException("Unable to find or create portal registry file!");
-            }
-        }
-        catch (IOException ex)
-        {
-            ex.printStackTrace();
-            return null;
-        }
-        return f;
+        return getServerDataFile("", "portal_registry.txt", true);
     }
 
-    public static boolean isRegistered(String portalId)
+    private static boolean isRegistered(String portalId)
     {
         return portalRegistry.contains(portalId);
     }
 
-    public static JSONArray getJSONArray(File f)
+    private static JSONArray getJSONArray(File f)
     {
         try
         {
@@ -385,7 +532,7 @@ public class PortalManager implements CommandExecutor
         return null;
     }
 
-    public static void saveJSONArray(JSONArray arr, File f)
+    private static void saveJSONArray(JSONArray arr, File f)
     {
         try
         {
@@ -395,38 +542,34 @@ public class PortalManager implements CommandExecutor
         }
         catch (IOException ex)
         {//impossible to reach this block
-            plugin.sendErrorMessage(ChatColor.RED + "Error! Could not write to file for portal data!");
+            sendErrorMessage(ChatColor.RED + "Error! Could not write to file for portal data!");
         }
 
     }
 
-    //make sure to remember that 0s are on the edges of blocks, and 0.5s are in the middle to the southeast
-    //.0 -> use even dimension, .5 -> use odd dimension
-    public static void logPortal(EventPortal portal)
+    protected static void cancelPortalTasks(Player p)
     {
-        allPortals.put(portal.id, portal);
-    }
-
-    public static void cancelPortalTasks(Player p)
-    {
-        for (EventPortal portal : allPortals.values())
+        Iterator<CuboidPortal> portalIterator = PortalEnum.iterator();
+        while (portalIterator.hasNext())
         {
-            portal.cancelAndForget(p);
+            portalIterator.next().cancelAndForget(p);
         }
     }
 
-    public static String getPortalListForOutput()
+    private static String getPortalListForOutput()
     {
         String portalList = "";
-        for (EventPortal portal : allPortals.values())
+        Iterator<CuboidPortal> portalIterator = PortalEnum.iterator();
+        while (portalIterator.hasNext())
         {
+            CuboidPortal portal = portalIterator.next();
             if (portal.isRegistered())
             {
-                portalList += ChatColor.GREEN + portal.id + "(" + portal.centerX + ", " + portal.centerY + ", " + portal.centerZ + ")" + ChatColor.WHITE + ", ";
+                portalList += ChatColor.GREEN + portal.getId() + "(" + portal.centerX + ", " + portal.centerY + ", " + portal.centerZ + ")" + ChatColor.WHITE + ", ";
             }
             else
             {
-                portalList += ChatColor.RED + portal.id + ChatColor.WHITE + ", ";
+                portalList += ChatColor.RED + portal.getId() + ChatColor.WHITE + ", ";
             }
         }
         if (portalList.length() >= PORTAL_REGISTRY_FILE_DELIMITER.length())
@@ -439,20 +582,27 @@ public class PortalManager implements CommandExecutor
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
-        if (plugin.matchesCommand(label, LIST_PORTAL_COMMAND))
+        if (matchesCommand(label, LIST_PORTAL_COMMAND))
         {
             if (portalRegistry.size() <= 0)
             {
-                sender.sendMessage(ChatColor.YELLOW + "There are no portals.");
+                if (!PortalEnum.iterator().hasNext())
+                {
+                    sender.sendMessage(ChatColor.YELLOW + "There are no portals.");
+                }
+                else
+                {
+                    sender.sendMessage(ChatColor.YELLOW + "There are no "+ ChatColor.ITALIC + "registered" + ChatColor.RESET + "" + ChatColor.YELLOW + " portals. Use /addportal to enable them.");
+                }
             }
             sender.sendMessage(ChatColor.GRAY + "List of portals: " + getPortalListForOutput());
             return true;
         }
         else
         {
-            boolean register = plugin.matchesCommand(label, REGISTER_PORTAL_COMMAND);
-            boolean unregister = plugin.matchesCommand(label, UNREGISTER_PORTAL_COMMAND);
-            if (register || unregister || plugin.matchesCommand(label, REFRESH_PORTAL_COMMAND))
+            boolean register = matchesCommand(label, REGISTER_PORTAL_COMMAND);
+            boolean unregister = matchesCommand(label, UNREGISTER_PORTAL_COMMAND);
+            if (register || unregister || matchesCommand(label, REFRESH_PORTAL_COMMAND))
             {
                 if (args.length < 1 || args.length > 2)
                 {
@@ -462,51 +612,67 @@ public class PortalManager implements CommandExecutor
                 {
                     int i = 0;
                     String portalID = args[i++];
-                    IDState state;
-                    if (register || unregister)
+                    boolean refreshAll = portalID.equalsIgnoreCase("all");
+                    if (!refreshAll)
                     {
-                        state = setRegistered(portalID, register);
+                        IDState state;
+                        if (register || unregister)
+                        {
+                            state = setRegistered(portalID, register);
+                        }
+                        else
+                        {
+                            state = refreshPortal(portalID);
+                        }
+                        String r;
+                        if (register)
+                        {
+                            r = "registered";
+                        }
+                        else
+                        {
+                            r = "unregistered";
+                        }
+                        if (state == IDState.NONEXISTENT)
+                        {
+                            sender.sendMessage(ChatColor.RED + "CuboidPortal " + portalID + " not found! Here is the list of portals: " + getPortalListForOutput());
+                            return true;
+                        }
+                        else if (state == IDState.UNCHANGED)
+                        {
+                            sender.sendMessage(ChatColor.RED + "CuboidPortal " + portalID + " was already " + r + "!");
+                        }
+                        else if (state == IDState.CHANGED)
+                        {
+                            sender.sendMessage(ChatColor.GREEN + "Set portal " + portalID + " to be " + r + ".");
+                        }
+                        else
+                        {
+                            sender.sendMessage(ChatColor.GREEN + "Refreshed portal " + portalID);
+                        }
+                        boolean teleport = false;
+                        if (args.length - i > 0)
+                        {
+                            String tp = args[i++];
+                            teleport = tp.length() > 0 && Character.toLowerCase(tp.charAt(0)) == 't';
+                        }
+                        if (teleport && sender instanceof Player && portalExists(portalID))
+                        {
+                            Player p = (Player) sender;
+                            p.teleport(getPortal(portalID).getEntrancePoint());
+                        }
+
                     }
                     else
                     {
-                        state = refreshPortal(portalID);
-                    }
-                    String r;
-                    if (register)
-                    {
-                        r = "registered";
-                    }
-                    else
-                    {
-                        r = "unregistered";
-                    }
-                    if (state.equals(IDState.NONEXISTENT))
-                    {
-                        sender.sendMessage(ChatColor.RED + "Portal " + portalID + " not found! Here is the list of portals: " + getPortalListForOutput());
-                        return true;
-                    }
-                    else if (state.equals(IDState.UNCHANGED))
-                    {
-                        sender.sendMessage(ChatColor.RED + "Portal " + portalID + " was already " + r + "!");
-                    }
-                    else if (state.equals(IDState.CHANGED))
-                    {
-                        sender.sendMessage(ChatColor.GREEN + "Set portal " + portalID + " to be " + r + ".");
-                    }
-                    else
-                    {
-                        sender.sendMessage(ChatColor.GREEN + "Refreshed portal " + portalID);
-                    }
-                    boolean teleport = false;
-                    if (args.length - i > 0)
-                    {
-                        String tp = args[i++];
-                        teleport = tp.length() > 0 && Character.toLowerCase(tp.charAt(0)) == 't';
-                    }
-                    if (teleport && sender instanceof Player && allPortals.containsKey(portalID))
-                    {
-                        Player p = (Player) sender;
-                        p.teleport(allPortals.get(portalID).getEntrancePoint());
+                        Iterator<CuboidPortal> portalIterator = PortalEnum.iterator();
+                        int portalCount = 0;
+                        while (portalIterator.hasNext())
+                        {
+                            portalCount++;
+                            portalIterator.next().refresh();
+                        }
+                        sender.sendMessage(ChatColor.GREEN + "Refreshed all " + portalCount + " portals!");
                     }
                 }
                 catch (NumberFormatException ex)
@@ -529,17 +695,17 @@ public class PortalManager implements CommandExecutor
         NONEXISTENT, UNCHANGED, CHANGED, REFRESHED;
     }
 
-
-    public abstract class EventPortal implements Listener
+    abstract static class CuboidPortal
     {
+        private final String id;
+        private final List<Player> dwellers;
+        private static final float ENTRANCE_OFFSET = 3f;
         private final Random r = new Random();
         private final Material[] buildingMaterials;
         private final Material portalCenterBlock;
         private final long tpDelayTicks;
-        private final World w;
+        private final World world;
         private final PortalDirection orientation;
-        private final HashMap<Block, Material> originalMaterials = new HashMap<Block, Material>();
-        protected final String id;
         private final int westI;
         private final int eastI;
         private final int bottomJ;
@@ -558,27 +724,34 @@ public class PortalManager implements CommandExecutor
         private boolean isBuilt;
         private final Location entrancePoint;
 
-        public EventPortal(String id, World w, float centerX, int baseY, float centerZ,
-                           int width, int height, int depth, PortalDirection orientation, Material[] buildingMaterials, Material portalCenterBlock)
+        public CuboidPortal(String id, World w, float centerX, int baseY, float centerZ,
+                            int width, int height, int depth, PortalDirection orientation, Material[] buildingMaterials, Material portalCenterBlock)
         {
-            this(id, w, centerX, baseY, centerZ, width, height, depth, orientation, 0, buildingMaterials, portalCenterBlock);
+            this(id, w, centerX, baseY, centerZ, width, height, depth, orientation, 0, buildingMaterials, portalCenterBlock, true);
         }
 
-        public EventPortal(String id, World w, float centerX, int baseY, float centerZ,
-                           int width, int height, int depth, PortalDirection orientation, Material[] buildingMaterials)
+        public CuboidPortal(String id, World w, float centerX, int baseY, float centerZ,
+                            int width, int height, int depth, PortalDirection orientation, Material[] buildingMaterials)
         {
             this(id, w, centerX, baseY, centerZ, width, height, depth, orientation, buildingMaterials, Material.AIR);
         }
 
-        public EventPortal(String id, World w, float centerX, int baseY, float centerZ,
-                           int width, int height, int depth, PortalDirection orientation)
+        public CuboidPortal(String id, World w, float centerX, int baseY, float centerZ,
+                            int width, int height, int depth, PortalDirection orientation)
         {
             this(id, w, centerX, baseY, centerZ, width, height, depth, orientation, new Material[] {DEFAULT_MATERIAL}, Material.AIR);
         }
 
-        public EventPortal(String id, World w, float centerX, int baseY, float centerZ,
-                           int width, int height, int depth, PortalDirection orientation, int tpTickDelay, Material[] buildingMaterials, Material portalCenterBlock)
+        public CuboidPortal(String id, World w, Vector center, int width, int height, int depth, PortalDirection orientation, int tpDelayTicks, Material[] buildingMaterials, Material portalCenterBlock)
         {
+            this(id, w, (float)center.getX(), (int)center.getY(), (float)center.getZ(), width, height, depth, orientation, tpDelayTicks, buildingMaterials, portalCenterBlock, true);
+        }
+
+        private CuboidPortal(String id, World w, float centerX, int baseY, float centerZ,
+                             int width, int height, int depth, PortalDirection orientation, int tpTickDelay, Material[] buildingMaterials, Material portalCenterBlock, boolean buildOnCreate)
+        {
+            this.dwellers = new ArrayList<Player>();
+
             this.tpDelayTicks = tpTickDelay;
             this.centerX = centerX;
             this.centerY = (float)baseY - 1f + (float)height/2;
@@ -590,18 +763,21 @@ public class PortalManager implements CommandExecutor
 
             xMin = centerX - (float)width/2;
             float westIf = xMin + 0.5f;
-            westI = (int)westIf;
-            eastI = (int)(2*centerX - westIf);
+            westI = getBlockCoord(westIf);
+            float eastIf = 2*centerX - westIf;
+            eastI = getBlockCoord(eastIf);
 
             yMin = centerY - (float)height/2;
             float bottomJf = yMin + 0.5f;
-            bottomJ = (int)bottomJf;
-            topJ =  (int)(2*centerY - bottomJf);
+            bottomJ = getBlockCoord(bottomJf);
+            float topJf = 2*centerY - bottomJf;
+            topJ = getBlockCoord(topJf);
 
             zMin = centerZ - (float)depth/2;
             float northKf = zMin + 0.5f;
-            northK = (int)northKf;//the oppressed
-            southK =  (int)(2*centerZ - northKf);//the free
+            northK = getBlockCoord(northKf);;//the oppressed
+            float southKf = 2*centerZ - northKf;
+            southK = getBlockCoord(southKf);//the free
 
 
             Block testBlock;
@@ -610,12 +786,11 @@ public class PortalManager implements CommandExecutor
             switch (orientation)
             {
                 case NORTH_SOUTH:
-                    testBlock = w.getBlockAt((int)centerX, baseY, (int)(centerZ - 1));
-                    offset = testBlock.getType().isSolid() ? -offset : offset;
+                    testBlock = w.getBlockAt(getBlockCoord(centerX), baseY, getBlockCoord(centerZ - 1));
+                    offset = (testBlock.getType().isSolid() || !testBlock.getRelative(0, -1, 0).getType().isSolid()) ? -offset : offset;
                     entrancePoint = new Location(w, centerX, baseY, centerZ + offset);
                     break;
                 case UP_DOWN:
-
                     entrancePoint =
                             !w.getBlockAt((int)centerX, baseY, northK).getType().isSolid() ? new Location(w, centerX, baseY, centerZ - ENTRANCE_OFFSET) :
                             !w.getBlockAt(westI, baseY, (int)centerZ).getType().isSolid() ? new Location(w, centerX - ENTRANCE_OFFSET, baseY, centerZ) :
@@ -623,8 +798,8 @@ public class PortalManager implements CommandExecutor
                             new Location(w, centerX + ENTRANCE_OFFSET, baseY, centerZ);
                     break;
                 case EAST_WEST:
-                    testBlock = w.getBlockAt((int)(centerX - 1), baseY, (int)centerZ);
-                    offset = testBlock.getType().isSolid() ? -offset : offset;
+                    testBlock = w.getBlockAt(getBlockCoord(centerX - 1), baseY, getBlockCoord(centerZ));
+                    offset = (testBlock.getType().isSolid() || !testBlock.getRelative(0, -1, 0).getType().isSolid()) ? -offset : offset;
                     entrancePoint = new Location(w, centerX + offset, baseY, centerZ);
                     break;
                 default:
@@ -634,70 +809,103 @@ public class PortalManager implements CommandExecutor
             entrancePoint.setDirection(new Vector(centerX, baseY, centerZ).subtract(entrancePoint.toVector()));
 
 
-            this.w = w;
+            this.world = w;
             this.orientation = orientation;
 
             this.buildingMaterials = buildingMaterials == null ? new Material[] {DEFAULT_MATERIAL} : buildingMaterials;
             this.portalCenterBlock = portalCenterBlock == null ? Material.AIR : portalCenterBlock;
 
             //log the original materials to the cache
-            isBuilt = false;
-            for (Object curObj : getJSONArray(getPortalCacheFile()))
+            if (buildOnCreate)
             {
-                if (curObj instanceof JSONObject)
+                isBuilt = false;
+                for (Object curObj : getJSONArray(getPortalCacheFile()))
                 {
-                    JSONObject curJason = (JSONObject)curObj;
-                    if (curJason.get("id").equals(id))
+                    if (curObj instanceof JSONObject)
                     {
-                        Set<Map.Entry<Object, Object>> entrySet = curJason.entrySet();
-                        for (Map.Entry<Object, Object> entry : entrySet)
+                        JSONObject curJason = (JSONObject)curObj;
+                        Object idValue = curJason.get("id");
+                        if (idValue != null && idValue.equals(id))
                         {
-                            String coordString = (String)entry.getKey();
-                            String[] coords = coordString.split(",");
-                            try
-                            {
-                                if (coords.length == 3)
-                                {
-                                    Block curBlock = w.getBlockAt((int)((float)Float.valueOf(coords[0])), (int)((float)Float.valueOf(coords[1])), (int)((float)Float.valueOf(coords[2])));
-                                    originalMaterials.put(curBlock, Material.getMaterial((String)entry.getValue()));
-                                }
-                            }
-                            catch (NumberFormatException ex)
-                            {
-                                ex.printStackTrace();
-                            }
+//                            Set<Map.Entry<Object, Object>> entrySet = curJason.entrySet();
+//                            for (Map.Entry<Object, Object> entry : entrySet)
+//                            {
+//                                String coordString = (String)entry.getKey();
+//                                String[] coords = coordString.split(",");
+//                                try
+//                                {
+//                                    if (coords.length == 3)
+//                                    {
+//                                        Block curBlock = w.getBlockAt((int)((float)Float.valueOf(coords[0])), (int)((float)Float.valueOf(coords[1])), (int)((float)Float.valueOf(coords[2])));
+//                                        //curBlock.setType(Material.getMaterial((String)entry.getValue()));
+//                                    }
+//                                }
+//                                catch (NumberFormatException ex)
+//                                {
+//                                    ex.printStackTrace();
+//                                }
+//                            }
+                            isBuilt = true;
+                            break;
                         }
-                        isBuilt = true;
-                        break;
                     }
                 }
+
+                if (!isRegistered() && isBuilt)
+                {
+                    destroy();
+                }
+                else if (isRegistered() && !isBuilt)
+                {
+                    build();
+                }
+            }
+            else
+            {
+                isBuilt = true;
             }
 
-            if (!isRegistered() && isBuilt)
+//            //logPortal log portal LOG THE FREAKING PORTAL
+//            allPortals.put(id, this);
+        }
+
+        public void setDwelling(Player p, boolean inside)
+        {
+            boolean alreadyInside = hasDweller(p);
+            if (alreadyInside && !inside)
             {
-                destroy();
+                dwellers.remove(p);
             }
-            else if (isRegistered() && !isBuilt)
+            else if (!alreadyInside && inside)
             {
-                build();
+                dwellers.add(p);
             }
         }
 
-        public boolean valid()
+        public boolean hasDweller(Player p)
         {
-            return w != null;
+            return dwellers.contains(p);
+        }
+
+        private boolean valid()
+        {
+            return world != null;
         }
 
         public abstract void performTeleportAction(Player p);
 
-        public boolean containsPlayer(Player p)
+        private int getBlockCoord(float blockCoord)
+        {
+            return blockCoord < 0 ? (int)blockCoord - 1 : (int)blockCoord;
+        }
+
+        public boolean contains(Location l)
         {
             if (!isRegistered())
             {
                 return false;
             }
 
-            Location l = p.getLocation();
             float pX = (float)l.getX();
             float pY = (float)l.getY();
             float pZ = (float)l.getZ();
@@ -708,10 +916,15 @@ public class PortalManager implements CommandExecutor
                 case NORTH_SOUTH: return Math.abs(pX - centerX)*2 + 2f <= width && Math.abs(pY - centerY)*2 + 2f <= height && Math.abs(pZ - centerZ)*2 <= depth;
                 case UP_DOWN: return Math.abs(pX - centerX)*2 + 2f <= width && Math.abs(pY - centerY)*2 <= height && Math.abs(pZ - centerZ)*2 + 2f <= depth;
                 default:
-                    SmashManager.getPlugin().sendErrorMessage(ChatColor.RED+ "Error! Had an invalid orientation when deciding if " + p.getLocation().toVector().toString() + " was in portal " + id + " or not.");
+                    sendErrorMessage(ChatColor.RED + "Error! Had an invalid orientation when deciding if " + l.toVector().toString() + " was in portal " + id + " or not.");
                     return false;
             }
+        }
 
+
+        public boolean containsPlayer(Player p)
+        {
+            return contains(p.getLocation());
         }
 
         public boolean isRegistered()
@@ -733,7 +946,7 @@ public class PortalManager implements CommandExecutor
         {
             if (!valid())
             {
-                SmashManager.getPlugin().sendErrorMessage(ChatColor.RED + "Error! Invalid world for portal " + id);
+                sendErrorMessage(ChatColor.RED + "Error! Invalid world for portal " + id);
                 return;
             }
             if (isBuilt())
@@ -755,7 +968,7 @@ public class PortalManager implements CommandExecutor
                                 String[] locArray = loc.split(",");
                                 if (locArray.length == 3)
                                 {
-                                    Block b = w.getBlockAt((int)(float)Float.valueOf(locArray[0]), (int)(float)Float.valueOf(locArray[1]), (int)(float)Float.valueOf(locArray[2]));
+                                    Block b = world.getBlockAt((int)(float)Float.valueOf(locArray[0]), (int)(float)Float.valueOf(locArray[1]), (int)(float)Float.valueOf(locArray[2]));
                                     b.setType(Material.getMaterial(mat));
                                 }
                             }
@@ -766,7 +979,6 @@ public class PortalManager implements CommandExecutor
                 if (!justBlocks)
                 {
                     removeCacheData();
-                    originalMaterials.clear();
                 }
                 isBuilt = false;
             }
@@ -780,17 +992,15 @@ public class PortalManager implements CommandExecutor
         {
             if (!valid())
             {
-                SmashManager.getPlugin().sendErrorMessage(ChatColor.RED + "Error! Invalid world for portal " + id);
+                sendErrorMessage(ChatColor.RED + "Error! Invalid world for portal " + id);
                 return;
             }
             if (!isBuilt())
             {
-                File f = null;
-                JSONArray mainArray = null;
                 JSONObject jasonVoorhees = null;
                 boolean newBuild = false;
-                f = getPortalCacheFile();
-                mainArray = getJSONArray(f);
+                File f = getPortalCacheFile();
+                JSONArray mainArray = getJSONArray(f);
 
                 for (Object obj : mainArray)
                 {
@@ -813,11 +1023,7 @@ public class PortalManager implements CommandExecutor
                     {
                         for (int k = northK; k <= southK ; k++)
                         {
-                            Block blockToChange = w.getBlockAt(i, j, k);
-                            if (!originalMaterials.containsKey(blockToChange))
-                            {
-                                originalMaterials.put(blockToChange, blockToChange.getType());
-                            }
+                            Block blockToChange = world.getBlockAt(i, j, k);
                             String blockLocation = blockToChange.getLocation().toVector().toString();
                             if (newBuild || !jasonVoorhees.containsKey(blockLocation))
                             {
@@ -860,49 +1066,6 @@ public class PortalManager implements CommandExecutor
             }
         }
 
-        private void removePortalBlock(World w, int x, int y, int z)
-        {
-            Block blockToChange = w.getBlockAt(x, y, z);
-            blockToChange.setType(getOriginalBlock(blockToChange));
-        }
-
-        private Material getOriginalBlock(Block blockToChange)
-        {
-            if (originalMaterials.containsKey(blockToChange))
-            {
-                return originalMaterials.get(blockToChange);
-            }
-//            else
-//            {
-//                File f = getPortalCacheFile();
-//                if (f == null)
-//                {
-//                    SmashManager.getPlugin().sendErrorMessage(ChatColor.RED + "Error! Could not get portal cache file!");
-//                    return Material.AIR;
-//                }
-//
-//                JSONArray arr = getJSONArray(f);
-//                if (arr == null)
-//                {
-//                    SmashManager.getPlugin().sendErrorMessage(ChatColor.RED + "Error! Could not get JSON array!");
-//                    return Material.AIR;
-//                }
-//
-//                for (Object curObj : arr)
-//                {
-//                    if (curObj instanceof JSONObject)
-//                    {
-//                        JSONObject curJason = (JSONObject)curObj;
-//                        if (curJason.get("id").equals(id) && curJason.containsKey(blockToChange.getLocation().toVector().toString()))
-//                        {
-//                            return Material.getMaterial((String)curJason.get(blockToChange.getLocation().toVector().toString()));
-//                        }
-//                    }
-//                }
-//            }
-            return Material.AIR;
-        }
-
         public void cancelAndForget(Player p)
         {
             if (halfMaterializedPlayers.containsKey(p))
@@ -910,9 +1073,9 @@ public class PortalManager implements CommandExecutor
                 Bukkit.getScheduler().cancelTask(halfMaterializedPlayers.get(p));
                 halfMaterializedPlayers.remove(p);
             }
-            if (portalDwellers.contains(p))
+            if (dwellers.contains(p))
             {
-                portalDwellers.remove(p);
+                dwellers.remove(p);
             }
         }
 
@@ -921,13 +1084,13 @@ public class PortalManager implements CommandExecutor
             File f = getPortalCacheFile();
             if (f == null)
             {
-                plugin.sendErrorMessage(ChatColor.RED + "Error! Could not find the portal_cache file!");
+                sendErrorMessage(ChatColor.RED + "Error! Could not find the portal_cache file!");
                 return;
             }
             JSONArray array = getJSONArray(f);
             if (array == null)
             {
-                plugin.sendErrorMessage(ChatColor.RED + "Could not fetch the JSON array for the portals!");
+                sendErrorMessage(ChatColor.RED + "Could not fetch the JSON array for the portals!");
                 return;
             }
 
@@ -946,12 +1109,8 @@ public class PortalManager implements CommandExecutor
             saveJSONArray(array, f);
         }
 
-        public PortalDirection getOrientation()
+        public Location getEntrancePoint()
         {
-            return orientation;
-        }
-
-        public Location getEntrancePoint() {
             return entrancePoint;
         }
 
@@ -961,10 +1120,14 @@ public class PortalManager implements CommandExecutor
             build();
         }
 
-        public long getTpDelayTicks() {
+        public long getTpDelayTicks()
+        {
             return tpDelayTicks;
         }
+
+        public String getId()
+        {
+            return id;
+        }
     }
-
-
 }

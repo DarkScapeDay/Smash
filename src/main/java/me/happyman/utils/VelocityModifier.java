@@ -1,9 +1,6 @@
 package me.happyman.utils;
 
-import me.happyman.commands.SmashManager;
-import me.happyman.source;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -16,6 +13,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.Callable;
 
+import static me.happyman.Plugin.cancelTaskAfterDelay;
+import static me.happyman.Plugin.getPlugin;
+
 public class VelocityModifier implements Listener
 {
     public static final float GRAVITY = .0948f;//0.092f;//0.08
@@ -23,14 +23,12 @@ public class VelocityModifier implements Listener
     public static final float MAX_PLAYER_LAUNCH_Y_EXPERIMENTAL = 60F;
     private static final int TICK_COOLDOWN = 10;
     private static ArrayList<Player> disallowedJumpers = new ArrayList<Player>();
-    private static source plugin;
 
     private static HashMap<Player, ArrayList<Integer>> kbTasks = new HashMap<Player, ArrayList<Integer>>();
 
-    public VelocityModifier(source plugin)
+    public VelocityModifier()
     {
-        this.plugin = plugin;
-        Bukkit.getPluginManager().registerEvents(this, plugin);
+        Bukkit.getPluginManager().registerEvents(this, getPlugin());
     }
 
     public static void cancelKnockback(Player p)
@@ -53,15 +51,15 @@ public class VelocityModifier implements Listener
         double lowerBound = 0f;
         double upperBound = 100f;
         double t = -1;
-        //Portal middle of lower and upper bound
+        //CuboidPortal middle of lower and upper bound
         while (lowerBound <= upperBound && iterations < max_it)
         {
             t = (lowerBound + upperBound)/2;
-            //get value at Portal
+            //get value at CuboidPortal
             double numerator = GRAVITY*(Y+t*VELOCITY_TERMINAL);
             double denominator = VELOCITY_TERMINAL*VELOCITY_TERMINAL*(Math.exp(GRAVITY*t/VELOCITY_TERMINAL)-1);
             double valueToBeReaching1 = numerator/denominator;
-            //depending on Portal, update bounds
+            //depending on CuboidPortal, update bounds
             if (valueToBeReaching1 < 1 - tolerance) //need to look left
             {
                 upperBound = t - tolerance;
@@ -72,7 +70,7 @@ public class VelocityModifier implements Listener
             }
             else //we found it
             {
-                //Bukkit.broadcastMessage(ChatColor.BLUE + "" + Portal + " ticks to peak");
+                //Bukkit.broadcastMessage(ChatColor.BLUE + "" + CuboidPortal + " ticks to peak");
                 return t;
             }
             iterations++;
@@ -136,7 +134,7 @@ public class VelocityModifier implements Listener
             float curY = (float)launchPower.getY();
             launchPower.multiply(launchPowerY/curY);
             setPlayerVelocity(p, launchPower);
-            Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), new Runnable() {
                 @Override
                 public void run()
                 {
@@ -166,17 +164,17 @@ public class VelocityModifier implements Listener
             final Vector sampleV = velocity.multiply(3.92f/length);
             //Bukkit.broadcastMessage(""  + sampleV);
 
-            int task = Bukkit.getScheduler().scheduleSyncRepeatingTask(SmashManager.getPlugin(), new Runnable() {
+            int task = Bukkit.getScheduler().scheduleSyncRepeatingTask(getPlugin(), new Runnable() {
                 int i = 0;
                 public void run()
                 {
                     if (i < iterations)
                     {
-                        Bukkit.getScheduler().callSyncMethod(plugin, new Callable()
+                        Bukkit.getScheduler().callSyncMethod(getPlugin(), new Callable()
                         {
                             public String call()
                             {
-                                //Bukkit.getPlayer("HappyMan").sendMessage("knocking " + damagedPlayer.getName() + " back");
+                                //Bukkit.getAttacker("HappyMan").sendMessage("knocking " + damagedPlayer.getName() + " back");
                                 p.setVelocity(sampleV);
                                 return "";
                             }
@@ -186,7 +184,7 @@ public class VelocityModifier implements Listener
                 }
             }, 0, delay);
 
-            SmashManager.getPlugin().cancelTaskAfterDelay(task, iterations*delay);
+            cancelTaskAfterDelay(task, iterations*delay);
             kbTasks.get(p).add(task);
         }
         else

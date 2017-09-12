@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/me/happyman/Listeners/Soup.java" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Bowser.java" line="4" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Wario.java" line="121" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/FileManager.java" line="511" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="051ebfd1-1d2d-414d-9977-b7ff50858a31" name="Default" comment="" />
@@ -33,136 +31,399 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="source.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/source.java">
+      <file leaf-file-name="WorldType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="511" column="15" lean-forward="true" selection-start-line="511" selection-start-column="15" selection-end-line="511" selection-end-column="15" />
+            <state relative-caret-position="18343">
+              <caret line="2895" column="9" lean-forward="false" selection-start-line="2895" selection-start-column="9" selection-end-line="2895" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1717#2601#0" expanded="true" />
-                <element signature="e#2600#2601#0" expanded="true" />
-                <element signature="e#5787#5975#0" expanded="true" />
-                <element signature="e#5974#5975#0" expanded="true" />
-                <element signature="e#6037#6051#0" expanded="true" />
-                <element signature="e#6818#7006#0" expanded="true" />
-                <element signature="e#7005#7006#0" expanded="true" />
-                <element signature="e#18350#18351#0" expanded="true" />
-                <element signature="e#18438#18439#0" expanded="true" />
-                <element signature="e#23688#23704#0" expanded="true" />
-                <element signature="e#26909#26945#0" expanded="false" />
-                <element signature="e#35175#35176#0" expanded="true" />
-                <element signature="e#35229#35230#0" expanded="true" />
+                <element signature="method#isNearSpawn#0;class#2188:8902" expanded="false" />
+                <element signature="method#blockIsProtected#0;class#2188:8902" expanded="false" />
+                <element signature="method#isAllowedToTeleport#0;class#2188:8902" expanded="false" />
+                <element signature="method#generateWorldCreatorItems#0;class#2188:8902" expanded="false" />
+                <element signature="method#performEntityDamageByEntity#0;class#2188:8902" expanded="false" />
+                <element signature="method#handleLeave#0;class#2188:8902" expanded="false" />
+                <element signature="method#handleCommand#0;class#2188:8902" expanded="false" />
+                <element signature="method#deleteTourneyLevelFile#0;class#9007:117311" expanded="false" />
+                <element signature="method#getTourneyLevelFile#0;class#9007:117311" expanded="false" />
+                <element signature="method#setTourneyLevel#0;class#9007:117311" expanded="false" />
+                <element signature="method#getTourneyLevelFromFile#0;class#9007:117311" expanded="false" />
+                <element signature="method#getTourneyLevel#1;class#9007:117311" expanded="false" />
+                <element signature="method#performDropItem#0;class#9007:117311" expanded="false" />
+                <element signature="method#generateWorldCreatorItems#0;class#9007:117311" expanded="false" />
+                <element signature="class#16631:16910" expanded="false" />
+                <element signature="method#getOriginalPlayerCount#0;class#9007:117311" expanded="false" />
+                <element signature="method#setTimeRemaining#0;class#9007:117311" expanded="false" />
+                <element signature="e#19043#19131#0" expanded="false" />
+                <element signature="method#getTimeRemaining#0;class#9007:117311" expanded="false" />
+                <element signature="method#getTimeRemaining#1;class#9007:117311" expanded="false" />
+                <element signature="method#getTimeTilStart#0;class#9007:117311" expanded="false" />
+                <element signature="method#startCountDown#0;class#9007:117311" expanded="false" />
+                <element signature="method#cancelCountdown#0;class#9007:117311" expanded="false" />
+                <element signature="method#setStartTime#0;class#9007:117311" expanded="false" />
+                <element signature="method#playCountdownSound#0;class#9007:117311" expanded="false" />
+                <element signature="method#subtractStartTime#0;class#9007:117311" expanded="false" />
+                <element signature="method#resetStartTime#0;class#9007:117311" expanded="false" />
+                <element signature="e#25657#25710#0" expanded="false" />
+                <element signature="method#setPlayerScoreValue#1;class#9007:117311" expanded="false" />
+                <element signature="method#startGame#0;class#9007:117311" expanded="false" />
+                <element signature="method#respawnTeleport#0;class#9007:117311" expanded="false" />
+                <element signature="method#willStartSoon#0;class#9007:117311" expanded="false" />
+                <element signature="method#getStartRequirement#0;class#9007:117311" expanded="false" />
+                <element signature="method#removeStartOverride#0;class#9007:117311" expanded="false" />
+                <element signature="method#getItemSpawnRunnable#0;class#9007:117311" expanded="false" />
+                <element signature="method#spawnItemDropOrFinalSmash#0;class#9007:117311" expanded="false" />
+                <element signature="method#getRandomBoolean#0;class#9007:117311" expanded="false" />
+                <element signature="method#getTimeRemainingRunnable#0;class#9007:117311" expanded="false" />
+                <element signature="method#getKillerRunnable#0;class#9007:117311" expanded="false" />
+                <element signature="method#restartSmashWorld#0;class#9007:117311" expanded="false" />
+                <element signature="method#incrementFreeGamesPlayed#0;class#9007:117311" expanded="false" />
+                <element signature="method#incrementPointBasedGamesPlayed#0;class#9007:117311" expanded="false" />
+                <element signature="method#incrementFreeGamesPlayed#1;class#9007:117311" expanded="false" />
+                <element signature="method#incrementTourneyRoundsPlayed#0;class#9007:117311" expanded="false" />
+                <element signature="method#incrementTourneyRoundsPlayed#1;class#9007:117311" expanded="false" />
+                <element signature="method#addScoreToTotalPoints#0;class#9007:117311" expanded="false" />
+                <element signature="method#addScoreToTotalPoints#1;class#9007:117311" expanded="false" />
+                <element signature="method#removeGame#0;class#9007:117311" expanded="false" />
+                <element signature="method#cancelTime#0;class#9007:117311" expanded="false" />
+                <element signature="method#cancelConstantTasks#0;class#9007:117311" expanded="false" />
+                <element signature="method#getDisplayPrefix#1;class#9007:117311" expanded="false" />
+                <element signature="method#getJoinTheWorldMaterial#0;class#9007:117311" expanded="false" />
+                <element signature="e#66307#66396#0" expanded="false" />
+                <element signature="method#getItemSpawnLocationFile#0;class#9007:117311" expanded="false" />
+                <element signature="method#getPlayerSpawnLocationFile#0;class#9007:117311" expanded="false" />
+                <element signature="method#loadSpawns#0;class#9007:117311" expanded="false" />
+                <element signature="e#70606#70672#0" expanded="false" />
+                <element signature="method#performDamage#0;class#9007:117311" expanded="false" />
+                <element signature="method#isShielded#0;class#9007:117311" expanded="false" />
+                <element signature="method#getRemainingShield#0;class#9007:117311" expanded="false" />
+                <element signature="method#performEntityDamageByEntity#0;class#9007:117311" expanded="false" />
+                <element signature="method#playerCanDamagePlayer#0;class#9007:117311" expanded="false" />
+                <element signature="method#handlePlayerItemDamageEvent#0;class#9007:117311" expanded="false" />
+                <element signature="method#getSpecialItemIterator#0;class#9007:117311" expanded="false" />
+                <element signature="e#79015#79034#0" expanded="false" />
+                <element signature="method#performPlayerInteract#0;class#9007:117311" expanded="false" />
+                <element signature="method#performPlayerDropItem#0;class#9007:117311" expanded="false" />
+                <element signature="method#canBeJoined#0;class#9007:117311" expanded="false" />
+                <element signature="method#canBeJoinedInRightNow#0;class#9007:117311" expanded="false" />
+                <element signature="method#handleJoin#0;class#9007:117311" expanded="false" />
+                <element signature="method#initializeSmashPlayer#0;class#9007:117311" expanded="false" />
+                <element signature="method#startSmashWorld#0;class#9007:117311" expanded="false" />
+                <element signature="method#getSpectatorJoinMessage#0;class#9007:117311" expanded="false" />
+                <element signature="method#canPlayJoinLeaveMessages#0;class#9007:117311" expanded="false" />
+                <element signature="method#handleLeave#0;class#9007:117311" expanded="false" />
+                <element signature="method#getTypeSpecificLoreForJoinItem#0;class#9007:117311" expanded="false" />
+                <element signature="method#getWorldStatus#0;class#9007:117311" expanded="false" />
+                <element signature="method#isDeathMatchWorld#0;class#9007:117311" expanded="false" />
+                <element signature="method#getDeathMatchLives#0;class#9007:117311" expanded="false" />
+                <element signature="method#recordKOStatistics#0;class#9007:117311" expanded="false" />
+                <element signature="method#getMapName#0;class#9007:117311" expanded="false" />
+                <element signature="method#getMapName#1;class#9007:117311" expanded="false" />
+                <element signature="method#performCreateWorldCommand#0;class#9007:117311" expanded="false" />
+                <element signature="method#handleCommand#0;class#9007:117311" expanded="false" />
+                <element signature="class#109815:111199" expanded="false" />
+                <element signature="method#performYesAction#0;class#109815:111199" expanded="false" />
+                <element signature="method#performNoAction#0;class#109815:111199" expanded="false" />
+                <element signature="method#getBestWorld#0;class#9007:117311" expanded="false" />
+                <element signature="method#getWorldStatus#0;class#117438:139980" expanded="false" />
+                <element signature="method#getSpecialItemIterator#0;class#117438:139980" expanded="false" />
+                <element signature="class#119750:120407" expanded="false" />
+                <element signature="method#generateWorldCreatorItems#0;class#117438:139980" expanded="false" />
+                <element signature="class#121207:121612" expanded="false" />
+                <element signature="method#getWarningMessage#0;class#121207:121612" expanded="false" />
+                <element signature="e#122002#122092#0" expanded="false" />
+                <element signature="class#122280:123239" expanded="false" />
+                <element signature="method#run#0;class#122280:123239" expanded="false" />
+                <element signature="class#123330:124677" expanded="false" />
+                <element signature="method#run#0;class#123330:124677" expanded="false" />
+                <element signature="method#performPlayerInteract#0;class#117438:139980" expanded="false" />
+                <element signature="method#isWeekend#0;class#117438:139980" expanded="false" />
+                <element signature="method#getSuperBoost#0;class#117438:139980" expanded="false" />
+                <element signature="method#subtractSuperBoost#0;class#117438:139980" expanded="false" />
+                <element signature="method#addSuperBoost#0;class#117438:139980" expanded="false" />
+                <element signature="method#handleLeave#0;class#117438:139980" expanded="false" />
+                <element signature="method#performPlayerMove#0;class#117438:139980" expanded="false" />
+                <element signature="method#performPlayerInteractEntity#0;class#117438:139980" expanded="false" />
+                <element signature="method#sendMessageFromKitVendor#0;class#117438:139980" expanded="false" />
+                <element signature="method#openKitPurchaseGui#0;class#117438:139980" expanded="false" />
+                <element signature="class#135250:136013" expanded="false" />
+                <element signature="method#getFailureMessage#0;class#135250:136013" expanded="false" />
+                <element signature="class#136250:138755" expanded="false" />
+                <element signature="method#performAction#0;class#136250:138755" expanded="false" />
+                <element signature="class#137336:138319" expanded="false" />
+                <element signature="method#performYesAction#0;class#137336:138319" expanded="false" />
+                <element signature="method#performNoAction#0;class#137336:138319" expanded="false" />
+                <element signature="method#handleCommand#0;class#117438:139980" expanded="false" />
+                <element signature="method#handleJoin#0;class#117438:139980" expanded="false" />
+                <element signature="class#140090:140728" expanded="false" />
+                <element signature="method#isTouchingTheGround#0;class#140865:144117" expanded="false" />
+                <element signature="method#getTicksTilNextRefuel#0;class#140865:144117" expanded="false" />
+                <element signature="class#144185:145308" expanded="false" />
+                <element signature="method#give#0;class#144185:145308" expanded="false" />
+                <element signature="method#performDropAction#0;class#144185:145308" expanded="false" />
+                <element signature="method#performRightClickAction#0;class#144185:145308" expanded="false" />
+                <element signature="method#WorldType#1;class#WorldType#0" expanded="false" />
+                <element signature="method#getChatMessagePrefix#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getChatMessagePrefix#1;class#WorldType#0" expanded="false" />
+                <element signature="method#getChatMessagePrefix#2;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#getWelcomeMessage#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getWelcomeMessage#0;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#sendMessageWithDelay#0;class#WorldType#0" expanded="false" />
+                <element signature="method#sendMessageWithDelay#0;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#sendMessageToWorld#0;class#WorldType#0" expanded="false" />
+                <element signature="method#sendMessageToWorld#0;class#WorldType#0" expanded="false" />
+                <element signature="method#sendMessageToWorld#1;class#WorldType#0" expanded="false" />
+                <element signature="method#sendMessageToPlayer#0;class#WorldType#0" expanded="false" />
+                <element signature="method#sendMessageToWorld#2;class#WorldType#0" expanded="false" />
+                <element signature="method#sendMessageOutsideWorld#0;class#WorldType#0" expanded="false" />
+                <element signature="method#broadcastMotdMessage#0;class#WorldType#0" expanded="false" />
+                <element signature="e#155059#155068#0" expanded="false" />
+                <element signature="docComment;method#getAvaliableWorlds#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getAvaliableWorlds#0;class#WorldType#0" expanded="false" />
+                <element signature="method#hasSpecialPermissions#0;class#WorldType#0" expanded="false" />
+                <element signature="method#openSmashGui#0;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#openSmashGui#1;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#getDeathMatchPreference#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getDeathMatchPreference#0;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#setDeathMatchPreference#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setDeathMatchPreference#0;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#allowFullflight#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setSpectatorMode#0;class#WorldType#0" expanded="false" />
+                <element signature="e#161666#161700#0" expanded="false" />
+                <element signature="method#getSpectators#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getNonspectators#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getSourceWorlds#0;class#WorldType#0" expanded="false" />
+                <element signature="class#Warp#0;class#WorldType#0" expanded="false" />
+                <element signature="initializer##0;class#Warp#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getWarpFile#0;class#Warp#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getWarps#0;class#Warp#0;class#WorldType#0" expanded="false" />
+                <element signature="method#createWarp#0;class#Warp#0;class#WorldType#0" expanded="false" />
+                <element signature="class#167634:168539" expanded="false" />
+                <element signature="method#performYesAction#0;class#167634:168539" expanded="false" />
+                <element signature="method#removeWarp#0;class#Warp#0;class#WorldType#0" expanded="false" />
+                <element signature="class#169258:169936" expanded="false" />
+                <element signature="method#performYesAction#0;class#169258:169936" expanded="false" />
+                <element signature="method#performNoAction#0;class#169258:169936" expanded="false" />
+                <element signature="method#Warp#0;class#Warp#0;class#WorldType#0" expanded="false" />
+                <element signature="method#Warp#1;class#Warp#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getUnlockedWarpsFile#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setMaxWarps#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getMaxWarps#0;class#WorldType#0" expanded="false" />
+                <element signature="method#syncSpectators#0;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#listWorlds#0;class#WorldType#0" expanded="false" />
+                <element signature="method#listWorlds#0;class#WorldType#0" expanded="false" />
+                <element signature="e#174730#174732#0" expanded="false" />
+                <element signature="docComment;method#hasGuiOpener#0;class#WorldType#0" expanded="false" />
+                <element signature="e#175362#175371#0" expanded="false" />
+                <element signature="docComment;method#giveSmashGuiOpener#0;class#WorldType#0" expanded="false" />
+                <element signature="method#giveSmashGuiOpener#0;class#WorldType#0" expanded="false" />
+                <element signature="e#175760#175836#0" expanded="false" />
+                <element signature="method#setTourneyPreferer#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getAndForgetIfPrefersTourneys#0;class#WorldType#0" expanded="false" />
+                <element signature="class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#AttackCulprit#0;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#AttackCulprit#1;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#AttackCulprit#3;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#AttackCulprit#4;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#AttackCulprit#5;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#AttackSource#1;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#AttackSource#3;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getWeaponName#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getSpecialItem#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getPlayer#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getLivingEntity#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getAttackerColoredName#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getDamage#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performHit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getAttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setAttackSource#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setScoreboardsInvisible#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setWorldScoreboardVisible#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setWorldScoreboardVisible#1;class#WorldType#0" expanded="false" />
+                <element signature="method#setPersonalScoreboardVisible#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setWorldSideScore#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setWorldSideScore#1;class#WorldType#0" expanded="false" />
+                <element signature="method#setPersonalSideScore#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setPersonalSideScore#1;class#WorldType#0" expanded="false" />
+                <element signature="method#setWorldBelowNameScore#0;class#WorldType#0" expanded="false" />
+                <element signature="method#isOnWorldScoreboard#0;class#WorldType#0" expanded="false" />
+                <element signature="method#removeWorldScoreboard#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getWorldScoreboard#0;class#WorldType#0" expanded="false" />
+                <element signature="method#removePersonalScoreboard#0;class#WorldType#0" expanded="false" />
+                <element signature="method#hasPersonalScoreboard#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getPersonalScoreboard#1;class#WorldType#0" expanded="false" />
+                <element signature="method#getNormalLeaveMessage#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getNormalJoinMessage#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getDrainWorldPrefix#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getDisplayName#1;class#WorldType#0" expanded="false" />
+                <element signature="method#getBestWorld#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getWorldRepresenter#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getWorlds#0;class#WorldType#0" expanded="false" />
+                <element signature="method#unloadWorld#0;class#WorldType#0" expanded="false" />
+                <element signature="method#setTaken#0;class#WorldType#0" expanded="false" />
+                <element signature="method#worldNumberIsTaken#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getPreWorldStatus#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getSpecialItemIterator#0;class#WorldType#0" expanded="false" />
+                <element signature="class#199316:199653" expanded="false" />
+                <element signature="method#getSpecialItem#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getHeldSpecialItem#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performResetAction#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performBlockPlace#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performBlockExplode#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performBlockBurn#0;class#WorldType#0" expanded="false" />
+                <element signature="e#204118#204175#0" expanded="false" />
+                <element signature="method#performBlockForm#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performBlockIgnite#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performLiquidPlacement#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performPlayerInteractEntity#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performWeatherChange#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performProjectileLaunch#0;class#WorldType#0" expanded="false" />
+                <element signature="e#207738#207807#0" expanded="false" />
+                <element signature="method#performConsolidate#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performEntityDamageByEntity#0;class#WorldType#0" expanded="false" />
+                <element signature="method#playerCanDamagePlayer#0;class#WorldType#0" expanded="false" />
+                <element signature="method#handlePickupItem#0;class#WorldType#0" expanded="false" />
+                <element signature="method#handleToggleSneak#0;class#WorldType#0" expanded="false" />
+                <element signature="method#handlePlayerItemHeld#0;class#WorldType#0" expanded="false" />
+                <element signature="e#214986#215003#0" expanded="false" />
+                <element signature="class#218580:219245" expanded="false" />
+                <element signature="method#performCommand#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performDropItem#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performCreateWorldCommand#0;class#WorldType#0" expanded="false" />
+                <element signature="class#226853:227707" expanded="false" />
+                <element signature="method#performAction#0;class#226853:227707" expanded="false" />
+                <element signature="method#bindPriceTask#0;class#WorldType#0" expanded="false" />
+                <element signature="class#227900:228445" expanded="false" />
+                <element signature="class#228547:228878" expanded="false" />
+                <element signature="method#performAction#0;class#228547:228878" expanded="false" />
+                <element signature="method#handleCommand#0;class#WorldType#0" expanded="false" />
+                <element signature="class#232108:232717" expanded="false" />
+                <element signature="e#235292#235324#0" expanded="false" />
+                <element signature="docComment;method#createWorld#1;class#WorldType#0" expanded="false" />
+                <element signature="method#createWorld#1;class#WorldType#0" expanded="false" />
+                <element signature="e#245732#245822#0" expanded="false" />
+                <element signature="method#setIsBeingDeleted#0;class#WorldType#0" expanded="false" />
+                <element signature="method#canBeJoined#0;class#WorldType#0" expanded="false" />
+                <element signature="method#worldCanChangeWeather#0;class#WorldType#0" expanded="false" />
+                <element signature="method#allowWeatherChanges#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getLoreForJoinItem#0;class#WorldType#0" expanded="false" />
+                <element signature="docComment;method#deleteWorld#0;class#WorldType#0" expanded="false" />
+                <element signature="method#deleteWorld#0;class#WorldType#0" expanded="false" />
+                <element signature="method#deleteWorldFolder#0;class#WorldType#0" expanded="false" />
+                <element signature="method#clearBukkitYML#0;class#WorldType#0" expanded="false" />
+                <element signature="e#258003#258016#0" expanded="false" />
+                <element signature="method#getDataLinesForBukkitYML#0;class#WorldType#0" expanded="false" />
+                <element signature="class#WorldCreatorItem#0;class#WorldType#0" expanded="false" />
+                <element signature="method#getProperWorldCreationItem#0;class#WorldCreatorItem#0;class#WorldType#0" expanded="false" />
+                <element signature="method#WorldCreatorItem#0;class#WorldCreatorItem#0;class#WorldType#0" expanded="false" />
+                <element signature="class#WorldJoinItem#0;class#WorldType#0" expanded="false" />
+                <element signature="method#WorldJoinItem#0;class#WorldJoinItem#0;class#WorldType#0" expanded="false" />
+                <element signature="method#performAction#0;class#WorldJoinItem#0;class#WorldType#0" expanded="false" />
+                <element signature="class#WorldGui#0;class#WorldType#0" expanded="false" />
+                <element signature="method#WorldGui#0;class#WorldGui#0;class#WorldType#0" expanded="false" />
+                <element signature="method#handleInventoryClose#0;class#WorldGui#0;class#WorldType#0" expanded="false" />
+                <element signature="method#addItem#0;class#WorldGui#0;class#WorldType#0" expanded="false" />
+                <element signature="method#addItem#1;class#WorldGui#0;class#WorldType#0" expanded="false" />
+                <element signature="method#removeItem#0;class#WorldGui#0;class#WorldType#0" expanded="false" />
+                <element signature="method#nonFriendliesAreNearby#1;class#WorldType#0" expanded="false" />
+                <element signature="method#playersAreFriendly#0;class#WorldType#0" expanded="false" />
+                <element signature="method#forceTp#0;class#WorldType#0" expanded="false" />
+                <element signature="method#veryForcefullyTp#0;class#WorldType#0" expanded="false" />
+                <element signature="method#repairItem#0;class#WorldType#0" expanded="false" />
+                <element signature="e#272522#272597#0" expanded="false" />
+                <element signature="e#273421#273437#0" expanded="false" />
+                <element signature="e#274558#274599#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SmashStatTracker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashStatTracker.java">
+      <file leaf-file-name="EconomyItemManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/EconomyItemManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="528" column="29" lean-forward="true" selection-start-line="528" selection-start-column="29" selection-end-line="528" selection-end-column="29" />
+            <state relative-caret-position="16150">
+              <caret line="1026" column="56" lean-forward="false" selection-start-line="1026" selection-start-column="56" selection-end-line="1026" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PortalManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalManager.java">
+      <file leaf-file-name="PlayerStateRecorder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PlayerStateRecorder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5032">
-              <caret line="334" column="92" lean-forward="false" selection-start-line="334" selection-start-column="92" selection-end-line="334" selection-end-column="92" />
-              <folding>
-                <element signature="e#6890#6898#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="748">
+              <caret line="66" column="37" lean-forward="false" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForcefieldManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/commands/ForcefieldManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-              <folding>
-                <element signature="e#1939#1940#0" expanded="true" />
-                <element signature="e#1973#1974#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SmashWorldListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldListener.java">
+      <file leaf-file-name="MetaItems.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/MetaItems.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
+              <caret line="614" column="9" lean-forward="false" selection-start-line="614" selection-start-column="9" selection-end-line="614" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SmashWorldManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34680">
-              <caret line="2121" column="16" lean-forward="false" selection-start-line="2121" selection-start-column="16" selection-end-line="2121" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#12287#12288#0" expanded="false" />
-                <element signature="e#12337#12338#0" expanded="false" />
-                <element signature="e#15006#15007#0" expanded="false" />
-                <element signature="e#15064#15065#0" expanded="false" />
-                <element signature="e#15259#15260#0" expanded="false" />
-                <element signature="e#15296#15297#0" expanded="false" />
-                <element signature="e#16149#16150#0" expanded="false" />
-                <element signature="e#16197#16198#0" expanded="false" />
-                <element signature="e#16609#16610#0" expanded="false" />
-                <element signature="e#16672#16673#0" expanded="false" />
-                <element signature="e#16990#16991#0" expanded="false" />
-                <element signature="e#17040#17041#0" expanded="false" />
-                <element signature="e#19391#19392#0" expanded="false" />
-                <element signature="e#19449#19450#0" expanded="false" />
-                <element signature="e#41424#41425#0" expanded="false" />
-                <element signature="e#41456#41457#0" expanded="false" />
-                <element signature="e#64705#64706#0" expanded="false" />
-                <element signature="e#64766#64767#0" expanded="false" />
-                <element signature="e#65086#65087#0" expanded="false" />
-                <element signature="e#65137#65138#0" expanded="false" />
-                <element signature="e#66128#66129#0" expanded="false" />
-                <element signature="e#66196#66197#0" expanded="false" />
-                <element signature="e#67904#67905#0" expanded="false" />
-                <element signature="e#67997#67998#0" expanded="false" />
-                <element signature="e#69418#69419#0" expanded="false" />
-                <element signature="e#69489#69490#0" expanded="false" />
-                <element signature="e#79562#79563#0" expanded="false" />
-                <element signature="e#79635#79636#0" expanded="false" />
-                <element signature="e#82462#82463#0" expanded="false" />
-                <element signature="e#82542#82543#0" expanded="false" />
-                <element signature="e#84573#84574#0" expanded="false" />
-                <element signature="e#84647#84648#0" expanded="false" />
-                <element signature="e#85455#85456#0" expanded="false" />
-                <element signature="e#85507#85508#0" expanded="false" />
-                <element signature="e#90407#90408#0" expanded="false" />
-                <element signature="e#90489#90490#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FTPAccessor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/FTPAccessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="97" column="12" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
-              <folding>
-                <element signature="e#3099#3304#0" expanded="true" />
-                <element signature="e#3303#3304#0" expanded="true" />
-                <element signature="e#4776#4777#0" expanded="true" />
-                <element signature="e#4816#4817#0" expanded="true" />
+                <element signature="class#1508:3805" expanded="false" />
+                <element signature="method#performHeldLandAction#0;class#1508:3805" expanded="false" />
+                <element signature="method#performRightClickAction#0;class#1508:3805" expanded="false" />
+                <element signature="e#2767#3787#0" expanded="true" />
+                <element signature="e#3786#3787#0" expanded="true" />
+                <element signature="class#3833:11697" expanded="false" />
+                <element signature="class#Backpack#0;class#3833:11697" expanded="false" />
+                <element signature="method#Backpack#0;class#Backpack#0;class#3833:11697" expanded="false" />
+                <element signature="method#handleInventoryClick#0;class#Backpack#0;class#3833:11697" expanded="false" />
+                <element signature="e#7715#7955#0" expanded="true" />
+                <element signature="e#7954#7955#0" expanded="true" />
+                <element signature="method#getItemFile#0;class#Backpack#0;class#3833:11697" expanded="false" />
+                <element signature="method#handleInventoryClose#0;class#Backpack#0;class#3833:11697" expanded="false" />
+                <element signature="e#8684#8754#0" expanded="false" />
+                <element signature="method#performRightClickAction#0;class#3833:11697" expanded="false" />
+                <element signature="class#11725:14258" expanded="false" />
+                <element signature="class#KeyEntryInv#0;class#11725:14258" expanded="false" />
+                <element signature="method#KeyEntryInv#0;class#KeyEntryInv#0;class#11725:14258" expanded="false" />
+                <element signature="method#handleInventoryClick#0;class#KeyEntryInv#0;class#11725:14258" expanded="false" />
+                <element signature="e#12721#13597#0" expanded="true" />
+                <element signature="e#13596#13597#0" expanded="true" />
+                <element signature="method#handleInventoryClose#0;class#KeyEntryInv#0;class#11725:14258" expanded="false" />
+                <element signature="method#performRightClickAction#0;class#11725:14258" expanded="false" />
+                <element signature="class#14437:15791" expanded="false" />
+                <element signature="method#performRightClickAction#0;class#14437:15791" expanded="false" />
+                <element signature="class#14808:15774" expanded="false" />
+                <element signature="method#performYesAction#0;class#14808:15774" expanded="false" />
+                <element signature="e#15944#16890#0" expanded="true" />
+                <element signature="e#16889#16890#0" expanded="true" />
+                <element signature="e#16900#17152#0" expanded="true" />
+                <element signature="e#17151#17152#0" expanded="true" />
+                <element signature="method#showFinalPossibilities#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+                <element signature="method#handleInventoryClose#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+                <element signature="method#MusicMaker#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+                <element signature="method#gotoNoteAdderPage#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+                <element signature="class#22716:23248" expanded="false" />
+                <element signature="method#performAction#0;class#22716:23248" expanded="false" />
+                <element signature="class#24159:24391" expanded="false" />
+                <element signature="class#24421:24926" expanded="false" />
+                <element signature="method#performAction#0;class#24421:24926" expanded="false" />
+                <element signature="class#25037:25557" expanded="false" />
+                <element signature="method#performAction#0;class#25037:25557" expanded="false" />
+                <element signature="class#25610:26042" expanded="false" />
+                <element signature="method#performAction#0;class#25610:26042" expanded="false" />
+                <element signature="class#26095:26422" expanded="false" />
+                <element signature="method#gotoInstrumentSelectorPage#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+                <element signature="class#26815:27164" expanded="false" />
+                <element signature="method#performRightClickAction#0;class#17255:27459" expanded="false" />
+                <element signature="initializer##0;class#MetaItems#0" expanded="false" />
+                <element signature="e#28261#31246#0" expanded="true" />
+                <element signature="e#31245#31246#0" expanded="true" />
+                <element signature="e#31264#33697#0" expanded="true" />
+                <element signature="e#31542#31550#0" expanded="true" />
+                <element signature="e#33696#33697#0" expanded="true" />
+                <element signature="class#MyStaticData#0;class#MetaItems#0" expanded="false" />
+                <element signature="method#MetaItems#0;class#MetaItems#0" expanded="false" />
+                <element signature="method#getSpecialItem#1;class#MetaItems#0" expanded="false" />
+                <element signature="method#getRandomSpecialItem#0;class#MetaItems#0" expanded="false" />
+                <marker date="1504559842156" expanded="false" signature="15935:17157" ph="..." />
               </folding>
             </state>
           </provider>
@@ -180,59 +441,73 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>abstra</find>
-      <find>getall</find>
-      <find>half</find>
-      <find>delay</find>
-      <find>contains</find>
-      <find>.split</find>
-      <find>isinpo</find>
-      <find>containsplayer</find>
-      <find>addor</find>
-      <find>tptick</find>
-      <find>computev</find>
-      <find>cancel</find>
-      <find>getworldrepresenters</find>
-      <find>get</find>
-      <find>&quot;al</find>
-      <find>al</find>
-      <find>isworld</find>
-      <find>portal</find>
-      <find>connection is no</find>
-      <find>putplugindatum</find>
-      <find>&quot;txt&quot;</find>
-      <find>&quot;</find>
-      <find>putdatum</find>
-      <find>scanner</find>
-      <find>getdatum</find>
-      <find>FileReader</find>
-      <find>hasfile</find>
-      <find>crede</find>
-      <find>getjson</find>
-      <find>send to the</find>
+      <find>sendchunp</find>
+      <find>load</find>
+      <find>forcreation</find>
+      <find>handleworld</find>
+      <find>teleport</find>
+      <find>tp</find>
+      <find>playerstate</find>
+      <find>handleworldtra</find>
+      <find>new exc</find>
+      <find>getfallb</find>
+      <find>loadworldac</find>
+      <find>handlejoin</find>
+      <find>getlastworld(player)</find>
+      <find>remember</find>
+      <find>new ex</find>
+      <find>teleportevent</find>
+      <find>loadworld</find>
+      <find>canbeuse</find>
+      <find>givestart</find>
+      <find>datum</find>
+      <find>canbesol</find>
+      <find>the air</find>
+      <find>canBeSold</find>
+      <find>deathevent</find>
+      <find>PlayerDeathEvent</find>
+      <find>getdeath</find>
+      <find>getdeathmessage</find>
+      <find>getDeathMessage</find>
+      <find>canbe</find>
+      <find>hex</find>
     </findStrings>
     <replaceStrings>
-      <replace>Verifier</replace>
-      <replace>Bukkit.getServer().getWorld(</replace>
-      <replace>Bukkit.getWorld</replace>
-      <replace>SmashItemManager.getPlugin()</replace>
-      <replace>Chicken</replace>
-      <replace>Item</replace>
-      <replace>Bukkit.broadcastMessage</replace>
-      <replace>getDatum</replace>
-      <replace>incrementStatistic</replace>
-      <replace>getStatistic</replace>
-      <replace>SmashFile(</replace>
-      <replace>File</replace>
-      <replace>depth</replace>
-      <replace>int</replace>
-      <replace>'t</replace>
-      <replace>plugin</replace>
-      <replace>int baseY</replace>
-      <replace>protected</replace>
-      <replace>public boolean accept</replace>
-      <replace>SmashManager.getPlugin()</replace>
+      <replace>SmashSwordItem</replace>
+      <replace>String uniqueName</replace>
+      <replace>gameHasStarted</replace>
+      <replace>allowFullflight</replace>
+      <replace>participants</replace>
+      <replace>isDeathMatchWorld</replace>
+      <replace>String uniqueName,</replace>
+      <replace>SmashKitManager</replace>
+      <replace>EMERALD_MATERIAL</replace>
+      <replace>setExecutor</replace>
+      <replace>sendErrorMessage</replace>
+      <replace>{}</replace>
+      <replace>Plugin</replace>
+      <replace>Plugin.</replace>
+      <replace />
+      <replace>getPlugin().getCommand</replace>
+      <replace>getPlugin(),</replace>
+      <replace>getPlugin().</replace>
+      <replace>getPlugin())</replace>
+      <replace>getPlugin</replace>
+      <replace>v1_12_R1</replace>
+      <replace>ENTITY_ZOMBIE</replace>
+      <replace>TEAM(Material.WOOL,</replace>
+      <replace>),</replace>
+      <replace>this.uniqueName = uniqueName</replace>
+      <replace>player</replace>
+      <replace>getMapName</replace>
+      <replace>Generator</replace>
+      <replace>MetaWorldGenerator</replace>
+      <replace>&lt;T&gt;</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\Timothy\IdeaProjects\Smash\src\main\java\me\happyman</dir>
+      <dir>C:\Users\Timothy\Desktop\Current Server\spigot-1.12.1.jar!\net\minecraft\server\v1_12_R1</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -242,71 +517,60 @@
       <projects_view />
     </option>
   </component>
-  <component name="GroovyConsoleState">
-    <option name="list">
-      <list>
-        <Entry>
-          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
-          <option name="moduleName" value="Smash" />
-          <option name="title" value="Smash (Bundled Groovy 2.4.6)" />
-        </Entry>
-      </list>
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/CommandVerifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Verifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PlayerFile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashFile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashWorldListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/SpecialItemWithTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/SpecialItemWithUsages.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/SpecialSword.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/SpeedChanger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Pitch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Instrument.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Music/Pitch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Music/Instrument.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/DirectoryType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/RocketItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashPortal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PortalDirection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PortalData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SeanMurray.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/EventPortal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/EventPortalCommandReceiver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/GanondorfEgg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithUsages.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/ItemDropManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrb.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrbTracker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKitMgt/SmashKitManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/KirbyInhaler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/DisableWeather.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/ParticleEffect.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PlayerList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/ReflectionUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashEntityTracker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashScoreboardManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/WorldTraveller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/EventPortal.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/PortalManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashWorldInteractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashWorldManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashScoreboardManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashStatTracker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Wario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/SmashManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Listeners/TabCompletion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashMishapPreventor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/PortalManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalDirection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SpongeLauncher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/VelocityModifier.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashAttackListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldInteractor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/commands/ForcefieldManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/happyman/source.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Music/Note.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Other/ForcefieldManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Other/SoupManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashStatTracker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/StatCommandExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/MainListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldInteractor.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/FTPAccessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Music/UsefulInstrument.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Music/MusicElement.java" />
+        <option value="$USER_HOME$/Desktop/Stuff/Backups/Plugin Backups/Smash 2017-7-16/src/main/java/me/happyman/Plugin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/EconomyCurrencyManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/UUIDFetcher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/GuiManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashAttackManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashKitMgt/SmashKitManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashItemDrops/MonsterEgg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashItemDrops/SmashOrbTracker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashItemDrops/ItemDropManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashEntityTracker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Music/Song.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/CompanyItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/FireballLauncher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/Sorter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/InventoryManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/Plugin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/UsefulItemStack.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/MinePlacer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/MonsterSpawner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/PlaceableItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/PlayerStateRecorder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/FileManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/EconomyItemManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/utils/InteractiveChat.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/MetaItems.java" />
       </list>
     </option>
   </component>
@@ -329,12 +593,6 @@
         <expanded-state>
           <State>
             <id />
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Correctness</id>
-          </State>
-          <State>
-            <id>Android &gt; Lint &gt; Security</id>
           </State>
           <State>
             <id>Code style issuesJava</id>
@@ -384,7 +642,7 @@
         </expanded-state>
         <selected-state>
           <State>
-            <id>Android</id>
+            <id>Since15</id>
           </State>
         </selected-state>
       </profile-state>
@@ -406,6 +664,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -578,7 +839,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SmashKits" />
+              <option name="myItemId" value="SpecialItems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -612,201 +873,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SmashKitMgt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
+              <option name="myItemId" value="SpecialItems" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="me" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="happyman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SmashItems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="me" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="happyman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SmashItemDrops" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="me" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="happyman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Listeners" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="me" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="happyman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="META-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Smash" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="SpecialItemTypes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -819,30 +895,46 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/me/happyman/utils" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Timothy/IdeaProjects/Smash/src/main/java/me/happyman/utils/Portal/EventPortal.java" />
+    <property name="SearchEverywhereHistoryKey" value=")&#9;null&#9;null" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
-      <recent name="me.happyman.utils.VelocityModifier" />
-      <recent name="me.happyman.utils.SpongeLauncher" />
-      <recent name="me.happyman.utils.SmashWorldInteractor" />
-      <recent name="me.happyman.utils.SmashWorldManager" />
-      <recent name="smashworld" />
+      <recent name="me.happyman.SpecialItems.SpecialItemTypes.PlaceableItem.PlacedBlock" />
+      <recent name="me.happyman.worlds.WorldManager" />
+      <recent name="me.happyman.Plugin" />
+      <recent name="me.happyman.worlds.WorldType" />
+      <recent name="me.happyman.worlds.WorldGenerationUtils.MetaWorldGenerator" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="me.happyman.utils" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Timothy\IdeaProjects\Smash\src\main\java\me\happyman\SmashItems\SmashKitMgt" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="me.happyman.worlds" />
       <recent name="me.happyman.utils" />
       <recent name="]" />
       <recent name="me.happyman.SpecialKitItems" />
       <recent name="me.happyman.SmashKits" />
-      <recent name="me.happyman.SmashItemDrops" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Timothy\IdeaProjects\Smash\lib" />
       <recent name="C:\Users\Timothy\IdeaProjects\Smash\src\main\resources" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1025,32 +1117,32 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14164905" sideWeight="0.1984375" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14164905" sideWeight="0.8015625" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26321355" sideWeight="0.6359375" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33509514" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26215646" sideWeight="0.315625" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20572917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26215646" sideWeight="0.3640625" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1987315" sideWeight="0.19427083" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1071,7 +1163,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="302" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashMishapPreventor.java</url>
+          <line>61</line>
+          <properties />
+          <option name="timeStamp" value="495" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="519" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1080,519 +1180,708 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/DirectoryType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldGenerationUtils/MetaWorldGenerator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldGenerationUtils/WorldGenerationTools.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldGenerationUtils/BinaryCubeInterpolator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/HexConverter.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="9775">
+          <caret line="625" column="22" lean-forward="false" selection-start-line="625" selection-start-column="22" selection-end-line="625" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/RocketItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/Server.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="101" column="14" lean-forward="false" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/craftbukkit/v1_8_R3/CraftServer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5644">
-          <caret line="520" column="50" lean-forward="false" selection-start-line="520" selection-start-column="50" selection-end-line="520" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/net/minecraft/server/v1_8_R3/PlayerList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3740">
-          <caret line="327" column="39" lean-forward="false" selection-start-line="327" selection-start-column="39" selection-end-line="327" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/Bukkit.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="165" column="25" lean-forward="true" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/entity/Entity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/entity/Vehicle.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Current Server/spigot-1.8.8.jar!/org/bukkit/craftbukkit/v1_8_R3/entity/CraftEntity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="575" column="131" lean-forward="true" selection-start-line="575" selection-start-column="131" selection-end-line="575" selection-end-column="131" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashPortal.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/PortalData.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SeanMurray.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/util/HashMap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="193" column="23" lean-forward="false" selection-start-line="193" selection-start-column="23" selection-end-line="193" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/EventPortalCommandReceiver.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/GanondorfEgg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="91" lean-forward="false" selection-start-line="19" selection-start-column="91" selection-end-line="19" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/ItemTypes/SmashItemWithUsages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="57" column="113" lean-forward="false" selection-start-line="57" selection-start-column="113" selection-end-line="57" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/ItemDropManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="77" lean-forward="false" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialKitItems/KirbyInhaler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="145" column="106" lean-forward="false" selection-start-line="145" selection-start-column="106" selection-end-line="145" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/ReflectionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/PlayerList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="678" column="30" lean-forward="false" selection-start-line="678" selection-start-column="30" selection-end-line="678" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/ParticleEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/commands/DisableWeather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/WorldTraveller.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Portal/EventPortal.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="202" column="39" lean-forward="false" selection-start-line="202" selection-start-column="26" selection-end-line="202" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashEntityTracker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="143" column="63" lean-forward="false" selection-start-line="143" selection-start-column="63" selection-end-line="143" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKitMgt/SmashKitManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="522" column="34" lean-forward="true" selection-start-line="522" selection-start-column="34" selection-end-line="522" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Sonic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Wario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="118" column="24" lean-forward="false" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrbTracker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="186" column="53" lean-forward="false" selection-start-line="186" selection-start-column="53" selection-end-line="186" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Verifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/Listeners/TabCompletion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashItemDrops/SmashOrb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="43" column="45" lean-forward="true" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/commands/SmashManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashKits/Pit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="59" column="106" lean-forward="false" selection-start-line="59" selection-start-column="106" selection-end-line="59" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashMishapPreventor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="292" column="95" lean-forward="false" selection-start-line="292" selection-start-column="95" selection-end-line="292" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashScoreboardManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="228" column="5" lean-forward="true" selection-start-line="228" selection-start-column="5" selection-end-line="228" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalDirection.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="84" lean-forward="false" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/Listeners/SmashAttackListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12410">
-          <caret line="780" column="76" lean-forward="false" selection-start-line="780" selection-start-column="76" selection-end-line="780" selection-end-column="76" />
-          <folding>
-            <marker date="1498598213151" expanded="false" signature="35864:35935" ph="() → {" />
-            <marker date="1498598213151" expanded="false" signature="36267:36302" ph="}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/VelocityModifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="74" column="70" lean-forward="false" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldInteractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5729">
-          <caret line="1098" column="30" lean-forward="false" selection-start-line="1098" selection-start-column="30" selection-end-line="1098" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addTabEntry#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getTabList#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#removeTabEntry#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#addAllTabEntries#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#removeAllTabEntries#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#forgetOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#forgetOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#rememberOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#rememberOriginalPlayerCount#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#isDead#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#setIsDead#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#setDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#setDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#determineDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#determineDeathMatchPreference#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#isDeathMatchWorld#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#isDeathMatchWorld#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getDeathMatchLives#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getDeathMatchLives#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#playSoundToPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#playSoundToPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#playSoundToPlayers#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#playSoundToPlayers#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#playSoundToPlayers#2;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#performDeathMatchDeath#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#recordKOStatistics#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#recordKOStatistics#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getRespawnRunnable#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getRespawnRunnable#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#respawnTeleport#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#allowFullflight#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#allowFullflight#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#sendMessageWithDelay#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#sendMessageWithDelay#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#sendMessageToWorld#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#sendMessageToWorld#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#sendMessageOutsideWorld#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#refreshWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#refreshWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#refreshWorldGui#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#refreshWorldGui#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldGuiLabel#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getAvaliableWorlds#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#hasSpecialPermissions#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#hasWorldGuiOpen#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#openWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#openWorldGui#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getTourneyWorldCreationItem#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getTourneyWorldCreationItem#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getFreeplayWorldCreationItem#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getFreeplayWorldCreationItem#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#updateHitCooldown#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#updateHitCooldown#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#updateHitCooldown#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#updateHitCooldown#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#handleJoin#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#handleJoin#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="e#35906#36040#0" expanded="false" />
-            <element signature="docComment;method#initializeSmashPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#initializeSmashPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#resetPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#resetPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#handleLeave#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#setSpectatorMode#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="e#43035#43069#0" expanded="false" />
-            <element signature="method#hideSpectatorsFromPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#hideSpectatorsFromPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#unhidePlayersFromPlayer#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#hideSpectatorFromPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getLivingPlayers#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#isHated#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#canBeJoinedRightNow#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldNumber#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getWorldNumber#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldNumber#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldDescription#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getWorldDescription#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWelcomeMessage#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getWelcomeMessage#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getSimpleWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getSimpleWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldListName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getWorldListName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldStatus#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getWorldStatus#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getShortWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getShortWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldRepresenter#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getWorldRepresented#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getWorldRepresented#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getMapName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getMapName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getMapName#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getMapName#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#removeSmashGuiOpener#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#removeSmashGuiOpener#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#giveSmashGuiOpener#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#giveSmashGuiOpener#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#giveSmashGuiOpener#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#giveSmashGuiOpener#1;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getTourneyWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getTourneyWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="docComment;method#getFreeplayWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
-            <element signature="method#getFreeplayWorldName#0;class#SmashWorldInteractor#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34680">
-          <caret line="2121" column="16" lean-forward="false" selection-start-line="2121" selection-start-column="16" selection-end-line="2121" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#12287#12288#0" expanded="false" />
-            <element signature="e#12337#12338#0" expanded="false" />
-            <element signature="e#15006#15007#0" expanded="false" />
-            <element signature="e#15064#15065#0" expanded="false" />
-            <element signature="e#15259#15260#0" expanded="false" />
-            <element signature="e#15296#15297#0" expanded="false" />
-            <element signature="e#16149#16150#0" expanded="false" />
-            <element signature="e#16197#16198#0" expanded="false" />
-            <element signature="e#16609#16610#0" expanded="false" />
-            <element signature="e#16672#16673#0" expanded="false" />
-            <element signature="e#16990#16991#0" expanded="false" />
-            <element signature="e#17040#17041#0" expanded="false" />
-            <element signature="e#19391#19392#0" expanded="false" />
-            <element signature="e#19449#19450#0" expanded="false" />
-            <element signature="e#41424#41425#0" expanded="false" />
-            <element signature="e#41456#41457#0" expanded="false" />
-            <element signature="e#64705#64706#0" expanded="false" />
-            <element signature="e#64766#64767#0" expanded="false" />
-            <element signature="e#65086#65087#0" expanded="false" />
-            <element signature="e#65137#65138#0" expanded="false" />
-            <element signature="e#66128#66129#0" expanded="false" />
-            <element signature="e#66196#66197#0" expanded="false" />
-            <element signature="e#67904#67905#0" expanded="false" />
-            <element signature="e#67997#67998#0" expanded="false" />
-            <element signature="e#69418#69419#0" expanded="false" />
-            <element signature="e#69489#69490#0" expanded="false" />
-            <element signature="e#79562#79563#0" expanded="false" />
-            <element signature="e#79635#79636#0" expanded="false" />
-            <element signature="e#82462#82463#0" expanded="false" />
-            <element signature="e#82542#82543#0" expanded="false" />
-            <element signature="e#84573#84574#0" expanded="false" />
-            <element signature="e#84647#84648#0" expanded="false" />
-            <element signature="e#85455#85456#0" expanded="false" />
-            <element signature="e#85507#85508#0" expanded="false" />
-            <element signature="e#90407#90408#0" expanded="false" />
-            <element signature="e#90489#90490#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="505" column="15" lean-forward="false" selection-start-line="505" selection-start-column="15" selection-end-line="505" selection-end-column="15" />
-          <folding>
-            <element signature="e#15236#15237#0" expanded="true" />
-            <element signature="e#15280#15281#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Forcefield.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/SmashWorldListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashStatTracker.java">
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/spigot-1.12.1.jar!/org/bukkit/plugin/java/JavaPlugin.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
-          <caret line="528" column="29" lean-forward="true" selection-start-line="528" selection-start-column="29" selection-end-line="528" selection-end-column="29" />
-          <folding />
+          <caret line="65" column="22" lean-forward="false" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/commands/ForcefieldManager.java">
+    <entry file="file://$USER_HOME$/Desktop/Stuff/Backups/Plugin Backups/Smash 2017-7-16/src/main/java/me/happyman/Plugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
-          <folding>
-            <element signature="e#1939#1940#0" expanded="true" />
-            <element signature="e#1973#1974#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="9639">
+          <caret line="647" column="153" lean-forward="false" selection-start-line="647" selection-start-column="19" selection-end-line="647" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/StatCommandExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="59" column="34" lean-forward="false" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/io/File.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="325" column="0" lean-forward="true" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/UUIDFetcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2584">
+          <caret line="179" column="15" lean-forward="false" selection-start-line="179" selection-start-column="15" selection-end-line="179" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="119" column="17" lean-forward="true" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PortalManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5032">
-          <caret line="334" column="92" lean-forward="false" selection-start-line="334" selection-start-column="92" selection-end-line="334" selection-end-column="92" />
-          <folding>
-            <element signature="e#6890#6898#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="858">
+          <caret line="274" column="24" lean-forward="false" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/source.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/GuiManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="511" column="15" lean-forward="true" selection-start-line="511" selection-start-column="15" selection-end-line="511" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1717#2601#0" expanded="true" />
-            <element signature="e#2600#2601#0" expanded="true" />
-            <element signature="e#5787#5975#0" expanded="true" />
-            <element signature="e#5974#5975#0" expanded="true" />
-            <element signature="e#6037#6051#0" expanded="true" />
-            <element signature="e#6818#7006#0" expanded="true" />
-            <element signature="e#7005#7006#0" expanded="true" />
-            <element signature="e#18350#18351#0" expanded="true" />
-            <element signature="e#18438#18439#0" expanded="true" />
-            <element signature="e#23688#23704#0" expanded="true" />
-            <element signature="e#26909#26945#0" expanded="false" />
-            <element signature="e#35175#35176#0" expanded="true" />
-            <element signature="e#35229#35230#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="527">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/FTPAccessor.java">
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/spigot-1.12.1.jar!/org/bukkit/craftbukkit/v1_12_R1/entity/CraftEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="902" column="35" lean-forward="false" selection-start-line="902" selection-start-column="35" selection-end-line="902" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/spigot-1.12.1.jar!/net/minecraft/server/v1_12_R1/Entity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="2022" column="20" lean-forward="false" selection-start-line="2022" selection-start-column="20" selection-end-line="2022" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashAttackManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="439" column="13" lean-forward="true" selection-start-line="439" selection-start-column="13" selection-end-line="439" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashKitMgt/SmashKitManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="2219" column="135" lean-forward="false" selection-start-line="2219" selection-start-column="135" selection-end-line="2219" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashItemDrops/SmashOrbTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashItemDrops/MonsterEgg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/SmashEntityTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="445" column="5" lean-forward="false" selection-start-line="445" selection-start-column="5" selection-end-line="445" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Music/Song.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashItemDrops/ItemDropManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/FireballLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="52" column="14" lean-forward="false" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/spigot-1.12.1.jar!/org/bukkit/entity/TNTPrimed.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/util/List.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="46" column="41" lean-forward="true" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/lang/Object.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/lang/Integer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="20" />
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="20" />
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/CompanyItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="275" column="67" lean-forward="false" selection-start-line="275" selection-start-column="67" selection-end-line="275" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/Plugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14161">
+          <caret line="842" column="106" lean-forward="false" selection-start-line="842" selection-start-column="106" selection-end-line="842" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashKitMgt/FinalSmash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="185" column="13" lean-forward="true" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/spigot-1.12.1.jar!/net/minecraft/server/v1_12_R1/SpawnerCreature.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/spigot-1.12.1.jar!/net/minecraft/server/v1_12_R1/BlockTileEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/spigot-1.12.1.jar!/net/minecraft/server/v1_12_R1/BlockMobSpawner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/UsefulItemStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/InventoryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="337" column="0" lean-forward="false" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/spigot-1.12.1.jar!/org/bukkit/event/entity/EntitySpawnEvent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="97" column="12" lean-forward="true" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/MinePlacer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="948">
+          <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/Sorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/PlaceableItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="141" column="29" lean-forward="false" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/EconomyCurrencyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/java/lang/Throwable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="116" column="22" lean-forward="false" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/MainListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5355">
+          <caret line="382" column="36" lean-forward="false" selection-start-line="382" selection-start-column="36" selection-end-line="382" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItemTypes/MonsterSpawner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="208" column="20" lean-forward="false" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="1100" column="29" lean-forward="false" selection-start-line="1100" selection-start-column="29" selection-end-line="1100" selection-end-column="29" />
           <folding>
-            <element signature="e#3099#3304#0" expanded="true" />
-            <element signature="e#3303#3304#0" expanded="true" />
-            <element signature="e#4776#4777#0" expanded="true" />
-            <element signature="e#4816#4817#0" expanded="true" />
+            <element signature="e#24042#24103#0" expanded="false" />
+            <element signature="method#getDataList#0;class#FileManager#0" expanded="false" />
+            <element signature="method#putDataList#0;class#FileManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="299" column="68" lean-forward="false" selection-start-line="299" selection-start-column="68" selection-end-line="299" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/utils/InteractiveChat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/EconomyItemManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16150">
+          <caret line="1026" column="56" lean-forward="false" selection-start-line="1026" selection-start-column="56" selection-end-line="1026" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18343">
+          <caret line="2895" column="9" lean-forward="false" selection-start-line="2895" selection-start-column="9" selection-end-line="2895" selection-end-column="9" />
+          <folding>
+            <element signature="method#isNearSpawn#0;class#2188:8902" expanded="false" />
+            <element signature="method#blockIsProtected#0;class#2188:8902" expanded="false" />
+            <element signature="method#isAllowedToTeleport#0;class#2188:8902" expanded="false" />
+            <element signature="method#generateWorldCreatorItems#0;class#2188:8902" expanded="false" />
+            <element signature="method#performEntityDamageByEntity#0;class#2188:8902" expanded="false" />
+            <element signature="method#handleLeave#0;class#2188:8902" expanded="false" />
+            <element signature="method#handleCommand#0;class#2188:8902" expanded="false" />
+            <element signature="method#deleteTourneyLevelFile#0;class#9007:117311" expanded="false" />
+            <element signature="method#getTourneyLevelFile#0;class#9007:117311" expanded="false" />
+            <element signature="method#setTourneyLevel#0;class#9007:117311" expanded="false" />
+            <element signature="method#getTourneyLevelFromFile#0;class#9007:117311" expanded="false" />
+            <element signature="method#getTourneyLevel#1;class#9007:117311" expanded="false" />
+            <element signature="method#performDropItem#0;class#9007:117311" expanded="false" />
+            <element signature="method#generateWorldCreatorItems#0;class#9007:117311" expanded="false" />
+            <element signature="class#16631:16910" expanded="false" />
+            <element signature="method#getOriginalPlayerCount#0;class#9007:117311" expanded="false" />
+            <element signature="method#setTimeRemaining#0;class#9007:117311" expanded="false" />
+            <element signature="e#19043#19131#0" expanded="false" />
+            <element signature="method#getTimeRemaining#0;class#9007:117311" expanded="false" />
+            <element signature="method#getTimeRemaining#1;class#9007:117311" expanded="false" />
+            <element signature="method#getTimeTilStart#0;class#9007:117311" expanded="false" />
+            <element signature="method#startCountDown#0;class#9007:117311" expanded="false" />
+            <element signature="method#cancelCountdown#0;class#9007:117311" expanded="false" />
+            <element signature="method#setStartTime#0;class#9007:117311" expanded="false" />
+            <element signature="method#playCountdownSound#0;class#9007:117311" expanded="false" />
+            <element signature="method#subtractStartTime#0;class#9007:117311" expanded="false" />
+            <element signature="method#resetStartTime#0;class#9007:117311" expanded="false" />
+            <element signature="e#25657#25710#0" expanded="false" />
+            <element signature="method#setPlayerScoreValue#1;class#9007:117311" expanded="false" />
+            <element signature="method#startGame#0;class#9007:117311" expanded="false" />
+            <element signature="method#respawnTeleport#0;class#9007:117311" expanded="false" />
+            <element signature="method#willStartSoon#0;class#9007:117311" expanded="false" />
+            <element signature="method#getStartRequirement#0;class#9007:117311" expanded="false" />
+            <element signature="method#removeStartOverride#0;class#9007:117311" expanded="false" />
+            <element signature="method#getItemSpawnRunnable#0;class#9007:117311" expanded="false" />
+            <element signature="method#spawnItemDropOrFinalSmash#0;class#9007:117311" expanded="false" />
+            <element signature="method#getRandomBoolean#0;class#9007:117311" expanded="false" />
+            <element signature="method#getTimeRemainingRunnable#0;class#9007:117311" expanded="false" />
+            <element signature="method#getKillerRunnable#0;class#9007:117311" expanded="false" />
+            <element signature="method#restartSmashWorld#0;class#9007:117311" expanded="false" />
+            <element signature="method#incrementFreeGamesPlayed#0;class#9007:117311" expanded="false" />
+            <element signature="method#incrementPointBasedGamesPlayed#0;class#9007:117311" expanded="false" />
+            <element signature="method#incrementFreeGamesPlayed#1;class#9007:117311" expanded="false" />
+            <element signature="method#incrementTourneyRoundsPlayed#0;class#9007:117311" expanded="false" />
+            <element signature="method#incrementTourneyRoundsPlayed#1;class#9007:117311" expanded="false" />
+            <element signature="method#addScoreToTotalPoints#0;class#9007:117311" expanded="false" />
+            <element signature="method#addScoreToTotalPoints#1;class#9007:117311" expanded="false" />
+            <element signature="method#removeGame#0;class#9007:117311" expanded="false" />
+            <element signature="method#cancelTime#0;class#9007:117311" expanded="false" />
+            <element signature="method#cancelConstantTasks#0;class#9007:117311" expanded="false" />
+            <element signature="method#getDisplayPrefix#1;class#9007:117311" expanded="false" />
+            <element signature="method#getJoinTheWorldMaterial#0;class#9007:117311" expanded="false" />
+            <element signature="e#66307#66396#0" expanded="false" />
+            <element signature="method#getItemSpawnLocationFile#0;class#9007:117311" expanded="false" />
+            <element signature="method#getPlayerSpawnLocationFile#0;class#9007:117311" expanded="false" />
+            <element signature="method#loadSpawns#0;class#9007:117311" expanded="false" />
+            <element signature="e#70606#70672#0" expanded="false" />
+            <element signature="method#performDamage#0;class#9007:117311" expanded="false" />
+            <element signature="method#isShielded#0;class#9007:117311" expanded="false" />
+            <element signature="method#getRemainingShield#0;class#9007:117311" expanded="false" />
+            <element signature="method#performEntityDamageByEntity#0;class#9007:117311" expanded="false" />
+            <element signature="method#playerCanDamagePlayer#0;class#9007:117311" expanded="false" />
+            <element signature="method#handlePlayerItemDamageEvent#0;class#9007:117311" expanded="false" />
+            <element signature="method#getSpecialItemIterator#0;class#9007:117311" expanded="false" />
+            <element signature="e#79015#79034#0" expanded="false" />
+            <element signature="method#performPlayerInteract#0;class#9007:117311" expanded="false" />
+            <element signature="method#performPlayerDropItem#0;class#9007:117311" expanded="false" />
+            <element signature="method#canBeJoined#0;class#9007:117311" expanded="false" />
+            <element signature="method#canBeJoinedInRightNow#0;class#9007:117311" expanded="false" />
+            <element signature="method#handleJoin#0;class#9007:117311" expanded="false" />
+            <element signature="method#initializeSmashPlayer#0;class#9007:117311" expanded="false" />
+            <element signature="method#startSmashWorld#0;class#9007:117311" expanded="false" />
+            <element signature="method#getSpectatorJoinMessage#0;class#9007:117311" expanded="false" />
+            <element signature="method#canPlayJoinLeaveMessages#0;class#9007:117311" expanded="false" />
+            <element signature="method#handleLeave#0;class#9007:117311" expanded="false" />
+            <element signature="method#getTypeSpecificLoreForJoinItem#0;class#9007:117311" expanded="false" />
+            <element signature="method#getWorldStatus#0;class#9007:117311" expanded="false" />
+            <element signature="method#isDeathMatchWorld#0;class#9007:117311" expanded="false" />
+            <element signature="method#getDeathMatchLives#0;class#9007:117311" expanded="false" />
+            <element signature="method#recordKOStatistics#0;class#9007:117311" expanded="false" />
+            <element signature="method#getMapName#0;class#9007:117311" expanded="false" />
+            <element signature="method#getMapName#1;class#9007:117311" expanded="false" />
+            <element signature="method#performCreateWorldCommand#0;class#9007:117311" expanded="false" />
+            <element signature="method#handleCommand#0;class#9007:117311" expanded="false" />
+            <element signature="class#109815:111199" expanded="false" />
+            <element signature="method#performYesAction#0;class#109815:111199" expanded="false" />
+            <element signature="method#performNoAction#0;class#109815:111199" expanded="false" />
+            <element signature="method#getBestWorld#0;class#9007:117311" expanded="false" />
+            <element signature="method#getWorldStatus#0;class#117438:139980" expanded="false" />
+            <element signature="method#getSpecialItemIterator#0;class#117438:139980" expanded="false" />
+            <element signature="class#119750:120407" expanded="false" />
+            <element signature="method#generateWorldCreatorItems#0;class#117438:139980" expanded="false" />
+            <element signature="class#121207:121612" expanded="false" />
+            <element signature="method#getWarningMessage#0;class#121207:121612" expanded="false" />
+            <element signature="e#122002#122092#0" expanded="false" />
+            <element signature="class#122280:123239" expanded="false" />
+            <element signature="method#run#0;class#122280:123239" expanded="false" />
+            <element signature="class#123330:124677" expanded="false" />
+            <element signature="method#run#0;class#123330:124677" expanded="false" />
+            <element signature="method#performPlayerInteract#0;class#117438:139980" expanded="false" />
+            <element signature="method#isWeekend#0;class#117438:139980" expanded="false" />
+            <element signature="method#getSuperBoost#0;class#117438:139980" expanded="false" />
+            <element signature="method#subtractSuperBoost#0;class#117438:139980" expanded="false" />
+            <element signature="method#addSuperBoost#0;class#117438:139980" expanded="false" />
+            <element signature="method#handleLeave#0;class#117438:139980" expanded="false" />
+            <element signature="method#performPlayerMove#0;class#117438:139980" expanded="false" />
+            <element signature="method#performPlayerInteractEntity#0;class#117438:139980" expanded="false" />
+            <element signature="method#sendMessageFromKitVendor#0;class#117438:139980" expanded="false" />
+            <element signature="method#openKitPurchaseGui#0;class#117438:139980" expanded="false" />
+            <element signature="class#135250:136013" expanded="false" />
+            <element signature="method#getFailureMessage#0;class#135250:136013" expanded="false" />
+            <element signature="class#136250:138755" expanded="false" />
+            <element signature="method#performAction#0;class#136250:138755" expanded="false" />
+            <element signature="class#137336:138319" expanded="false" />
+            <element signature="method#performYesAction#0;class#137336:138319" expanded="false" />
+            <element signature="method#performNoAction#0;class#137336:138319" expanded="false" />
+            <element signature="method#handleCommand#0;class#117438:139980" expanded="false" />
+            <element signature="method#handleJoin#0;class#117438:139980" expanded="false" />
+            <element signature="class#140090:140728" expanded="false" />
+            <element signature="method#isTouchingTheGround#0;class#140865:144117" expanded="false" />
+            <element signature="method#getTicksTilNextRefuel#0;class#140865:144117" expanded="false" />
+            <element signature="class#144185:145308" expanded="false" />
+            <element signature="method#give#0;class#144185:145308" expanded="false" />
+            <element signature="method#performDropAction#0;class#144185:145308" expanded="false" />
+            <element signature="method#performRightClickAction#0;class#144185:145308" expanded="false" />
+            <element signature="method#WorldType#1;class#WorldType#0" expanded="false" />
+            <element signature="method#getChatMessagePrefix#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getChatMessagePrefix#1;class#WorldType#0" expanded="false" />
+            <element signature="method#getChatMessagePrefix#2;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#getWelcomeMessage#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getWelcomeMessage#0;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#sendMessageWithDelay#0;class#WorldType#0" expanded="false" />
+            <element signature="method#sendMessageWithDelay#0;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#sendMessageToWorld#0;class#WorldType#0" expanded="false" />
+            <element signature="method#sendMessageToWorld#0;class#WorldType#0" expanded="false" />
+            <element signature="method#sendMessageToWorld#1;class#WorldType#0" expanded="false" />
+            <element signature="method#sendMessageToPlayer#0;class#WorldType#0" expanded="false" />
+            <element signature="method#sendMessageToWorld#2;class#WorldType#0" expanded="false" />
+            <element signature="method#sendMessageOutsideWorld#0;class#WorldType#0" expanded="false" />
+            <element signature="method#broadcastMotdMessage#0;class#WorldType#0" expanded="false" />
+            <element signature="e#155059#155068#0" expanded="false" />
+            <element signature="docComment;method#getAvaliableWorlds#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getAvaliableWorlds#0;class#WorldType#0" expanded="false" />
+            <element signature="method#hasSpecialPermissions#0;class#WorldType#0" expanded="false" />
+            <element signature="method#openSmashGui#0;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#openSmashGui#1;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#getDeathMatchPreference#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getDeathMatchPreference#0;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#setDeathMatchPreference#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setDeathMatchPreference#0;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#allowFullflight#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setSpectatorMode#0;class#WorldType#0" expanded="false" />
+            <element signature="e#161666#161700#0" expanded="false" />
+            <element signature="method#getSpectators#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getNonspectators#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getSourceWorlds#0;class#WorldType#0" expanded="false" />
+            <element signature="class#Warp#0;class#WorldType#0" expanded="false" />
+            <element signature="initializer##0;class#Warp#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getWarpFile#0;class#Warp#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getWarps#0;class#Warp#0;class#WorldType#0" expanded="false" />
+            <element signature="method#createWarp#0;class#Warp#0;class#WorldType#0" expanded="false" />
+            <element signature="class#167634:168539" expanded="false" />
+            <element signature="method#performYesAction#0;class#167634:168539" expanded="false" />
+            <element signature="method#removeWarp#0;class#Warp#0;class#WorldType#0" expanded="false" />
+            <element signature="class#169258:169936" expanded="false" />
+            <element signature="method#performYesAction#0;class#169258:169936" expanded="false" />
+            <element signature="method#performNoAction#0;class#169258:169936" expanded="false" />
+            <element signature="method#Warp#0;class#Warp#0;class#WorldType#0" expanded="false" />
+            <element signature="method#Warp#1;class#Warp#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getUnlockedWarpsFile#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setMaxWarps#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getMaxWarps#0;class#WorldType#0" expanded="false" />
+            <element signature="method#syncSpectators#0;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#listWorlds#0;class#WorldType#0" expanded="false" />
+            <element signature="method#listWorlds#0;class#WorldType#0" expanded="false" />
+            <element signature="e#174730#174732#0" expanded="false" />
+            <element signature="docComment;method#hasGuiOpener#0;class#WorldType#0" expanded="false" />
+            <element signature="e#175362#175371#0" expanded="false" />
+            <element signature="docComment;method#giveSmashGuiOpener#0;class#WorldType#0" expanded="false" />
+            <element signature="method#giveSmashGuiOpener#0;class#WorldType#0" expanded="false" />
+            <element signature="e#175760#175836#0" expanded="false" />
+            <element signature="method#setTourneyPreferer#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getAndForgetIfPrefersTourneys#0;class#WorldType#0" expanded="false" />
+            <element signature="class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#AttackCulprit#0;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#AttackCulprit#1;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#AttackCulprit#3;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#AttackCulprit#4;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#AttackCulprit#5;class#AttackCulprit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#AttackSource#1;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#AttackSource#3;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getWeaponName#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getSpecialItem#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getPlayer#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getLivingEntity#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getAttackerColoredName#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getDamage#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performHit#0;class#AttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getAttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setAttackSource#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setScoreboardsInvisible#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setWorldScoreboardVisible#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setWorldScoreboardVisible#1;class#WorldType#0" expanded="false" />
+            <element signature="method#setPersonalScoreboardVisible#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setWorldSideScore#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setWorldSideScore#1;class#WorldType#0" expanded="false" />
+            <element signature="method#setPersonalSideScore#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setPersonalSideScore#1;class#WorldType#0" expanded="false" />
+            <element signature="method#setWorldBelowNameScore#0;class#WorldType#0" expanded="false" />
+            <element signature="method#isOnWorldScoreboard#0;class#WorldType#0" expanded="false" />
+            <element signature="method#removeWorldScoreboard#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getWorldScoreboard#0;class#WorldType#0" expanded="false" />
+            <element signature="method#removePersonalScoreboard#0;class#WorldType#0" expanded="false" />
+            <element signature="method#hasPersonalScoreboard#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getPersonalScoreboard#1;class#WorldType#0" expanded="false" />
+            <element signature="method#getNormalLeaveMessage#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getNormalJoinMessage#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getDrainWorldPrefix#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getDisplayName#1;class#WorldType#0" expanded="false" />
+            <element signature="method#getBestWorld#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getWorldRepresenter#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getWorlds#0;class#WorldType#0" expanded="false" />
+            <element signature="method#unloadWorld#0;class#WorldType#0" expanded="false" />
+            <element signature="method#setTaken#0;class#WorldType#0" expanded="false" />
+            <element signature="method#worldNumberIsTaken#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getPreWorldStatus#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getSpecialItemIterator#0;class#WorldType#0" expanded="false" />
+            <element signature="class#199316:199653" expanded="false" />
+            <element signature="method#getSpecialItem#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getHeldSpecialItem#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performResetAction#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performBlockPlace#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performBlockExplode#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performBlockBurn#0;class#WorldType#0" expanded="false" />
+            <element signature="e#204118#204175#0" expanded="false" />
+            <element signature="method#performBlockForm#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performBlockIgnite#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performLiquidPlacement#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performPlayerInteractEntity#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performWeatherChange#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performProjectileLaunch#0;class#WorldType#0" expanded="false" />
+            <element signature="e#207738#207807#0" expanded="false" />
+            <element signature="method#performConsolidate#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performEntityDamageByEntity#0;class#WorldType#0" expanded="false" />
+            <element signature="method#playerCanDamagePlayer#0;class#WorldType#0" expanded="false" />
+            <element signature="method#handlePickupItem#0;class#WorldType#0" expanded="false" />
+            <element signature="method#handleToggleSneak#0;class#WorldType#0" expanded="false" />
+            <element signature="method#handlePlayerItemHeld#0;class#WorldType#0" expanded="false" />
+            <element signature="e#214986#215003#0" expanded="false" />
+            <element signature="class#218580:219245" expanded="false" />
+            <element signature="method#performCommand#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performDropItem#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performCreateWorldCommand#0;class#WorldType#0" expanded="false" />
+            <element signature="class#226853:227707" expanded="false" />
+            <element signature="method#performAction#0;class#226853:227707" expanded="false" />
+            <element signature="method#bindPriceTask#0;class#WorldType#0" expanded="false" />
+            <element signature="class#227900:228445" expanded="false" />
+            <element signature="class#228547:228878" expanded="false" />
+            <element signature="method#performAction#0;class#228547:228878" expanded="false" />
+            <element signature="method#handleCommand#0;class#WorldType#0" expanded="false" />
+            <element signature="class#232108:232717" expanded="false" />
+            <element signature="e#235292#235324#0" expanded="false" />
+            <element signature="docComment;method#createWorld#1;class#WorldType#0" expanded="false" />
+            <element signature="method#createWorld#1;class#WorldType#0" expanded="false" />
+            <element signature="e#245732#245822#0" expanded="false" />
+            <element signature="method#setIsBeingDeleted#0;class#WorldType#0" expanded="false" />
+            <element signature="method#canBeJoined#0;class#WorldType#0" expanded="false" />
+            <element signature="method#worldCanChangeWeather#0;class#WorldType#0" expanded="false" />
+            <element signature="method#allowWeatherChanges#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getLoreForJoinItem#0;class#WorldType#0" expanded="false" />
+            <element signature="docComment;method#deleteWorld#0;class#WorldType#0" expanded="false" />
+            <element signature="method#deleteWorld#0;class#WorldType#0" expanded="false" />
+            <element signature="method#deleteWorldFolder#0;class#WorldType#0" expanded="false" />
+            <element signature="method#clearBukkitYML#0;class#WorldType#0" expanded="false" />
+            <element signature="e#258003#258016#0" expanded="false" />
+            <element signature="method#getDataLinesForBukkitYML#0;class#WorldType#0" expanded="false" />
+            <element signature="class#WorldCreatorItem#0;class#WorldType#0" expanded="false" />
+            <element signature="method#getProperWorldCreationItem#0;class#WorldCreatorItem#0;class#WorldType#0" expanded="false" />
+            <element signature="method#WorldCreatorItem#0;class#WorldCreatorItem#0;class#WorldType#0" expanded="false" />
+            <element signature="class#WorldJoinItem#0;class#WorldType#0" expanded="false" />
+            <element signature="method#WorldJoinItem#0;class#WorldJoinItem#0;class#WorldType#0" expanded="false" />
+            <element signature="method#performAction#0;class#WorldJoinItem#0;class#WorldType#0" expanded="false" />
+            <element signature="class#WorldGui#0;class#WorldType#0" expanded="false" />
+            <element signature="method#WorldGui#0;class#WorldGui#0;class#WorldType#0" expanded="false" />
+            <element signature="method#handleInventoryClose#0;class#WorldGui#0;class#WorldType#0" expanded="false" />
+            <element signature="method#addItem#0;class#WorldGui#0;class#WorldType#0" expanded="false" />
+            <element signature="method#addItem#1;class#WorldGui#0;class#WorldType#0" expanded="false" />
+            <element signature="method#removeItem#0;class#WorldGui#0;class#WorldType#0" expanded="false" />
+            <element signature="method#nonFriendliesAreNearby#1;class#WorldType#0" expanded="false" />
+            <element signature="method#playersAreFriendly#0;class#WorldType#0" expanded="false" />
+            <element signature="method#forceTp#0;class#WorldType#0" expanded="false" />
+            <element signature="method#veryForcefullyTp#0;class#WorldType#0" expanded="false" />
+            <element signature="method#repairItem#0;class#WorldType#0" expanded="false" />
+            <element signature="e#272522#272597#0" expanded="false" />
+            <element signature="e#273421#273437#0" expanded="false" />
+            <element signature="e#274558#274599#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/PlayerStateRecorder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="66" column="37" lean-forward="false" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SpecialItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="299" column="49" lean-forward="true" selection-start-line="299" selection-start-column="49" selection-end-line="299" selection-end-column="49" />
+          <folding>
+            <element signature="e#7900#7901#0" expanded="true" />
+            <element signature="e#7927#7928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/MetaItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="614" column="9" lean-forward="false" selection-start-line="614" selection-start-column="9" selection-end-line="614" selection-end-column="9" />
+          <folding>
+            <element signature="class#1508:3805" expanded="false" />
+            <element signature="method#performHeldLandAction#0;class#1508:3805" expanded="false" />
+            <element signature="method#performRightClickAction#0;class#1508:3805" expanded="false" />
+            <element signature="e#2767#3787#0" expanded="true" />
+            <element signature="e#3786#3787#0" expanded="true" />
+            <element signature="class#3833:11697" expanded="false" />
+            <element signature="class#Backpack#0;class#3833:11697" expanded="false" />
+            <element signature="method#Backpack#0;class#Backpack#0;class#3833:11697" expanded="false" />
+            <element signature="method#handleInventoryClick#0;class#Backpack#0;class#3833:11697" expanded="false" />
+            <element signature="e#7715#7955#0" expanded="true" />
+            <element signature="e#7954#7955#0" expanded="true" />
+            <element signature="method#getItemFile#0;class#Backpack#0;class#3833:11697" expanded="false" />
+            <element signature="method#handleInventoryClose#0;class#Backpack#0;class#3833:11697" expanded="false" />
+            <element signature="e#8684#8754#0" expanded="false" />
+            <element signature="method#performRightClickAction#0;class#3833:11697" expanded="false" />
+            <element signature="class#11725:14258" expanded="false" />
+            <element signature="class#KeyEntryInv#0;class#11725:14258" expanded="false" />
+            <element signature="method#KeyEntryInv#0;class#KeyEntryInv#0;class#11725:14258" expanded="false" />
+            <element signature="method#handleInventoryClick#0;class#KeyEntryInv#0;class#11725:14258" expanded="false" />
+            <element signature="e#12721#13597#0" expanded="true" />
+            <element signature="e#13596#13597#0" expanded="true" />
+            <element signature="method#handleInventoryClose#0;class#KeyEntryInv#0;class#11725:14258" expanded="false" />
+            <element signature="method#performRightClickAction#0;class#11725:14258" expanded="false" />
+            <element signature="class#14437:15791" expanded="false" />
+            <element signature="method#performRightClickAction#0;class#14437:15791" expanded="false" />
+            <element signature="class#14808:15774" expanded="false" />
+            <element signature="method#performYesAction#0;class#14808:15774" expanded="false" />
+            <element signature="e#15944#16890#0" expanded="true" />
+            <element signature="e#16889#16890#0" expanded="true" />
+            <element signature="e#16900#17152#0" expanded="true" />
+            <element signature="e#17151#17152#0" expanded="true" />
+            <element signature="method#showFinalPossibilities#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+            <element signature="method#handleInventoryClose#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+            <element signature="method#MusicMaker#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+            <element signature="method#gotoNoteAdderPage#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+            <element signature="class#22716:23248" expanded="false" />
+            <element signature="method#performAction#0;class#22716:23248" expanded="false" />
+            <element signature="class#24159:24391" expanded="false" />
+            <element signature="class#24421:24926" expanded="false" />
+            <element signature="method#performAction#0;class#24421:24926" expanded="false" />
+            <element signature="class#25037:25557" expanded="false" />
+            <element signature="method#performAction#0;class#25037:25557" expanded="false" />
+            <element signature="class#25610:26042" expanded="false" />
+            <element signature="method#performAction#0;class#25610:26042" expanded="false" />
+            <element signature="class#26095:26422" expanded="false" />
+            <element signature="method#gotoInstrumentSelectorPage#0;class#MusicMaker#0;class#17255:27459" expanded="false" />
+            <element signature="class#26815:27164" expanded="false" />
+            <element signature="method#performRightClickAction#0;class#17255:27459" expanded="false" />
+            <element signature="initializer##0;class#MetaItems#0" expanded="false" />
+            <element signature="e#28261#31246#0" expanded="true" />
+            <element signature="e#31245#31246#0" expanded="true" />
+            <element signature="e#31264#33697#0" expanded="true" />
+            <element signature="e#31542#31550#0" expanded="true" />
+            <element signature="e#33696#33697#0" expanded="true" />
+            <element signature="class#MyStaticData#0;class#MetaItems#0" expanded="false" />
+            <element signature="method#MetaItems#0;class#MetaItems#0" expanded="false" />
+            <element signature="method#getSpecialItem#1;class#MetaItems#0" expanded="false" />
+            <element signature="method#getRandomSpecialItem#0;class#MetaItems#0" expanded="false" />
+            <marker date="1504559842156" expanded="false" signature="15935:17157" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1675,7 +1964,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>commons-net-3.6</last-edited>
+          <last-edited>MetaWorldGenerator</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

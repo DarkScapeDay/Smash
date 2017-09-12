@@ -5,6 +5,7 @@
       <element id="module-output" name="Smash" />
       <element id="library" level="project" name="jdk1.8" />
       <element id="extracted-dir" path="$PROJECT_DIR$/src/main/resources/commons-net-3.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../WorldGenerationLib/out/artifacts/WorldGenerationLib_jar/WorldGenerationLib.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

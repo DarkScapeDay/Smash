@@ -1,43 +1,24 @@
 package me.happyman.utils;
 
-import me.happyman.source;
-import net.minecraft.server.v1_8_R3.EntityPlayer;
-import org.bukkit.*;
-import org.bukkit.block.Block;
+import me.happyman.Plugin;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.conversations.Conversation;
-import org.bukkit.conversations.ConversationAbandonedEvent;
-import org.bukkit.craftbukkit.v1_8_R3.CraftServer;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
-import org.bukkit.entity.*;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
-import org.bukkit.inventory.*;
-import org.bukkit.map.MapView;
-import org.bukkit.metadata.MetadataValue;
-import org.bukkit.permissions.Permission;
-import org.bukkit.permissions.PermissionAttachment;
-import org.bukkit.permissions.PermissionAttachmentInfo;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.util.*;
-import org.bukkit.util.Vector;
+import org.bukkit.entity.Player;
 
-import java.net.InetSocketAddress;
-import java.util.*;
+import java.util.Random;
 
 public class PlayerCreator implements CommandExecutor
 {
     private static Random r = new Random();
     private static final String CREATE_PLAYER_CMD = "createplayer";
-    private final source plugin;
+    private final Plugin plugin;
 
-    public PlayerCreator(source plugin)
+    public PlayerCreator(Plugin plugin)
     {
         this.plugin = plugin;
         plugin.setExecutor(CREATE_PLAYER_CMD, this);

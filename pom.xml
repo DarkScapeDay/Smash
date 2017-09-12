@@ -40,12 +40,12 @@
             <artifactId>commons-net</artifactId>
             <version>3.6</version>
         </dependency>-->
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.7.2-R0.2</version>
-            <type>jar</type>
-            <scope>provided</scope>
-        </dependency>
+        <!--<dependency>
+           <groupId>org.bukkit</groupId>
+           <artifactId>bukkit</artifactId>
+           <version>1.7.2-R0.2</version>
+           <type>jar</type>
+           <scope>provided</scope>
+       </dependency>-->
     </dependencies>
 </project>

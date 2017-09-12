@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExcludeFromValidation">
+    <file url="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldType.java" />
+    <file url="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldGenerationUtils/MetaWorldGenerator.java" />
+    <file url="file://$PROJECT_DIR$/src/main/java/me/happyman/worlds/WorldGenerationUtils/WorldGenerationTools.java" />
+    <file url="file://$PROJECT_DIR$/src/main/java/me/happyman/SmashItems/SmashItemTypes/MinePlacer.java" />
+    <file url="file://$PROJECT_DIR$/src/main/java/me/happyman/SpecialItems/SmashKitMgt/SmashKitManager.java" />
+  </component>
+</project>

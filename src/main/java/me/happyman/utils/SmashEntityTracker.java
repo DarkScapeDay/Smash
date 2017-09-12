@@ -1,10 +1,11 @@
 package me.happyman.utils;
 
-import me.happyman.ItemTypes.SpeedChanger;
-import me.happyman.commands.SmashManager;
-import me.happyman.worlds.SmashWorldInteractor;
-import me.happyman.worlds.SmashWorldManager;
-import org.bukkit.*;
+import me.happyman.Plugin;
+import me.happyman.SpecialItems.SpecialItemTypes.SpeedChanger;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
@@ -12,7 +13,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileHitEvent;
-import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.util.Vector;
@@ -23,42 +23,33 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+import static me.happyman.Plugin.*;
+
 public class SmashEntityTracker implements Listener
 {
     public static final int ARROW_TRACKING_TIME = 40;
-    private static HashMap<World, HashMap<Entity, Player>> culprits;
-    private static HashMap<World, HashMap<Entity, String>> weaponNames;
-    private static HashMap<World, HashMap<Entity, Integer>> powerLevels;
-    private static HashMap<World, HashMap<Player, Float>> speedFactor;
+//    private static final HashMap<World, HashMap<Entity, Player>> culprits = new HashMap<World, HashMap<Entity, Player>>();
+//    private static final HashMap<World, HashMap<Entity, String>> weaponNames = new HashMap<World, HashMap<Entity, String>>();
+//    private static final HashMap<World, HashMap<Entity, Integer>> powerLevels = new HashMap<World, HashMap<Entity, Integer>>();
+    private static final HashMap<Player, Float> speedFactors = new HashMap<Player, Float>();
 
-    private static HashMap<Player, List<SpeedChanger>> speedTasks;
-    private static HashMap<Player, Float> playerSpeeds;
-    private static HashMap<Player, Vector> playerMovementVectors;
-    private static List<Player> crouchingPlayers;
-    private static HashMap<World, HashMap<Entity, Player>> entityOwners; //The owners of entities in the various worlds who shouldn't be damaged by those entities
-    private static final Vector zero = new Vector().zero();;
-    private static HashMap<Player, Long> timeOfLastMove;
+    private static final HashMap<Player, List<SpeedChanger>> speedTasks = new HashMap<Player, List<SpeedChanger>>();;
+    private static final HashMap<Player, Float> playerSpeeds = new HashMap<Player, Float>();
+    private static final HashMap<Player, Vector> playerMovementVectors = new HashMap<Player, Vector>();
+    private static final List<Player> crouchingPlayers = new ArrayList<Player>();
+//    private static final HashMap<World, HashMap<Entity, Player>> entityOwners = new HashMap<World, HashMap<Entity, Player>>(); //The owners of entities in the various worlds who shouldn't be damaged by those entities
+    private static final Vector zero = new Vector().zero();
+    private static final HashMap<Player, Long> timeOfLastMove = new HashMap<Player, Long>();
+    private static final float DEFAULT_WALK_SPEED = 0.2f;
+    private static final float DEFAULT_FLY_SPEED = 0.075F; //The fly speed for before and after Smash games start
 
     public SmashEntityTracker()
     {
-        culprits = new HashMap<World, HashMap<Entity, Player>>();
-        weaponNames = new HashMap<World, HashMap<Entity, String>>();
-        powerLevels = new HashMap<World, HashMap<Entity, Integer>>();
-        speedFactor = new HashMap<World, HashMap<Player, Float>>();
-
-        speedTasks = new HashMap<Player, List<SpeedChanger>>();
-
-        Bukkit.getPluginManager().registerEvents(this, SmashManager.getPlugin());
-        playerSpeeds = new HashMap<Player, Float>();
-        timeOfLastMove = new HashMap<Player, Long>();
-        playerMovementVectors = new HashMap<Player, Vector>();
-
-        entityOwners = new HashMap<World, HashMap<Entity, Player>>();
-
-        crouchingPlayers = new ArrayList<Player>();
+        Bukkit.getPluginManager().registerEvents(this, getPlugin());
     }
 
-    //***************
+    //**************
+
 
     public static void resetSpeedAlteredPlayer(Player p)
     {
@@ -67,7 +58,7 @@ public class SmashEntityTracker implements Listener
         {
             for (SpeedChanger item : speedTasks.get(p))
             {
-                item.cancelTask(p);
+                item.performResetAction(p);
             }
             speedTasks.remove(p);
         }
@@ -75,80 +66,77 @@ public class SmashEntityTracker implements Listener
 
     public static float getSpeedFactor(Player p)
     {
-        if (speedFactor.containsKey(p.getWorld()) && speedFactor.get(p.getWorld()).containsKey(p))
-        {
-            return speedFactor.get(p.getWorld()).get(p);
-        }
-        return 1F;
+        Float speedFactor = speedFactors.get(p);
+        return speedFactor == null ? 1F : speedFactor;
     }
 
-    public static void forgetTransgressions(World w)
+    public static void forgetSpeedFactors(World w)
     {
-        if (speedFactor.containsKey(w))
+        for (Player p : w.getPlayers())
         {
-            for (Player p : speedFactor.get(w).keySet())
-            {
-                resetSpeedFactor(p);
-            }
-            speedFactor.remove(w);
+            resetSpeedFactor(p);
         }
-        if (culprits.containsKey(w))
-        {
-            culprits.remove(w);
-        }
-        if (weaponNames.containsKey(w))
-        {
-            weaponNames.remove(w);
-        }
-        if (powerLevels.containsKey(w))
-        {
-            powerLevels.remove(w);
-        }
-        if (speedFactor.containsKey(w))
-        {
-            for (Player p : speedFactor.get(w).keySet())
-            {
-                resetSpeedFactor(p);
-            }
-            speedFactor.remove(w);
-        }
-        if (entityOwners.containsKey(w))
-        {
-            entityOwners.remove(w);
-        }
+//        if (culprits.containsKey(w))
+//        {
+//            culprits.remove(w);
+//        }
+//        if (weaponNames.containsKey(w))
+//        {
+//            weaponNames.remove(w);
+//        }
+//        if (powerLevels.containsKey(w))
+//        {
+//            powerLevels.remove(w);
+//        }
+//        if (entityOwners.containsKey(w))
+//        {
+//            entityOwners.remove(w);
+//        }
     }
 
     //True if speed factor changed
     @CheckReturnValue
     public static boolean setSpeedFactor(Player p, float factor)
     {
-        if (factor < 640)
+        try
         {
-            if (!speedFactor.containsKey(p.getWorld()))
+            float walkFactor = factor*DEFAULT_WALK_SPEED;
+            float flyFactor = factor*DEFAULT_FLY_SPEED;
+            if (flyFactor <= 1F && flyFactor >= 0 && walkFactor <= 1F && walkFactor >= 0)
             {
-                speedFactor.put(p.getWorld(), new HashMap<Player, Float>());
-            }
-            speedFactor.get(p.getWorld()).put(p, factor);
-            try
-            {
-                p.setWalkSpeed(factor*0.2F);
-            }
-            catch (IllegalArgumentException e)
-            {
-                p.setWalkSpeed(1F);
-            }
-            if (p.isFlying())
-            {
-                try
+                p.setWalkSpeed(walkFactor);
+                if (p.isFlying())
                 {
-                    p.setFlySpeed(factor* SmashWorldInteractor.DEFAULT_FLY_SPEED);
+                    p.setFlySpeed(flyFactor);
                 }
-                catch (IllegalArgumentException e)
-                {
-                    p.setFlySpeed(1F);
-                }
+                speedFactors.put(p, factor);
+                return true;
             }
-            return true;
+        }
+        catch (IllegalArgumentException e)
+        {
+            sendErrorMessage("Error! Tried to validate speed factor and failed!");
+            //don't do anything; you've reached max
+//                final float newFactor;
+//                if (DEFAULT_FLY_SPEED < DEFAULT_WALK_SPEED)
+//                {
+//                    p.setWalkSpeed(1F);
+//                    newFactor = 1F/DEFAULT_WALK_SPEED;
+//                    p.setFlySpeed(DEFAULT_FLY_SPEED/DEFAULT_WALK_SPEED);
+//                }
+//                else if (DEFAULT_WALK_SPEED < DEFAULT_FLY_SPEED)
+//                {
+//                    p.setFlySpeed(1F);
+//                    newFactor = 1F/DEFAULT_FLY_SPEED;
+//                    p.setWalkSpeed(DEFAULT_WALK_SPEED/DEFAULT_FLY_SPEED);
+//                }
+//                else
+//                {
+//                    p.setWalkSpeed(1F);
+//                    p.setFlySpeed(1F);
+//                    newFactor = 1F/DEFAULT_FLY_SPEED;
+//                }
+//                speedFactors.put(p, newFactor);
         }
         return false;
     }
@@ -160,16 +148,9 @@ public class SmashEntityTracker implements Listener
 
     public static void resetSpeedFactor(Player p)
     {
-        if (!speedFactor.containsKey(p.getWorld()))
-        {
-            speedFactor.put(p.getWorld(), new HashMap<Player, Float>());
-        }
-        if (speedFactor.get(p.getWorld()).containsKey(p))
-        {
-            setSpeedFactor(p, 1F);
-        }
-        p.setWalkSpeed(0.2F);
-        p.setFlySpeed(SmashWorldInteractor.DEFAULT_FLY_SPEED);
+        p.setWalkSpeed(DEFAULT_WALK_SPEED);
+        p.setFlySpeed(DEFAULT_FLY_SPEED);
+        speedFactors.remove(p);
     }
 
     @CheckReturnValue
@@ -197,126 +178,147 @@ public class SmashEntityTracker implements Listener
     }
 
     //**************
-
-    /**
-     * Function: setImmuneEntityOwner
-     * Purpose: To make it so that the entity will not damage the player.
-     * @param e - The Entity which the player will not be damaged by
-     * @param p - The player who should not be damaged by the entity
-     */
-    private static void setImmuneEntityOwner(Player p, Entity e)
-    {
-        if (!entityOwners.containsKey(p.getWorld()))
-        {
-            entityOwners.put(p.getWorld(), new HashMap<Entity, Player>());
-        }
-        entityOwners.get(p.getWorld()).put(e, p);
-    }
-
-    /**
-     * Function: hasImmuneEntityOwner
-     * Purpose: To determine whether the entity in question has a player who should be damaged
-     * @param e - The Entity in question
-     * @return - True if the entity shouldn't be damaging a particular player
-     */
-    private static boolean hasImmuneEntityOwner(Entity e)
-    {
-        return entityOwners.containsKey(e.getWorld()) && entityOwners.get(e.getWorld()).containsKey(e);
-    }
-
-    /**
-     * Function: isImmuneEntityOwner
-     * Purpose: To determine if the player shouldn't be damaged by the entity
-     * @param p - The player who we want to check for being immune to the entity
-     * @param e - The entity we want to check if it should damage the player
-     * @return - True if the player shouldn't be damaged by the entity
-     */
-    public static boolean isImmuneEntityOwner(Player p, Entity e)
-    {
-        return hasImmuneEntityOwner(e) && entityOwners.get(p.getWorld()).get(e).equals(p);
-    }
+//
+//    /**
+//     * Function: setImmuneEntityOwner
+//     * Purpose: To make it so that the entity will not damage the player.
+//     * @param e - The Entity which the player will not be damaged by
+//     * @param p - The player who should not be damaged by the entity
+//     */
+//    private static void setImmuneEntityOwner(Player p, Entity e)
+//    {
+//        if (!entityOwners.containsKey(p.getWorld()))
+//        {
+//            entityOwners.put(p.getWorld(), new HashMap<Entity, Player>());
+//        }
+//        entityOwners.get(p.getWorld()).put(e, p);
+//    }
+//
+//    /**
+//     * Function: hasImmuneEntityOwner
+//     * Purpose: To determine whether the entity in question has a player who should be damaged
+//     * @param e - The Entity in question
+//     * @return - True if the entity shouldn't be damaging a particular player
+//     */
+//    private static boolean hasImmuneEntityOwner(Entity e)
+//    {
+//        return entityOwners.containsKey(e.getWorld()) && entityOwners.get(e.getWorld()).containsKey(e);
+//    }
 
     //**************
 
-    public static void addCulprit(Player p, Entity damager, String weaponName, int powerLevel)
-    {
-        addCulprit(p, damager, weaponName, powerLevel, false);
-    }
-
-    public static void addCulprit(Player p, Entity damager, String weaponName, int powerLevel, boolean makeImmune)
-    {
-        if (makeImmune)
-        {
-            setImmuneEntityOwner(p, damager);
-        }
-        if (!culprits.containsKey(p.getWorld()))
-        {
-            culprits.put(p.getWorld(), new HashMap<Entity, Player>());
-        }
-        if (!weaponNames.containsKey(p.getWorld()))
-        {
-            weaponNames.put(p.getWorld(), new HashMap<Entity, String>());
-        }
-        if (!powerLevels.containsKey(p.getWorld()))
-        {
-            powerLevels.put(p.getWorld(), new HashMap<Entity, Integer>());
-        }
-        culprits.get(p.getWorld()).put(damager, p);
-        weaponNames.get(p.getWorld()).put(damager, weaponName);
-        powerLevels.get(p.getWorld()).put(damager, powerLevel);
-    }
-
-
-    public static String getWeaponName(Entity damager)
-    {
-        if (weaponNames.containsKey(damager.getWorld()) && weaponNames.get(damager.getWorld()).containsKey(damager))
-        {
-            return weaponNames.get(damager.getWorld()).get(damager);
-        }
-        SmashManager.getPlugin().sendErrorMessage("Error! Attempted to get the weaponName for " + damager.toString() + ", but there was none!");
-        return null;
-    }
-
-    public static String getCulpritName(Entity damager)
-    {
-        if (culprits.containsKey(damager.getWorld()) && culprits.get(damager.getWorld()).containsKey(damager))
-        {
-            return culprits.get(damager.getWorld()).get(damager).getName();
-        }
-        SmashManager.getPlugin().sendErrorMessage("Error! Attempted to get the culprit for " + damager.toString() + ", but there was none!");
-        return null;
-    }
-
-    public static int getCulpritDamage(Entity damager)
-    {
-        if (powerLevels.containsKey(damager.getWorld()) &&  powerLevels.get(damager.getWorld()).containsKey(damager))
-        {
-            return powerLevels.get(damager.getWorld()).get(damager);
-        }
-        SmashManager.getPlugin().sendErrorMessage("Error! Attempted to get the power level for " + damager.toString() + ", but there was none!");
-        return -1;
-    }
-
-    public static boolean hasCulprit(Entity damager)
-    {
-        return culprits.containsKey(damager.getWorld()) && culprits.get(damager.getWorld()).containsKey(damager);
-    }
+//    public static void addCulprit(Player p, Monster damager, String weaponName, int powerLevel)
+//    {
+//        addCulprit(p, damager, weaponName, powerLevel, false);
+//    }
+//
+//    public static void addCulprit(Player p, Entity damager, String weaponName, int powerLevel, boolean makeImmune)
+//    {
+//        if (makeImmune)
+//        {
+//            setImmuneEntityOwner(p, damager);
+//        }
+//        if (!culprits.containsKey(p.getWorld()))
+//        {
+//            culprits.put(p.getWorld(), new HashMap<Entity, Player>());
+//        }
+//        if (!weaponNames.containsKey(p.getWorld()))
+//        {
+//            weaponNames.put(p.getWorld(), new HashMap<Entity, String>());
+//        }
+//        if (!powerLevels.containsKey(p.getWorld()))
+//        {
+//            powerLevels.put(p.getWorld(), new HashMap<Entity, Integer>());
+//        }
+//        culprits.get(p.getWorld()).put(damager, p);
+//        weaponNames.get(p.getWorld()).put(damager, weaponName);
+//        powerLevels.get(p.getWorld()).put(damager, powerLevel);
+////    }
+//    public static class Culprit extends WorldType.RangeAttackSource
+//    {
+//        private final int powerLevel;
+//        private final boolean immuneToOwn;
+//
+//        public Culprit(SpecialItem item, LivingEntity user, int powerLevel, boolean makeImmune)
+//        {
+//            super(item, user);
+//            this.powerLevel = powerLevel;
+//            this.immuneToOwn = makeImmune;
+//        }
+//
+//        public boolean isImmuneToOwn()
+//        {
+//            return immuneToOwn;
+//        }
+//
+//        public int powerLevel()
+//        {
+//            return powerLevel;
+//        }
+//    }
+//
+//    public static String getWeaponName(Entity damager)
+//    {
+//        sendErrorMessage("Warning! called getWeaponName!");
+//        WorldType.RangeAttackSource source = WorldManager.getAttackSource(damager);
+//        if (source != null)
+//        {
+//            return source.getSpecialItem().getItemStack().getItemMeta().getDisplayName();
+//        }
+//        sendErrorMessage("Attempted to get the weaponName for " + damager.toString() + ", but there was none!");
+//        return damager.getType().name().toLowerCase();
+//    }
+//
+//    public static String getCulpritName(Entity damager)
+//    {
+//        sendErrorMessage("Warning! called getCulpritName!");
+//        WorldType.RangeAttackSource source = WorldManager.getAttackSource(damager);
+//        if (source != null)
+//        {
+//            return source.getAttacker().getName();
+//        }
+////        if (culprits.containsKey(damager.getWorld()) && culprits.get(damager.getWorld()).containsKey(damager))
+////        {
+////            return culprits.get(damager.getWorld()).get(damager).getName();
+////        }
+//        sendErrorMessage("Error! Attempted to get the culprit for " + damager.toString() + ", but there was none!");
+//        return null;
+//    }
+//
+////    public static int getCulpritDamage(Entity damager)
+////    {
+////        if (powerLevels.containsKey(damager.getWorld()) &&  powerLevels.get(damager.getWorld()).containsKey(damager))
+////        {
+////            return powerLevels.get(damager.getWorld()).get(damager);
+////        }
+////        sendErrorMessage("Error! Attempted to get the power level for " + damager.toString() + ", but there was none!");
+////        return -1;
+////    }
+//
+//    public static boolean hasCulprit(Entity damager)
+//    {
+//        return WorldManager.getAttackSource(damager) != null;//culprits.containsKey(damager.getWorld()) && culprits.get(damager.getWorld()).containsKey(damager);
+//    }
 
     //***********************
 
-    public static boolean isHoldingStill(Player p)
+    public static boolean isAfk(Player p)
     {
-        if (timeOfLastMove.containsKey(p) && (timeOfLastMove.get(p) + 1000 > SmashManager.getPlugin().getMillisecond()))
+        Long timeSinceLastMove = timeOfLastMove.get(p);
+        if (timeSinceLastMove == null || timeSinceLastMove + 10000 > Plugin.getMillisecond())
         {
-            forgetSpeed(p);
+            if (timeSinceLastMove != null)
+            {
+                forgetSpeed(p);
+            }
             return false;
         }
-        return p.getVelocity().equals(zero);
+        return p.getVelocity().lengthSquared() < 0.01;
     }
 
     public static float getSpeed(Player p)
     {
-        if (!playerSpeeds.containsKey(p) || isHoldingStill(p))
+        if (!playerSpeeds.containsKey(p) || isAfk(p))
         {
             forgetSpeed(p);
         }
@@ -329,7 +331,7 @@ public class SmashEntityTracker implements Listener
 
     public static void setSpeedToZero(Player p)
     {
-        //Bukkit.getPlayer("HappyMan").sendMessage("setting velocity from setting to zero");
+        //Bukkit.getAttacker("HappyMan").sendMessage("setting velocity from setting to zero");
         p.setVelocity(new Vector().zero());
     }
 
@@ -351,7 +353,7 @@ public class SmashEntityTracker implements Listener
 
     public static Vector getSpeedVector(Player p)
     {
-        if (!playerMovementVectors.containsKey(p) || isHoldingStill(p))
+        if (!playerMovementVectors.containsKey(p) || isAfk(p))
         {
             forgetSpeed(p);
         }
@@ -418,18 +420,20 @@ public class SmashEntityTracker implements Listener
     }
 
     @EventHandler
-    public void crouchEvent(PlayerToggleSneakEvent e)
+    public void crouchEvent(PlayerToggleSneakEvent event)
     {
-        setCrouching(e.getPlayer(), e.isSneaking());
+        setCrouching(event.getPlayer(), event.isSneaking());
     }
 
     @EventHandler
     public void moveEvent(final PlayerMoveEvent e)
     {
-        Bukkit.getScheduler().callSyncMethod(SmashManager.getPlugin(), new Callable() {
-            public String call() {
+        Bukkit.getScheduler().callSyncMethod(getPlugin(), new Callable()
+        {
+            public String call()
+            {
                 Player p = e.getPlayer();
-                timeOfLastMove.put(p, SmashManager.getPlugin().getMillisecond());
+                timeOfLastMove.put(p, Plugin.getMillisecond());
                 playerSpeeds.put(p, (float)e.getFrom().distance(e.getTo()));
                 playerMovementVectors.put(p, new Vector(
                         (float)e.getTo().getX() - (float)e.getFrom().getX(),
@@ -441,33 +445,52 @@ public class SmashEntityTracker implements Listener
         });
     }
 
-    @EventHandler
-    public void projLaunch(ProjectileLaunchEvent e)
+    public static void performActionWhenSafe(final Player p, final AfkAction action, final int secondsMustBeStill, final String youMustWaitMessage, final String successMessage, final String failureMessage)
     {
-        World w = e.getEntity().getWorld();
-        if (e.getEntity().getShooter() instanceof Player && SmashWorldManager.isSmashWorld(w) && SmashWorldManager.gameHasStarted(w) && !SmashWorldManager.gameHasEnded(w)
-                && ((Player)e.getEntity().getShooter()).getItemInHand().hasItemMeta() && ((Player)e.getEntity().getShooter()).getItemInHand().getItemMeta().hasDisplayName()) // ((Player)e.getEntity().getShooter()).getItemInHand().hasItemMeta()
-        // && ((Player)e.getEntity().getShooter()).getItemInHand().getItemMeta().hasDisplayName() && ((Player)e.getEntity().getShooter()).getItemInHand().getItemMeta().hasDisplayName()
-        // && ((Player)e.getEntity().getShooter()).getItemInHand().getItemMeta().hasDisplayName().is
+        p.sendMessage(youMustWaitMessage);
+        final int timeSample = 3;
+        final int ticksMustBeStill = secondsMustBeStill*20;
+        final int task = Bukkit.getScheduler().scheduleSyncRepeatingTask(getPlugin(), new Runnable()
         {
-            final Player p = (Player)e.getEntity().getShooter();
-            SmashEntityTracker.addCulprit(p, e.getEntity(), p.getItemInHand().getItemMeta().getDisplayName(), 10);
-        }
+            int tick = -timeSample;
+            boolean dontDoIt = false;
+            int second = 0;
+            int secondsLeft = secondsMustBeStill;
+
+            @Override
+            public void run()
+            {
+                if (!dontDoIt)
+                {
+                    if (!isAfk(p))
+                    {
+                        dontDoIt = true;
+                        p.sendMessage(failureMessage);
+                    }
+                    else
+                    {
+                        tick += timeSample;
+                        if (tick >= ticksMustBeStill)
+                        {
+                            dontDoIt = true;
+                            p.sendMessage(successMessage);
+                            action.performAction();
+                        }
+                        else if (tick > second*20)
+                        {
+                            second++;
+                            p.sendMessage("" + secondsLeft);
+                            secondsLeft--;
+                        }
+                    }
+                }
+            }
+        }, 0, timeSample);
+        cancelTaskAfterDelay(task, secondsMustBeStill*20);
     }
 
-    @EventHandler
-    public void projLaunch(ProjectileHitEvent e)
+    public abstract static class AfkAction
     {
-        final Entity proj = e.getEntity();
-        if (proj instanceof Arrow)
-        {
-            Bukkit.getScheduler().callSyncMethod(SmashManager.getPlugin(), new Callable() {
-                public String call()
-                {
-                    proj.remove();
-                    return "";
-                }
-            });
-        }
+        public abstract void performAction();
     }
 }

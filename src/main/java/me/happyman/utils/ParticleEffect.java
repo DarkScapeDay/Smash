@@ -1,5 +1,6 @@
 package me.happyman.utils;
 
+import me.happyman.Plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Location;
@@ -389,7 +390,7 @@ public enum ParticleEffect {
     private final int requiredVersion;
     private final List<ParticleProperty> properties;
 
-    // Initialize map for quick name and id lookup
+    // Initialize map for quick colorlessName and id lookup
     static {
         for (ParticleEffect effect : values()) {
             NAME_MAP.put(effect.name, effect);
@@ -413,9 +414,9 @@ public enum ParticleEffect {
     }
 
     /**
-     * Returns the name of this particle effect
+     * Returns the colorlessName of this particle effect
      *
-     * @return The name
+     * @return The colorlessName
      */
     public String getName() {
         return name;
@@ -461,7 +462,7 @@ public enum ParticleEffect {
     }
 
     /**
-     * Returns the particle effect with the given name
+     * Returns the particle effect with the given colorlessName
      *
      * @param name Name of the particle effect
      * @return The particle effect
@@ -509,14 +510,15 @@ public enum ParticleEffect {
      * @param location Location to check
      * @return Whether the distance exceeds 256 or not
      */
-    private static boolean isLongDistance(Location location, List<Player> players) {
-        String world = location.getWorld().getName();
-        for (Player player : players) {
+    private static boolean isLongDistance(Location location, List<Player> players)
+    {
+        for (Player player : players)
+        {
             Location playerLocation = player.getLocation();
-            if (!world.equals(playerLocation.getWorld().getName()) || playerLocation.distanceSquared(location) < 65536) {
-                continue;
+            if (location.getWorld() == playerLocation.getWorld() && playerLocation.distanceSquared(location) >= 65536)
+            {
+                return true;
             }
-            return true;
         }
         return false;
     }
@@ -528,8 +530,9 @@ public enum ParticleEffect {
      * @param data Particle data
      * @return Whether the data type is correct or not
      */
-    private static boolean isDataCorrect(ParticleEffect effect, ParticleData data) {
-        return ((effect == BLOCK_CRACK || effect == BLOCK_DUST) && data instanceof BlockData) || (effect == ITEM_CRACK && data instanceof ItemData);
+    private static boolean dataIsOkay(ParticleEffect effect, ParticleData data)
+    {
+        return (effect == BLOCK_CRACK || effect == BLOCK_DUST) && data instanceof BlockData || effect == ITEM_CRACK && data instanceof ItemData;
     }
 
     /**
@@ -539,8 +542,9 @@ public enum ParticleEffect {
      * @param color Particle color
      * @return Whether the color type is correct or not
      */
-    private static boolean isColorCorrect(ParticleEffect effect, ParticleColor color) {
-        return ((effect == SPELL_MOB || effect == SPELL_MOB_AMBIENT || effect == REDSTONE) && color instanceof OrdinaryColor) || (effect == NOTE && color instanceof NoteColor);
+    private static boolean colorIsOkay(ParticleEffect effect, ParticleColor color)
+    {
+        return (effect == SPELL_MOB || effect == SPELL_MOB_AMBIENT || effect == REDSTONE) && color instanceof OrdinaryColor || effect == NOTE && color instanceof NoteColor;
     }
 
     /**
@@ -560,7 +564,8 @@ public enum ParticleEffect {
      * @see ParticlePacket#sendTo(Location, double)
      */
     public void display(float offsetX, float offsetY, float offsetZ, float speed, int amount, Location center, double range) throws ParticleVersionException, ParticleDataException, IllegalArgumentException {
-        if (!isSupported()) {
+        if (!isSupported())
+        {
             throw new ParticleVersionException("This particle effect is not supported by your server version");
         }
         if (hasProperty(ParticleProperty.REQUIRES_DATA)) {
@@ -712,7 +717,7 @@ public enum ParticleEffect {
         if (!hasProperty(ParticleProperty.COLORABLE)) {
             throw new ParticleColorException("This particle effect is not colorable");
         }
-        if (!isColorCorrect(this, color)) {
+        if (!colorIsOkay(this, color)) {
             throw new ParticleColorException("The particle color type is incorrect");
         }
         new ParticlePacket(this, color, range > 256).sendTo(center, range);
@@ -736,7 +741,7 @@ public enum ParticleEffect {
         if (!hasProperty(ParticleProperty.COLORABLE)) {
             throw new ParticleColorException("This particle effect is not colorable");
         }
-        if (!isColorCorrect(this, color)) {
+        if (!colorIsOkay(this, color)) {
             throw new ParticleColorException("The particle color type is incorrect");
         }
         new ParticlePacket(this, color, isLongDistance(center, players)).sendTo(center, players);
@@ -779,7 +784,7 @@ public enum ParticleEffect {
         if (!hasProperty(ParticleProperty.REQUIRES_DATA)) {
             throw new ParticleDataException("This particle effect does not require additional data");
         }
-        if (!isDataCorrect(this, data)) {
+        if (!dataIsOkay(this, data)) {
             throw new ParticleDataException("The particle data type is incorrect");
         }
         new ParticlePacket(this, offsetX, offsetY, offsetZ, speed, amount, range > 256, data).sendTo(center, range);
@@ -808,7 +813,7 @@ public enum ParticleEffect {
         if (!hasProperty(ParticleProperty.REQUIRES_DATA)) {
             throw new ParticleDataException("This particle effect does not require additional data");
         }
-        if (!isDataCorrect(this, data)) {
+        if (!dataIsOkay(this, data)) {
             throw new ParticleDataException("The particle data type is incorrect");
         }
         new ParticlePacket(this, offsetX, offsetY, offsetZ, speed, amount, isLongDistance(center, players), data).sendTo(center, players);
@@ -853,7 +858,7 @@ public enum ParticleEffect {
         if (!hasProperty(ParticleProperty.REQUIRES_DATA)) {
             throw new ParticleDataException("This particle effect does not require additional data");
         }
-        if (!isDataCorrect(this, data)) {
+        if (!dataIsOkay(this, data)) {
             throw new ParticleDataException("The particle data type is incorrect");
         }
         new ParticlePacket(this, direction, speed, range > 256, data).sendTo(center, range);
@@ -879,7 +884,7 @@ public enum ParticleEffect {
         if (!hasProperty(ParticleProperty.REQUIRES_DATA)) {
             throw new ParticleDataException("This particle effect does not require additional data");
         }
-        if (!isDataCorrect(this, data)) {
+        if (!dataIsOkay(this, data)) {
             throw new ParticleDataException("The particle data type is incorrect");
         }
         new ParticlePacket(this, direction, speed, isLongDistance(center, players), data).sendTo(center, players);
@@ -1400,7 +1405,7 @@ public enum ParticleEffect {
                 return;
             }
             try {
-                version = Integer.parseInt(Character.toString(ReflectionUtils.PackageType.getServerVersion().charAt(3)));
+                version = Plugin.getServerVersion();
                 if (version > 7) {
                     enumParticle = ReflectionUtils.PackageType.MINECRAFT_SERVER.getClass("EnumParticle");
                 }

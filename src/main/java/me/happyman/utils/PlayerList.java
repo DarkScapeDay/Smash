@@ -1,13 +1,15 @@
 package me.happyman.utils;
 
-import java.lang.reflect.*;
-import java.util.*;
-import java.util.List;
-
-import me.happyman.commands.SmashManager;
-import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerInfo;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.*;
 
 public class PlayerList {
     private final Class<?> PACKET_PLAYER_INFO_CLASS = ReflectionUtil
@@ -86,7 +88,7 @@ public class PlayerList {
     }
 
     /**
-     * Returns the name of the tab at ID "id".
+     * Returns the colorlessName of the tab at ID "id".
      * @param id
      *
      * @return
@@ -183,7 +185,7 @@ public class PlayerList {
                 Object gameProfile = GAMEPROFILECLASS.cast(ReflectionUtil
                         .invokeMethod(playerData, "a", new Class[0]));
                 tabs[getIDFromName((String) ReflectionUtil.invokeMethod(
-                        gameProfile, "getName", null))] = "";
+                        gameProfile, "getDisplayName", null))] = "";
                 players.add(playerData);
             }
             datas.clear();
@@ -211,20 +213,20 @@ public class PlayerList {
         }
     }
 
-    private String getCustomTab(int i)
-    {
-        return ((PacketPlayOutPlayerInfo.PlayerInfoData)datas.get(i)).d().c();
-    }
-
-    public List<String> getCustomTabs()
-    {
-        List<String> tabs = new ArrayList<String>();
-        for (int i = 0; i < datas.size(); i++)
-        {
-            tabs.add(getCustomTab(i));
-        }
-        return tabs;
-    }
+//    private String getCustomTab(int i)
+//    {
+//        return ((PacketPlayOutPlayerInfo.PlayerInfoData)datas.get(i)).d().c();
+//    }
+//
+//    public List<String> getCustomTabs()
+//    {
+//        List<String> tabs = new ArrayList<String>();
+//        for (int i = 0; i < datas.size(); i++)
+//        {
+//            tabs.add(getCustomTab(i));
+//        }
+//        return tabs;
+//    }
 
     /**
      * Clears all the values for a player's tablist. Use this whenever a player
@@ -325,9 +327,9 @@ public class PlayerList {
                 Object gameProfile = GAMEPROFILECLASS.cast(ReflectionUtil
                         .invokeMethod(playerData, "a", new Class[0]));
                 if (((String) ReflectionUtil.invokeMethod(gameProfile,
-                        "getName", null)).startsWith(getNameFromID(id))) {
+                        "getDisplayName", null)).startsWith(getNameFromID(id))) {
                     tabs[getIDFromName(((String) ReflectionUtil.invokeMethod(
-                            gameProfile, "getName", null)))] = "";
+                            gameProfile, "getDisplayName", null)))] = "";
                     players.add(playerData);
                     if (remove)
                         datas.remove(playerData);
@@ -359,9 +361,9 @@ public class PlayerList {
     /**
      *
      * Use this to add an existing offline player to a player's tablist. The
-     * reason there is a name variable is so you can modify a player's name in
+     * reason there is a colorlessName variable is so you can modify a player's colorlessName in
      * the tablist. If you want the player-tab to be the same as the player's
-     * name, provide the offline player's name.
+     * colorlessName, provide the offline player's colorlessName.
      *
      * @param id
      * @param name
@@ -425,8 +427,8 @@ public class PlayerList {
             Object profile = GAMEPROFILECLASS.cast(ReflectionUtil.invokeMethod(
                     data, "a", new Class[0]));
             tabs[getIDFromName((String) ReflectionUtil.invokeMethod(profile,
-                    "getName", null))] = (String) ReflectionUtil.invokeMethod(
-                    profile, "getName", null);
+                    "getDisplayName", null))] = (String) ReflectionUtil.invokeMethod(
+                    profile, "getDisplayName", null);
             players.add(data);
             datas.add(data);
 
@@ -569,9 +571,9 @@ public class PlayerList {
     }
 
     private void error(){
-        SmashManager.getPlugin().sendErrorMessage("PLEASE REPORT THIS ISSUE TO"
+        sendErrorMessage("Please report this issue to"
                 + ChatColor.RED + " ZOMBIE_STRIKER"
-                + ChatColor.RESET + " ON THE BUKKIT FORUMS");
+                + ChatColor.RESET + " on the Bukkit forums");
     }
 
     /**
@@ -611,7 +613,7 @@ public class PlayerList {
          * Returns the NMS class.
          *
          * @param name
-         *            The name of the class
+         *            The colorlessName of the class
          *
          * @return The NMS class or null if an error occurred
          */
@@ -629,7 +631,7 @@ public class PlayerList {
          * Returns the CraftBukkit class.
          *
          * @param name
-         *            The name of the class
+         *            The colorlessName of the class
          *
          * @return The CraftBukkit class or null if an error occurred
          */
@@ -649,7 +651,7 @@ public class PlayerList {
          * Returns the mojang.authlib class.
          *
          * @param name
-         *            The name of the class
+         *            The colorlessName of the class
          *
          * @return The mojang.authlib class or null if an error occurred
          */
@@ -669,7 +671,7 @@ public class PlayerList {
          * @param handle
          *            The handle to invoke it on
          * @param methodName
-         *            The name of the method
+         *            The colorlessName of the method
          * @param parameterClasses
          *            The parameter types
          * @param args
@@ -693,7 +695,7 @@ public class PlayerList {
          * @param handle
          *            The handle to invoke it on
          * @param methodName
-         *            The name of the method
+         *            The colorlessName of the method
          * @param parameterClasses
          *            The parameter types
          * @param args
@@ -730,7 +732,7 @@ public class PlayerList {
          * @param handle
          *            The handle to invoke it on
          * @param name
-         *            The name of the field
+         *            The colorlessName of the field
          * @param value
          *            The new value of the field
          */
@@ -759,7 +761,7 @@ public class PlayerList {
          * @param handle
          *            The handle to invoke it on
          * @param name
-         *            The name of the field
+         *            The colorlessName of the field
          *
          * @return The result
          */
@@ -787,7 +789,7 @@ public class PlayerList {
          * @param enumClass
          *            The class of the enum
          * @param name
-         *            The name of the enum constant
+         *            The colorlessName of the enum constant
          *
          * @return The enum entry or null
          */
@@ -796,7 +798,7 @@ public class PlayerList {
                 return null;
             }
             for (Object o : enumClass.getEnumConstants()) {
-                if (name.equals(invokeMethod(o, "name", new Class[0]))) {
+                if (name.equals(invokeMethod(o, "colorlessName", new Class[0]))) {
                     return o;
                 }
             }

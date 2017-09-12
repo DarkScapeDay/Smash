@@ -1,32 +1,41 @@
 name: Smash
-main: me.happyman.source
-version: 2016.12.28
+main: me.happyman.Plugin
+version: 2017.8.23
 author: HappyMan
 prefix: FinalSmash
 website: finalsmash.us
-description: This is a test plugin.
+description: This is an awesome plugin.
 load: STARTUP
 
 commands:
    broadcast:
-      usage: "§cUsage: §6/broadcast <message>"
+      usage: "§cUsage: §6/broadcast <text>"
       aliases: broadcast
       permission: minecraft.command.kick
-      description: Sends a broadcast message
+      description: Sends a broadcast text
    enableforcefield:
-      usage: "§cUsage: §6/enableforcefield <world | all> <bounds> <damage in hp> <interval in seconds>"
-      aliases: [ef, eff]
+      usage: "§cUsage: §6/enableforcefield <world | all> <bounds> <damage in hp> <tickInterval in seconds>"
+      aliases: [ef, eff, enableff]
       permission: minecraft.command.ban
-      description: "Possible shapes are sphere, cyl and, freestyle in order of increasing # of params (bounds/coords, radius, height). Freestyle: (xmin, xmax, ymin, ymax, zmin, zmax)."
+      description: "Creates or enables forcefields. Possible shapes are sphere, cyl and, freestyle in order of increasing # of params (bounds/coords, radius, height). Freestyle: (xmin, xmax, ymin, ymax, zmin, zmax)."
    disableforcefield:
       usage: "§cUsage: §6/disableforcefield"
-      aliases: [df, dff]
+      aliases: [df, dff, deleteff]
       permission: minecraft.command.ban
       description: Disables the forcefield
+   removeforcefield:
+      usage: "§cUsage: §6/removeforcefield"
+      aliases: [rf, rff, removeff]
+      permission: minecraft.command.ban
+      description: Removes a forcefield
    ffexempt:
-      usage: "§cUsage: §6/ffexempt <add | remove> <team name> | <list>"
+      usage: "§cUsage: §6/ffexempt <add | remove> <team colorlessName> | <list>"
       permission: minecraft.command.ban
       description: Adds or removes a scoreboard team from being exempt from forcefield damage
+   save:
+      usage: "§cUsage: §6/save"
+      permission: minecraft.command.ban
+      description: Save the rebellion, save the dream!
    rlp:
       usage: "§cUsage: §6/rlp"
       permission: minecraft.command.op
@@ -39,10 +48,10 @@ commands:
       usage: "§cUsage: §6/heal [player]"
       permission: minecraft.command.ban
       description: Heals the player completely
-   weather:
-      usage: "§cUsage: §6/weather [rain | thunder | clear]"
-      permission: minecraft.command.weather
-      description: Unlike normal, does almost nothing
+   food:
+      usage: "§cIf anyone is not willing to work, let him not eat."
+      permission: minecraft.command.tell
+      description: Gives food under certain conditions
    pvp:
       usage: "§cUsage: §6/pvp [true | false]"
       aliases: [togglepvp]
@@ -58,8 +67,9 @@ commands:
       aliases: [fs, fat]
       permission: minecraft.command.tell
       description: Toggles getting told you're fat
-   smash:
-      usage: "§cUsage: §6/smash"
+   nav:
+      usage: "§cUsage: §6/nav"
+      aliases: [game, gui, smash, navigate]
       permission: minecraft.command.tell
       description: Opens the Smash gui
    start:
@@ -77,14 +87,14 @@ commands:
       permission: minecraft.command.tell
       description: Shows you the Smash statistics for the given player
    createworld:
-      usage: "§cUsage: §6/createworld <free|round #> [map #] [join immediately]"
+      usage: "§cUsage: §6/createworld <type> [round # if needed] [map #] [join immediately]"
       aliases: [create, cw]
       permission: minecraft.command.ban
       description: Creates a new Smash world of the specified type. Do /maplist to see a full list of maps.
    deleteworld:
-      usage: "§cUsage: §6/deleteworld [world name]"
+      usage: "§cUsage: §6/deleteworld [world colorlessName]"
       aliases: [delete, dw]
-      permission: minecraft.command.ban
+      permission: minecraft.command.op
       description: Deletes the world specified or the world your in if not
    listmaps:
       usage: "§cUsage: §6/listmaps"
@@ -101,16 +111,35 @@ commands:
       aliases: []
       permission: minecraft.command.ban
       description: Resets a Smash world
-   getworld:
+   find:
       usage: "§cUsage: §6/find [player]"
-      aliases: [find]
+      aliases: [getworld]
       permission: minecraft.command.tell
-      description: Gets the name of the world you're in
+      description: Gets the colorlessName of the world you're in
    kit:
-      usage: "§cUsage: §6/kit [kit name]"
+      usage: "§cUsage: §6/kit [kit colorlessName]"
       aliases: [kitselector]
       permission: minecraft.command.tell
       description: Allows you to select a kit
+   givekit:
+      usage: "§cUsage: §6/addkit <kit colorlessName> <player>"
+      aliases: [addkit]
+      permission: minecraft.command.op
+      description: Gives the player the kit (if it exists)
+   removekit:
+      usage: "§cUsage: §6/removekit <kit colorlessName> <player> "
+      permission: minecraft.command.op
+      description: Takes a kit away from a player
+   setrotation:
+      usage: "§cUsage: §6/setrotationlevel <kit colorlessName> <zero-indexed level>"
+      aliases: [setkitrotationlevel, setrotationlevel]
+      permission: minecraft.command.op
+      description: Sets the rotation level of a kit
+   getrotation:
+      usage: "§cUsage: §6/getrotationlevel <kit colorlessName>"
+      aliases: [getkitrotationlevel, kitrotationlevel, getrotationlevel]
+      permission: minecraft.command.tell
+      description: Gets the rotation level of a kit
    kitlist:
       usage: "§cUsage: §6/kitlist"
       aliases: [kits, whatkitsdoihave, listkits, kitslist]
@@ -120,9 +149,9 @@ commands:
       aliases: [dmgplayer, dmg]
       permission: minecraft.command.op
       description: Adds damage to a player
-   goto:
+   join:
       usage: "§cUsage: §6/goto <world>"
-      aliases: [warp, world, join]
+      aliases: [world, goto]
       permission: minecraft.command.tell
       description: Sends you to the Smash world
    dm:
@@ -136,17 +165,17 @@ commands:
       permission: minecraft.command.tell
       description: Determines the deathmatch setting of the world (or your world)
    msg:
-      usage: "§cUsage: §6/msg <player> <message>"
-      aliases: [w, whisper, tell, message]
+      usage: "§cUsage: §6/msg <player> <text>"
+      aliases: [world, whisper, tell, text]
       permission: minecraft.command.tell
-      description: Messages the player the message
+      description: Messages the player the text
    r:
-      usage: "§cUsage: §6/r <message>"
+      usage: "§cUsage: §6/r <text>"
       permission: minecraft.command.tell
       description: Replies to the person who messaged you last
    spectate:
       usage: "§cUsage: §6/spectate"
-      aliases: [spec]
+      aliases: [spec, admin]
       permission: minecraft.command.tell
       description: Sets you into spectator mode
    giveorb:
@@ -182,7 +211,7 @@ commands:
       permission: minecraft.command.ban
       usage: "§cUsage: §6/jump <blocks> [player]"
    playparticle:
-      description: Plays a particle at the designated location (or player's location)
+      description: Plays a particle at the designated player (or player's player)
       permission: minecraft.command.ban
       aliases: [pp]
       usage: "§cUsage: §6/playparticle <coords or player> [coord offset] [tp]"
@@ -206,4 +235,66 @@ commands:
       permission: minecraft.command.op
       aliases: [portallist]
       usage: "§cUsage: §6/listportals"
-
+   bal:
+      description: Get how much gold or emeralds a player has
+      permission: minecraft.command.tell
+      aliases: [bal, gold, emeralds]
+      usage: "§cUsage: §6/bal [player] [gold/emeralds]"
+   fabricate:
+      description: Give someone some emeralds from outer space (or add a negative amount)
+      permission: minecraft.command.op
+      aliases: [addemeralds, addgold, addtokens]
+      usage: "§cUsage: §6/fabricate <player> <amount> [gold/emeralds]"
+   pay:
+      description: Give another player some of your emeralds
+      permission: minecraft.command.tell
+      aliases: [giveemeralds, givegold]
+      usage: "§cUsage: §6/pay <player> <amount> [gold/emeralds]"
+   buy:
+      description: Buy items from the market
+      permission: minecraft.command.tell
+      aliases: [economy, trade, shop, myshop]
+      usage: "§cUsage: §6/buy [player/material]"
+   sell:
+      description: Sell an specialItem on the market
+      permission: minecraft.command.tell
+      aliases: [offer]
+      usage: "§cUsage: §6/sell [amount/all]"
+   consolidate:
+      description: Consolidate your items into nice stacks
+      permission: minecraft.command.tell
+      aliases: [stack, combine]
+      usage: "§cUsage: §6/combine"
+   givespecial:
+      description: Give a special specialItem
+      permission: minecraft.command.op
+      aliases: [giveitem]
+      usage: "§cUsage: §6/give <player> <specialItem>"
+   spawn:
+      description: Teleport to the spawn of this world
+      permission: minecraft.command.tell
+      usage: "§cUsage: §6/spawn"
+   dbg:
+      description: Debug
+      permission: minecraft.command.op
+      usage: "§cUsage: §6/debug"
+   rankset:
+      description: pex user alias
+      permission: minecraft.command.op
+      usage: "§cUsage: §6/rankset <player> <rank>"
+   chat:
+      description: Makes a player say something
+      permission: minecraft.command.op
+      usage: "§cUsage: §6/chat <player> <message>"
+   warp:
+      description: Warp or create a warp at your player
+      permission: minecraft.command.tell
+      usage: "§cUsage: §6/warp <name>  OR  /warp create <name>  OR  /warp remove <name>"
+   killentities:
+      description: Kill non-player entities
+      permission: minecraft.command.kill
+      usage: "§cUsage: §6/killentities [radius]"
+   song:
+      description: Manage your songs
+      permission: minecraft.command.tell
+      usage: "§cUsage: §6/song <play,stop,delete,intro,list> [song]"

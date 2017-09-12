@@ -1,39 +1,129 @@
 package me.happyman.utils;
 
-import me.happyman.source;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.Callable;
 
+import static me.happyman.Plugin.*;
 
 public class A_StarSearch implements CommandExecutor
 {
+    private static class AxeListener implements Listener
+    {
+        private static HashMap<Player, Block> pos2Selections = new HashMap<Player, Block>();
+        private static HashMap<Player, Block> pos1Selections = new HashMap<Player, Block>();
+
+        public AxeListener()
+        {
+            Bukkit.getPluginManager().registerEvents(this, getPlugin());
+        }
+
+        public static boolean hasSelections(Player p)
+        {
+            return pos2Selections.containsKey(p) && pos1Selections.containsKey(p);
+        }
+
+        public static Block getPos1(Player p)
+        {
+            return pos1Selections.get(p);
+        }
+
+        public static Block getPos2(Player p)
+        {
+            return pos2Selections.get(p);
+        }
+
+        @EventHandler
+        public void onClickAxe(PlayerInteractEvent e)
+        {
+            Action action = e.getAction();
+            Player p = e.getPlayer();
+            if (e.getItem() != null && e.getItem().getType() == Material.GOLD_AXE &&
+                    (action == Action.RIGHT_CLICK_BLOCK || action == Action.LEFT_CLICK_BLOCK) &&
+                    hasPermissionsForCommand(p, A_STAR_CMD) && p.getGameMode() == GameMode.CREATIVE)
+            {
+                e.setCancelled(true);
+                HashMap<Player, Block> posToSelect = null;
+                Block pos = e.getClickedBlock().getRelative(0, 1, 0);
+                if (A_StarSearch.isAllowedAStarBlock(pos))
+                {
+                    String message = "";
+                    if (action.equals(Action.RIGHT_CLICK_BLOCK))
+                    {
+                        message = ChatColor.GREEN + "Set destination for A*";
+                        posToSelect = pos2Selections;
+                    }
+                    else if (action.equals(Action.LEFT_CLICK_BLOCK))
+                    {
+                        message = ChatColor.GREEN + "Set start location for A*";
+                        posToSelect = pos1Selections;
+                    }
+                    if (posToSelect != null)
+                    {
+                        posToSelect.put(p, pos);
+                        if (pos1Selections.containsKey(p) && pos2Selections.containsKey(p))
+                        {
+                            if (pos2Selections.get(p).getWorld() != pos1Selections.get(p).getWorld())
+                            {
+                                if (posToSelect == pos1Selections)
+                                {
+                                    pos2Selections.remove(p);
+                                }
+                                else
+                                {
+                                    pos1Selections.remove(p);
+                                }
+                            }
+                            else if (A_StarSearch.tooFarForParkour(pos1Selections.get(p), pos2Selections.get(p)))
+                            {
+                                message += " (" + ChatColor.LIGHT_PURPLE + "too far for parkour " + ChatColor.GREEN + ")";
+                            }
+                        }
+                    }
+                    else
+                    {
+                        message = ChatColor.RED + "Internal error has occurred";
+                    }
+                    p.sendMessage(message + ".");
+                }
+                else
+                {
+                    p.sendMessage(ChatColor.GRAY + "You have to select somewhere that has non-solid above it.");
+                }
+            }
+        }
+
+    }
+
     /*
     private static Source instance = new Source();
-    public static Source getInstance()
+    public static Source getPlugin()
     {
         return instance;
     }*/
-    private final source plugin;
     private static final int BREAKPOINT_ITERATIONS = 10000;
 
     private static String A_STAR_CMD = "a*";
 
-    public A_StarSearch(source plugin)
+    public A_StarSearch()
     {
-        this.plugin = plugin;
-        new AxeListener(plugin);
-        plugin.setExecutor(A_STAR_CMD, this);
+        new AxeListener();
+        setExecutor(A_STAR_CMD, this);
     }
 
     private double getEstimatedDistance(Block start, Block destination)
@@ -349,7 +439,7 @@ public class A_StarSearch implements CommandExecutor
         final int max_iterations = maxIt;
         final ArrayList<Block> returnResult = new ArrayList<Block>();
 
-        final int task = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable()
+        final int task = Bukkit.getScheduler().scheduleSyncRepeatingTask(getPlugin(), new Runnable()
         {
             int i = 0;
             Block prev = null;
@@ -392,7 +482,7 @@ public class A_StarSearch implements CommandExecutor
                         {
                             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Major error! Could not find path!");
                         }
-                        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable()
+                        Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), new Runnable()
                         {
                             public void run()
                             {
@@ -463,7 +553,7 @@ public class A_StarSearch implements CommandExecutor
                 }
             }
         }, 0, 1);
-        Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable()
+        Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), new Runnable()
         {
             public void run()
             {
@@ -478,7 +568,7 @@ public class A_StarSearch implements CommandExecutor
         {
             commandSender.sendMessage(ChatColor.GREEN + "Outputting path");
             int delay = 5;
-            final int task = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable()
+            final int task = Bukkit.getScheduler().scheduleSyncRepeatingTask(getPlugin(), new Runnable()
             {
                 private int cur = 0;
                 Block prevBlock = null;
@@ -496,7 +586,7 @@ public class A_StarSearch implements CommandExecutor
                         prevMat = b.getType();
                         prevBlock = b;
 
-                        Bukkit.getScheduler().callSyncMethod(plugin, new Callable()
+                        Bukkit.getScheduler().callSyncMethod(getPlugin(), new Callable()
                         {
                             public String call()
                             {
@@ -516,7 +606,7 @@ public class A_StarSearch implements CommandExecutor
                 }
             }, 0, delay);
 
-            Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable()
+            Bukkit.getScheduler().scheduleSyncDelayedTask(getPlugin(), new Runnable()
             {
                 public void run()
                 {
